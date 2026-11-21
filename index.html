@@ -124,6 +124,28 @@
       }
       @media (prefers-color-scheme: dark) { .card .tag { color: var(--orange); } }
 
+      /* ---------- Media / 発信紹介 ---------- */
+      .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+      @media (max-width: 700px) { .media-grid { grid-template-columns: 1fr; } }
+      .media-card { background: var(--surface); border: 1.5px solid var(--line); border-radius: 18px; padding: 24px 22px; box-shadow: var(--shadow); }
+      .media-card .platform { display: inline-flex; align-items: center; font-size: .78rem; font-weight: 700; letter-spacing: .02em; background: var(--ink); color: var(--bg); padding: 3px 12px; border-radius: 999px; margin-bottom: 12px; }
+      .media-card .platform.note-p { background: var(--accent-teal); color: #fff; }
+      @media (prefers-color-scheme: dark) { .media-card .platform { background: var(--orange-soft); color: var(--ink); } .media-card .platform.note-p { background: var(--accent-teal); color: #0d211c; } }
+      .media-card h3 { margin: 0 0 4px; font-size: 1.18rem; line-height: 1.45; }
+      .media-card .handle { margin: 0 0 10px; font-size: .88rem; color: var(--orange-deep); font-weight: 700; word-break: break-all; }
+      @media (prefers-color-scheme: dark) { .media-card .handle { color: var(--orange); } }
+      .media-card p.desc { margin: 0 0 14px; font-size: .93rem; color: var(--ink-soft); }
+      .media-points { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 8px; }
+      .media-points li { font-size: .9rem; padding-left: 1.35em; position: relative; line-height: 1.65; }
+      .media-points li::before { content: "・"; position: absolute; left: .3em; color: var(--orange); font-weight: 900; }
+      .article-list { display: grid; gap: 10px; margin: 0 0 18px; }
+      .article-item { display: block; text-decoration: none; background: var(--surface-2); border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+      .article-item .a-tag { display: inline-block; font-size: .72rem; font-weight: 700; background: var(--surface); border: 1px solid var(--line); color: var(--orange-deep); padding: 1px 8px; border-radius: 999px; margin-bottom: 4px; }
+      @media (prefers-color-scheme: dark) { .article-item .a-tag { color: var(--orange); } }
+      .article-item .a-title { display: block; font-weight: 700; font-size: .92rem; line-height: 1.55; color: var(--ink); }
+      .article-item .a-note { display: block; font-size: .82rem; color: var(--ink-soft); margin-top: 2px; line-height: 1.6; }
+      .media-card .btn { min-height: 44px; }
+
       /* ---------- Pricing ---------- */
       .price-list { display: grid; gap: 14px; }
       .price-row {
@@ -256,6 +278,7 @@
         <div class="hero-cta">
           <a class="btn btn-white" href="#contact">相談してみる</a>
           <a class="btn btn-ghost" href="#price">料金の目安を見る</a>
+          <a class="btn btn-ghost" href="#media">Threads・noteを見る</a>
         </div>
       </div>
     </header>
@@ -284,8 +307,46 @@
         </div>
       </section>
 
+      <section id="media">
+        <div class="sec-head"><span class="num">02</span><h2>だしょの発信（Threads・note）</h2></div>
+        <p class="sec-sub">この制作補助も、その発信の延長です。普段はThreadsとnoteで、実績ゼロから副業に挑戦する過程をそのまま記録しています。どんな人か気になったら、まずこちらをのぞいてみてください。</p>
+        <div class="media-grid">
+          <article class="media-card">
+            <span class="platform">Threads</span>
+            <h3>毎日の実践記録</h3>
+            <p class="handle">だしょ｜note月10万に挑戦中　@dasho_note</p>
+            <p class="desc">実績ゼロ・時間ほぼなしの会社員が、Threads×noteで副業月10万円を目指す記録です。先生として教えるのではなく、やったこと・数字・失敗を正直に出す「実践記録型」で続けています。AIアシスタント「ふわ」と一緒に運営しています。</p>
+            <ul class="media-points">
+              <li>やったことと数字の報告（0円の時期も含めて、そのまま）</li>
+              <li>条件の近い実践者の紹介と、投稿から学んだ観察</li>
+              <li>調べたコツを「試してみた」形で出すノウハウ投稿や、短い動画</li>
+            </ul>
+            <a class="btn btn-orange" href="https://www.threads.com/@dasho_note" target="_blank" rel="noopener">Threadsを見る</a>
+          </article>
+          <article class="media-card">
+            <span class="platform note-p">note</span>
+            <h3>手順と調べたことを、記事で残す場所</h3>
+            <p class="handle">だしょ｜note月10万に挑戦中　note.com/dasho_note</p>
+            <p class="desc">Threadsでは書ききれない手順や調査の記録は、noteにまとめています。有料noteは追記で育てていく形で、無料の調査記事も公開しています。</p>
+            <div class="article-list">
+              <a class="article-item" href="https://note.com/dasho_note/n/n0da7dae9a041" target="_blank" rel="noopener">
+                <span class="a-tag">有料note・第1本</span>
+                <span class="a-title">実績ゼロ・時間ほぼなしの会社員が、Threads×noteを始める全手順</span>
+                <span class="a-note">開設のつまずきから、プロフィール、最初の投稿まで。500円から始め、10部売れるごとに100円ずつ値上げする形で公開中です。</span>
+              </a>
+              <a class="article-item" href="https://note.com/dasho_note/n/n9a3087a62258" target="_blank" rel="noopener">
+                <span class="a-tag">無料記事</span>
+                <span class="a-title">売れている有料note8本の『無料部分』だけを調べた記録｜自分のnoteがいちばん短かった</span>
+                <span class="a-note">売れている有料noteの「無料部分」だけを比べて、自分のnoteに足りなかったものを見つけた調査記録です。</span>
+              </a>
+            </div>
+            <a class="btn btn-line" href="https://note.com/dasho_note" target="_blank" rel="noopener">noteを見る</a>
+          </article>
+        </div>
+      </section>
+
       <section id="price">
-        <div class="sec-head"><span class="num">02</span><h2>料金の目安</h2></div>
+        <div class="sec-head"><span class="num">03</span><h2>料金の目安</h2></div>
         <p class="sec-sub">最初から値段が見える形にしています。正式な金額は、内容を聞いてから相談のうえで決めます。</p>
         <div class="price-list">
           <div class="price-row">
@@ -345,7 +406,7 @@
       </section>
 
       <section id="flow">
-        <div class="sec-head"><span class="num">03</span><h2>進め方</h2></div>
+        <div class="sec-head"><span class="num">04</span><h2>進め方</h2></div>
         <p class="sec-sub">やり取りはすべてメールかDM（メッセージ）で完結します。電話やビデオ通話はしません。</p>
         <div class="steps">
           <div class="step"><div class="dot">1</div><div>
@@ -368,7 +429,7 @@
       </section>
 
       <section id="rules">
-        <div class="sec-head"><span class="num">04</span><h2>受ける条件（先に正直に）</h2></div>
+        <div class="sec-head"><span class="num">05</span><h2>受ける条件（先に正直に）</h2></div>
         <p class="sec-sub">本業の合間の副業として受けているので、無理のない条件を最初から書いておきます。合う方だけ、気楽にどうぞ。</p>
         <div class="two-col">
           <div>
@@ -395,7 +456,7 @@
       </section>
 
       <section id="faq">
-        <div class="sec-head"><span class="num">05</span><h2>よくある質問</h2></div>
+        <div class="sec-head"><span class="num">06</span><h2>よくある質問</h2></div>
         <p class="sec-sub"></p>
         <details class="faq">
           <summary>パソコンに詳しくなくても大丈夫ですか？</summary>
@@ -450,6 +511,7 @@
           <a href="mailto:dasho.support@gmail.com">dasho.support@gmail.com</a>
           <a href="https://www.threads.com/@dasho_note" target="_blank" rel="noopener">Threads @dasho_note</a>
           <a href="https://note.com/dasho_note" target="_blank" rel="noopener">note dasho_note</a>
+          <a href="#media">発信の紹介（Threads・note）</a>
           <a href="#price">料金の目安</a>
           <a href="#rules">受ける条件</a>
         </div>
