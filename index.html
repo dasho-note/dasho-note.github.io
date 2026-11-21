@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
     <title>AIウェブサイト制作補助 案内ページ｜だしょ</title>
-    <meta name="description" content="AIを使って、小さなウェブサイト作りをお手伝いします。1ページの案内サイト制作、文章の整理、GitHub Pagesへの公開まで。月1件まで、連絡はメール（dasho.support@gmail.com）かDMで気楽に。" />
+    <meta name="description" content="AIを使って、小さなウェブサイト作りをお手伝いします。お店・教室・イベントなど6パターンのサンプルから選べる、セキュリティに配慮した静的ページ限定の制作補助。文章の整理、GitHub Pagesへの公開まで。月1件まで、連絡はメール（dasho.support@gmail.com）かDMで気楽に。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -146,6 +146,40 @@
       .article-item .a-note { display: block; font-size: .82rem; color: var(--ink-soft); margin-top: 2px; line-height: 1.6; }
       .media-card .btn { min-height: 44px; }
 
+      /* ---------- Samples gallery ---------- */
+      .sample-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+      .sample-card { background: var(--surface); border: 1.5px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+      .sample-card .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+      .sample-card h3 { margin: 0; font-size: 1.02rem; line-height: 1.5; }
+      .sample-card p { margin: 0; font-size: .88rem; color: var(--ink-soft); line-height: 1.7; }
+      .sample-card .can { margin: 6px 0 0; padding: 10px 12px; background: var(--surface-2); border-radius: 10px; font-size: .82rem; line-height: 1.65; }
+      .sample-card .can strong { color: var(--orange-deep); }
+      @media (prefers-color-scheme: dark) { .sample-card .can strong { color: var(--orange); } }
+      .mock { border-bottom: 1.5px solid var(--line); }
+      .mock-bar { display: flex; align-items: center; gap: 5px; padding: 8px 12px; background: #efe6dc; }
+      @media (prefers-color-scheme: dark) { .mock-bar { background: #1d130b; } }
+      .mock-bar i { width: 8px; height: 8px; border-radius: 50%; background: #cbb59c; display: block; }
+      .mock-bar span { margin-left: 6px; flex: 1; height: 14px; border-radius: 7px; background: var(--surface); font-size: .6rem; line-height: 14px; padding: 0 8px; color: var(--ink-soft); overflow: hidden; white-space: nowrap; }
+      .mock-view { padding: 14px; min-height: 148px; }
+      .mock-view .m-title { font-family: "Zen Maru Gothic", sans-serif; font-weight: 900; line-height: 1.4; }
+      .mock-view .m-line { height: 7px; border-radius: 4px; margin-top: 8px; }
+      .mock-view .m-btn { display: inline-block; margin-top: 12px; padding: 4px 14px; border-radius: 999px; font-size: .72rem; font-weight: 700; color: #fff; }
+      .mock-view .m-row { display: flex; gap: 8px; margin-top: 10px; }
+      .mock-view .m-box { flex: 1; border-radius: 8px; min-height: 38px; padding: 6px 8px; font-size: .68rem; line-height: 1.5; font-weight: 700; }
+      .mv-shop { background: #fdf1e3; color: #5b3413; } .mv-shop .m-line { background: #eec9a3; } .mv-shop .m-btn { background: #b85c1e; } .mv-shop .m-box { background: #fff; border: 1px solid #eec9a3; }
+      .mv-school { background: #e6f4f1; color: #123f36; } .mv-school .m-line { background: #a9d8cf; } .mv-school .m-btn { background: #0e7c6b; } .mv-school .m-box { background: #fff; border: 1px solid #a9d8cf; }
+      .mv-works { background: #f3eefb; color: #372a56; } .mv-works .m-line { background: #cfc2ec; } .mv-works .m-btn { background: #5b4a8a; } .mv-works .m-box { background: #fff; border: 1px solid #cfc2ec; min-height: 52px; }
+      .mv-event { background: #fdebec; color: #5c1d22; } .mv-event .m-line { background: #f2b8bc; } .mv-event .m-btn { background: #b03038; } .mv-event .m-box { background: #fff; border: 1px solid #f2b8bc; }
+      .mv-circle { background: #eef6e4; color: #33491c; } .mv-circle .m-line { background: #c3dd9f; } .mv-circle .m-btn { background: #5d8527; } .mv-circle .m-box { background: #fff; border: 1px solid #c3dd9f; }
+      .mv-card { background: #e8f0fa; color: #1d3554; } .mv-card .m-line { background: #b3cbe8; } .mv-card .m-btn { background: #2f5d8a; } .mv-card .m-box { background: #fff; border: 1px solid #b3cbe8; }
+      .mock-view .m-date { display: inline-block; background: #b03038; color: #fff; font-weight: 900; font-size: .75rem; border-radius: 8px; padding: 3px 10px; margin-bottom: 6px; }
+      .mock-view .m-avatar { width: 40px; height: 40px; border-radius: 50%; margin-bottom: 6px; }
+      .security-box { margin-top: 20px; background: var(--surface); border: 1.5px solid var(--accent-teal); border-radius: 18px; padding: 20px 22px; }
+      .security-box h3 { margin: 0 0 8px; font-size: 1.05rem; color: var(--accent-teal); }
+      .security-box p { margin: 0 0 10px; font-size: .92rem; }
+      .security-box ul { margin: 0; padding-left: 1.2em; font-size: .92rem; display: grid; gap: 4px; }
+      .sample-note { font-size: .85rem; color: var(--ink-soft); margin-top: 14px; }
+
       /* ---------- Pricing ---------- */
       .price-list { display: grid; gap: 14px; }
       .price-row {
@@ -277,6 +311,7 @@
         </div>
         <div class="hero-cta">
           <a class="btn btn-white" href="#contact">相談してみる</a>
+          <a class="btn btn-ghost" href="#samples">サンプル（6パターン）を見る</a>
           <a class="btn btn-ghost" href="#price">料金の目安を見る</a>
           <a class="btn btn-ghost" href="#media">Threads・noteを見る</a>
         </div>
@@ -307,8 +342,126 @@
         </div>
       </section>
 
+      <section id="samples">
+        <div class="sec-head"><span class="num">02</span><h2>作れるページのサンプル（6パターン）</h2></div>
+        <p class="sec-sub">「自分の場合はどれだろう？」と選べるように、形のサンプルを用意しました。どれも<strong>静的ページ（見るだけのページ）</strong>です。色・写真・文章は、あなたの内容に合わせて変えます。下の見本はデザインのイメージで、実在のお店・団体ではありません。</p>
+        <div class="sample-grid">
+          <article class="sample-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>cafe-sample.github.io</span></div>
+              <div class="mock-view mv-shop">
+                <div class="m-title">小さなカフェ<br />〇〇</div>
+                <div class="m-line" style="width:82%"></div><div class="m-line" style="width:64%"></div>
+                <div class="m-row"><div class="m-box">本日のメニュー</div><div class="m-box">営業時間<br />9:00–17:00</div></div>
+                <span class="m-btn">地図・アクセス</span>
+              </div>
+            </div>
+            <div class="body">
+              <h3>① お店の紹介ページ</h3>
+              <p>カフェ・パン屋・雑貨店など、小さなお店の「名刺代わり」に。初めて来る人が知りたいことだけを1ページに。</p>
+              <p class="can"><strong>載せられるもの：</strong>メニュー／営業時間・定休日／アクセス・地図へのリンク／写真／SNSへのリンク</p>
+            </div>
+          </article>
+          <article class="sample-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>school-sample.github.io</span></div>
+              <div class="mock-view mv-school">
+                <div class="m-title">ピアノ教室<br />〇〇レッスン</div>
+                <div class="m-line" style="width:78%"></div><div class="m-line" style="width:58%"></div>
+                <div class="m-row"><div class="m-box">月謝・コース</div><div class="m-box">講師紹介</div><div class="m-box">曜日・時間</div></div>
+                <span class="m-btn">体験の相談（メール）</span>
+              </div>
+            </div>
+            <div class="body">
+              <h3>② 教室・レッスンの案内ページ</h3>
+              <p>習い事教室や個人レッスン向け。料金と流れが先に見えるので、問い合わせ前の不安が減ります。</p>
+              <p class="can"><strong>載せられるもの：</strong>コース・料金／講師プロフィール／レッスンの流れ／よくある質問／相談先リンク</p>
+            </div>
+          </article>
+          <article class="sample-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>works-sample.github.io</span></div>
+              <div class="mock-view mv-works">
+                <div class="m-title">ハンドメイド作家<br />〇〇 の作品集</div>
+                <div class="m-line" style="width:70%"></div>
+                <div class="m-row"><div class="m-box">作品 1</div><div class="m-box">作品 2</div><div class="m-box">作品 3</div></div>
+                <span class="m-btn">販売先・SNSを見る</span>
+              </div>
+            </div>
+            <div class="body">
+              <h3>③ 活動・作品のポートフォリオ</h3>
+              <p>作家・クリエイター・個人の活動紹介に。作品写真を並べるギャラリー型で、販売先やSNSへ案内します。</p>
+              <p class="can"><strong>載せられるもの：</strong>作品ギャラリー／プロフィール／出展・活動歴／販売先・SNSへのリンク</p>
+            </div>
+          </article>
+          <article class="sample-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>event-sample.github.io</span></div>
+              <div class="mock-view mv-event">
+                <span class="m-date">12月14日（日）</span>
+                <div class="m-title">1日ワークショップ<br />〇〇体験会</div>
+                <div class="m-line" style="width:80%"></div><div class="m-line" style="width:52%"></div>
+                <div class="m-row"><div class="m-box">会場・持ち物</div><div class="m-box">参加費</div></div>
+                <span class="m-btn">申し込み（メール）</span>
+              </div>
+            </div>
+            <div class="body">
+              <h3>④ イベント・講座の案内ページ</h3>
+              <p>1回きりのイベントや講座の告知に。日時・会場・参加費を1ページにまとめ、SNSでそのままシェアできます。</p>
+              <p class="can"><strong>載せられるもの：</strong>日時・会場／プログラム／参加費・定員／申し込み方法（メール・DMへの案内）</p>
+            </div>
+          </article>
+          <article class="sample-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>circle-sample.github.io</span></div>
+              <div class="mock-view mv-circle">
+                <div class="m-title">地域サークル<br />〇〇の会</div>
+                <div class="m-line" style="width:76%"></div><div class="m-line" style="width:60%"></div>
+                <div class="m-row"><div class="m-box">活動日<br />毎週土曜</div><div class="m-box">活動の様子</div></div>
+                <span class="m-btn">見学の相談（メール）</span>
+              </div>
+            </div>
+            <div class="body">
+              <h3>⑤ サークル・地域活動の紹介ページ</h3>
+              <p>趣味のサークルや地域の団体向け。活動の雰囲気が伝わると、見学・参加のハードルが下がります。</p>
+              <p class="can"><strong>載せられるもの：</strong>活動内容・活動日／写真／参加のしかた／会費／連絡先</p>
+            </div>
+          </article>
+          <article class="sample-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>profile-sample.github.io</span></div>
+              <div class="mock-view mv-card">
+                <div class="m-avatar" style="background:#2f5d8a"></div>
+                <div class="m-title">〇〇（肩書き）</div>
+                <div class="m-line" style="width:72%"></div><div class="m-line" style="width:55%"></div>
+                <div class="m-row"><div class="m-box">できること</div><div class="m-box">実績・経歴</div></div>
+                <span class="m-btn">連絡先・SNS</span>
+              </div>
+            </div>
+            <div class="body">
+              <h3>⑥ 名刺代わりのプロフィールページ</h3>
+              <p>フリーランスや個人事業の自己紹介に。SNSのプロフィール欄に貼れる、リンク集つきの1ページです。この案内ページ自体も、この型に近い作りです。</p>
+              <p class="can"><strong>載せられるもの：</strong>プロフィール／できること／実績／SNS・連絡先のリンク集</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="security-box">
+          <h3>なぜ「静的ページ限定」なのか（セキュリティの話）</h3>
+          <p>最近は、ホームページ経由の情報漏えいや不正ログインのニュースも増えています。そこで、このお手伝いは<strong>あえて「静的ページ」だけ</strong>に絞っています。静的ページとは、誰が見ても同じ内容が表示される「見るだけのページ」のことです。</p>
+          <ul>
+            <li><strong>個人情報を集めません：</strong>入力フォームで名前や住所を受け取らないので、ページ側に残る情報がありません。連絡はメール・DMに寄せます</li>
+            <li><strong>ログイン・決済の機能を持ちません：</strong>会員情報やカード情報を扱わないぶん、狙われる材料自体がありません</li>
+            <li><strong>データベースや管理画面を持ちません：</strong>仕組みがシンプルなほど、侵入や改ざんの入り口は小さくなります</li>
+            <li><strong>公開後の維持も軽いです：</strong>サーバーの管理や定期的な更新作業がほぼ要らないので、作ったあとは「置いておくだけ」で長く使えます</li>
+          </ul>
+          <p style="margin-top:10px">その代わり、ネットショップ・予約・会員機能のような「動く仕組み」は作れません（<a href="#rules">受ける条件</a>にも明記しています）。必要なのは紹介と案内だけ、という方にちょうど合う形です。</p>
+        </div>
+        <p class="sample-note">※ 6パターンは出発点です。「①と④の間みたいな形」といった組み合わせも、相談の中で決められます。ページ数を増やす場合の料金は<a href="#price">料金の目安</a>をご覧ください。</p>
+      </section>
+
       <section id="media">
-        <div class="sec-head"><span class="num">02</span><h2>だしょの発信（Threads・note）</h2></div>
+        <div class="sec-head"><span class="num">03</span><h2>だしょの発信（Threads・note）</h2></div>
         <p class="sec-sub">この制作補助も、その発信の延長です。普段はThreadsとnoteで、実績ゼロから副業に挑戦する過程をそのまま記録しています。どんな人か気になったら、まずこちらをのぞいてみてください。</p>
         <div class="media-grid">
           <article class="media-card">
@@ -346,7 +499,7 @@
       </section>
 
       <section id="price">
-        <div class="sec-head"><span class="num">03</span><h2>料金の目安</h2></div>
+        <div class="sec-head"><span class="num">04</span><h2>料金の目安</h2></div>
         <p class="sec-sub">最初から値段が見える形にしています。正式な金額は、内容を聞いてから相談のうえで決めます。</p>
         <div class="price-list">
           <div class="price-row">
@@ -406,7 +559,7 @@
       </section>
 
       <section id="flow">
-        <div class="sec-head"><span class="num">04</span><h2>進め方</h2></div>
+        <div class="sec-head"><span class="num">05</span><h2>進め方</h2></div>
         <p class="sec-sub">やり取りはすべてメールかDM（メッセージ）で完結します。電話やビデオ通話はしません。</p>
         <div class="steps">
           <div class="step"><div class="dot">1</div><div>
@@ -429,7 +582,7 @@
       </section>
 
       <section id="rules">
-        <div class="sec-head"><span class="num">05</span><h2>受ける条件（先に正直に）</h2></div>
+        <div class="sec-head"><span class="num">06</span><h2>受ける条件（先に正直に）</h2></div>
         <p class="sec-sub">本業の合間の副業として受けているので、無理のない条件を最初から書いておきます。合う方だけ、気楽にどうぞ。</p>
         <div class="two-col">
           <div>
@@ -445,7 +598,9 @@
           <div>
             <p class="col-title">受けていないこと</p>
             <ul class="ng-list">
+              <li>静的ページ以外の制作（このお手伝いは「見るだけのページ」限定です）</li>
               <li>ネットショップ（決済機能つき）の制作</li>
+              <li>ログイン・会員機能、個人情報を集める入力フォームのあるページ</li>
               <li>予約システム・会員機能などの大きな仕組み</li>
               <li>「明日まで」など、急ぎの納品</li>
               <li>公開後の継続的な更新・運用代行</li>
@@ -456,7 +611,7 @@
       </section>
 
       <section id="faq">
-        <div class="sec-head"><span class="num">06</span><h2>よくある質問</h2></div>
+        <div class="sec-head"><span class="num">07</span><h2>よくある質問</h2></div>
         <p class="sec-sub"></p>
         <details class="faq">
           <summary>パソコンに詳しくなくても大丈夫ですか？</summary>
@@ -473,6 +628,10 @@
         <details class="faq">
           <summary>AIで作るって、品質は大丈夫ですか？</summary>
           <div class="a">AIは「速く下書きを作る道具」として使います。最後は私が内容を確認し、あなたの目でも確認してもらってから公開します。このページ自体が、AIと一緒に作った実物サンプルです。</div>
+        </details>
+        <details class="faq">
+          <summary>「静的ページ」だと、できないこともありますか？</summary>
+          <div class="a">はい。ログイン、ネットショップの決済、予約受付、会員だけが見られるページなど、情報を預かる仕組みは作りません。セキュリティ面で安全に保てる範囲に絞るためです。申し込みや問い合わせは、メールやDMへのリンクで受け付ける形になります。詳しくは<a href="#samples">サンプルのセキュリティの説明</a>をご覧ください。</div>
         </details>
         <details class="faq">
           <summary>今月はもう受けてもらえませんか？</summary>
@@ -511,6 +670,7 @@
           <a href="mailto:dasho.support@gmail.com">dasho.support@gmail.com</a>
           <a href="https://www.threads.com/@dasho_note" target="_blank" rel="noopener">Threads @dasho_note</a>
           <a href="https://note.com/dasho_note" target="_blank" rel="noopener">note dasho_note</a>
+          <a href="#samples">作れるページのサンプル</a>
           <a href="#media">発信の紹介（Threads・note）</a>
           <a href="#price">料金の目安</a>
           <a href="#rules">受ける条件</a>
