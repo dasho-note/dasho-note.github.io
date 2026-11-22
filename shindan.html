@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>いまのあなたに合うnote診断｜だしょ</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8f9fa;
+      --border: #e5e7eb;
+      --border-strong: #cbd5e1;
+      --text: #1f2937;
+      --text-sub: #4b5563;
+      --text-muted: #6b7280;
+      --accent: #1e6b52;
+      --accent-hover: #175440;
+      --accent-soft: #eef6f3;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 24px 18px 48px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin: 0 0 4px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin: 6px 0 0;
+    }
+
+    .progress-wrap {
+      margin-bottom: 20px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background-color: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: var(--accent);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .question-card {
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 18px;
+      line-height: 1.5;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background-color: var(--bg);
+      color: var(--text);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 15px 16px;
+      font-size: 15px;
+      line-height: 1.5;
+      font-family: inherit;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.08s ease;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+    }
+
+    .option-btn:hover {
+      border-color: var(--accent);
+      background-color: var(--accent-soft);
+    }
+
+    .option-btn:active {
+      transform: scale(0.99);
+    }
+
+    .option-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .nav-row {
+      margin-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border-strong);
+      color: var(--text-sub);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-family: inherit;
+      cursor: pointer;
+      min-height: 44px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--surface);
+      color: var(--text);
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      min-height: 48px;
+      width: 100%;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .result-card {
+      animation: fadeIn 0.25s ease;
+    }
+
+    .result-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .result-type {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 4px;
+      line-height: 1.35;
+    }
+
+    .result-sub {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin: 0 0 20px;
+    }
+
+    .summary-list {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .summary-item {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .summary-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-bottom: 2px;
+    }
+
+    .summary-value {
+      display: block;
+      color: var(--text);
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 14px;
+      color: var(--text);
+    }
+
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .article-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background-color: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .article-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .article-card.is-first {
+      border-color: var(--accent);
+      background-color: #fbfdfc;
+    }
+
+    .article-tags {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .tag-first {
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      background-color: var(--accent);
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+
+    .tag-order {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-sub);
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .tag-price {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .article-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+
+    .article-reason {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin: 0 0 10px;
+      line-height: 1.55;
+    }
+
+    .article-link-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .result-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 28px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--text-sub);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <p class="site-label">だしょ｜note月10万に挑戦中</p>
+      <h1>いまのあなたに合うnote診断</h1>
+      <p class="subtitle">6つの質問に答えると、今の状況に合う3本をご案内します。</p>
+    </header>
+
+    <main id="app" aria-live="polite"></main>
+
+    <footer>
+      <a href="https://note.com/dasho_note" target="_blank" rel="noopener noreferrer">noteアカウントを見る（新しいタブ）</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const ARTICLES = {
+        paid_guide: {
+          id: "paid_guide",
+          title: "実績ゼロの会社員が、2万円分の有料noteを10本買って見えた『売れる型』と始め方の全記録",
+          url: "https://note.com/dasho_note/n/n0da7dae9a041",
+          priceLabel: "有料・500円（無料部分あり）"
+        },
+        free_part: {
+          id: "free_part",
+          title: "売れている有料note8本の「無料部分」だけを調べた記録｜自分のnoteがいちばん短かった",
+          url: "https://note.com/dasho_note/n/n9a3087a62258",
+          priceLabel: "無料"
+        },
+        wellbeing: {
+          id: "wellbeing",
+          title: "ウェルビーイングってなんだろう｜できていない私が、それでも試していること",
+          url: "https://note.com/dasho_note/n/n59f5b5736e03",
+          priceLabel: "無料"
+        },
+        title_20: {
+          id: "title_20",
+          title: "有料noteを出したのに売れない人へ。売れている20本のタイトルだけを調べたら、数字なしは2本だけでした",
+          url: "https://note.com/dasho_note/n/n14381e240b50",
+          priceLabel: "無料"
+        }
+      };
+
+      const RESULTS = {
+        prep: {
+          name: "準備じっくり型",
+          sub: "まずは最初の一歩を決めたい人",
+          strength: "始める前にしっかり調べられる慎重さがあります。",
+          weakness: "情報が増えるほど迷って手が止まりやすい傾向があります。",
+          nextStep: "活動名と「これから試すこと」を1行だけメモに書いてみる。",
+          articles: [
+            {
+              id: "paid_guide",
+              reason: "情報が多すぎて止まっている状態を抜けるための5ステップと、やらない売り方の線引きが分かります。"
+            },
+            {
+              id: "wellbeing",
+              reason: "準備が完璧じゃなくても、小さく試し始めていいと思える等身大の記録です。"
+            },
+            {
+              id: "free_part",
+              reason: "これから書く前に、読まれる記事の入口に何が入っているか全体像をつかめます。"
+            }
+          ]
+        },
+        entry: {
+          name: "入口あと一歩型",
+          sub: "見てもらう工夫で悩んでいる人",
+          strength: "まずは記事を書き上げて形にできる行動力があります。",
+          weakness: "中身に力を入れるぶん、タイトルなど入口の見直しが後回しになりがちです。",
+          nextStep: "自分の記事タイトルに「数字」と「誰向けか」が入っているか見直す。",
+          articles: [
+            {
+              id: "title_20",
+              reason: "実績ゼロでも正直に使える数字の入れ方と、タイトルを見直す視点が手に入ります。"
+            },
+            {
+              id: "free_part",
+              reason: "タイトルから開いてもらったあと、中身に興味を持ってもらうための要素が確認できます。"
+            },
+            {
+              id: "paid_guide",
+              reason: "公開から6日間のリアルな修正記録と、SNSでの動き方が次の打ち手の参考になります。"
+            }
+          ]
+        },
+        content: {
+          name: "中身しっかり型",
+          sub: "煽らず丁寧に届けたい人",
+          strength: "正直に伝えたいという誠実なスタンスを持っています。",
+          weakness: "書いた本人だからこそ、無料部分の足りない部分に気づきにくい面があります。",
+          nextStep: "無料部分に「有料部分の中身が少し見える項目」を1つ足せないか考えてみる。",
+          articles: [
+            {
+              id: "free_part",
+              reason: "焦らせる表現を使わずに、無料部分の足りない5項目を見直すヒントが詰まっています。"
+            },
+            {
+              id: "paid_guide",
+              reason: "10本分析して「あえてやらない」と決めた3つの売り方が、あなたの線引きの支えになります。"
+            },
+            {
+              id: "title_20",
+              reason: "無料部分を整えたあとに見直したい、誇張しないタイトルの作り方が分かります。"
+            }
+          ]
+        },
+        gap: {
+          name: "スキマ模索型",
+          sub: "時間がない中で小さく進めたい人",
+          strength: "仕事や家庭など、目の前の役割に真面目に向き合っています。",
+          weakness: "余裕がないと、自分のやりたいことを後回しにしやすい傾向があります。",
+          nextStep: "寝る前の5分だけ、今日やったことをスマホに1行メモしてみる。",
+          articles: [
+            {
+              id: "wellbeing",
+              reason: "仕事や介護で時間がない中でも、自分の時間を少し取り戻そうとする姿勢に肩の力が抜けます。"
+            },
+            {
+              id: "paid_guide",
+              reason: "時間がない会社員でも無理なく続けるための運用ルールと、迷わない手順がまとまっています。"
+            },
+            {
+              id: "free_part",
+              reason: "少しずつ直しながら記事を育てていく進め方を知り、気負わず取り組む目安になります。"
+            }
+          ]
+        }
+      };
+
+      const Q1 = {
+        id: "q1",
+        text: "いまのあなたに一番近いのは？",
+        options: [
+          { id: "A", label: "副業やnoteを始めたいけど、まだ動けていない", branch: "A", scores: { prep: 2 } },
+          { id: "B", label: "noteを書いている（または有料記事を出した）が、反応が薄い", branch: "B", scores: { entry: 1, content: 1 } },
+          { id: "C", label: "仕事や家のことで手いっぱいで、自分の時間がない", branch: "C", scores: { gap: 2 } },
+          { id: "D", label: "どれも当てはまらない", branch: "C", scores: { prep: 1, gap: 1 } }
+        ]
+      };
+
+      const Q2_BRANCHES = {
+        A: {
+          id: "q2_A",
+          text: "何がいちばん引っかかっていますか？",
+          options: [
+            { id: "A1", label: "情報が多すぎて、何からやるか決められない", scores: { prep: 2 } },
+            { id: "A2", label: "実績がないので、何を書けばいいか分からない", scores: { prep: 1, entry: 1 } },
+            { id: "A3", label: "忙しくて続けられるか不安", scores: { gap: 2 } }
+          ]
+        },
+        B: {
+          id: "q2_B",
+          text: "いま一番モヤッとしているのはどこですか？",
+          options: [
+            { id: "B1", label: "そもそも記事を開いてもらえていない気がする", scores: { entry: 2 } },
+            { id: "B2", label: "無料部分で何をどこまで書けばいいか分からない", scores: { content: 2 } },
+            { id: "B3", label: "焦らせるような売り方に抵抗がある", scores: { content: 2, prep: 1 } }
+          ]
+        },
+        C: {
+          id: "q2_C",
+          text: "いまの気持ちに近いのは？",
+          options: [
+            { id: "C1", label: "毎日こなすだけで終わり、自分の時間がほしい", scores: { gap: 2 } },
+            { id: "C2", label: "何か小さく試したいけど、気力がわかない", scores: { gap: 1, prep: 1 } },
+            { id: "C3", label: "まずは誰かのリアルな挑戦をのぞいてみたい", scores: { prep: 1, gap: 1 } }
+          ]
+        }
+      };
+
+      const COMMON_QUESTIONS = [
+        {
+          id: "q3",
+          text: "いま一番近づきたい状態は？",
+          options: [
+            { id: "3_1", label: "迷わずアカウントや最初の投稿を形にしたい", scores: { prep: 1 } },
+            { id: "3_2", label: "出したnoteを、まずは見てもらえる形に直したい", scores: { entry: 1 } },
+            { id: "3_3", label: "買うか判断しやすい無料部分に整えたい", scores: { content: 1 } },
+            { id: "3_4", label: "無理のないペースで、自分のための時間を少し作りたい", scores: { gap: 1 } }
+          ]
+        },
+        {
+          id: "q4",
+          text: "新しいことを始めるとき、ついやってしまうのは？",
+          options: [
+            { id: "4_1", label: "調べるだけで時間が過ぎて、手が止まりがち", scores: { prep: 1 } },
+            { id: "4_2", label: "ひとまず出したあと、どこを直せばいいか迷う", scores: { entry: 1 } },
+            { id: "4_3", label: "自分の記事を客観的に見られず、短くまとめがち", scores: { content: 1 } },
+            { id: "4_4", label: "ちゃんとできないと「今は無理」と後回しにしがち", scores: { gap: 1 } }
+          ]
+        },
+        {
+          id: "q5",
+          text: "いま読んでみたいのはどれですか？",
+          options: [
+            { id: "5_1", label: "実績ゼロから始める手順と、そのまま使える型", scores: { prep: 1 } },
+            { id: "5_2", label: "売れているnoteのタイトルを数えて見えた共通点", scores: { entry: 1 } },
+            { id: "5_3", label: "売れているnoteの無料部分を比べたリアルな記録", scores: { content: 1 } },
+            { id: "5_4", label: "余裕がない毎日の中で、小さく試している人の本音", scores: { gap: 1 } }
+          ]
+        },
+        {
+          id: "q6",
+          text: "続けるうえで大事にしたいことは？",
+          options: [
+            { id: "6_1", label: "やらなくていいことも先に知って、遠回りを減らしたい", scores: { prep: 1 } },
+            { id: "6_2", label: "実績がなくても、正直に書ける言葉で勝負したい", scores: { entry: 1 } },
+            { id: "6_3", label: "煽らずに、中身がきちんと伝わる形にしたい", scores: { content: 1 } },
+            { id: "6_4", label: "大きな結果より、今日できる小さな一歩を積み重ねたい", scores: { gap: 1 } }
+          ]
+        }
+      ];
+
+      const TOTAL_QUESTIONS = 6;
+      const TIE_BREAK_ORDER = ["prep", "entry", "content", "gap"];
+
+      let currentStep = 0;
+      let answers = [];
+
+      const appEl = document.getElementById("app");
+
+      function scrollToTop() {
+        try {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } catch (e) {
+          window.scrollTo(0, 0);
+        }
+      }
+
+      function getQuestionForStep(step) {
+        if (step === 0) return Q1;
+        if (step === 1) {
+          const q1Answer = answers[0];
+          const branchKey = q1Answer ? q1Answer.branch : "A";
+          return Q2_BRANCHES[branchKey] || Q2_BRANCHES.A;
+        }
+        return COMMON_QUESTIONS[step - 2];
+      }
+
+      function calculateResultKey() {
+        const totals = { prep: 0, entry: 0, content: 0, gap: 0 };
+        answers.forEach(function (ans) {
+          if (!ans || !ans.scores) return;
+          Object.keys(ans.scores).forEach(function (key) {
+            if (Object.prototype.hasOwnProperty.call(totals, key)) {
+              totals[key] += ans.scores[key];
+            }
+          });
+        });
+
+        let bestKey = TIE_BREAK_ORDER[0];
+        let bestScore = -1;
+        TIE_BREAK_ORDER.forEach(function (key) {
+          if (totals[key] > bestScore) {
+            bestScore = totals[key];
+            bestKey = key;
+          }
+        });
+        return bestKey;
+      }
+
+      function handleSelect(option) {
+        if (currentStep === 0 && answers[0] && answers[0].branch !== option.branch) {
+          answers = [option];
+        } else {
+          answers[currentStep] = option;
+        }
+        currentStep += 1;
+        render();
+        scrollToTop();
+      }
+
+      function handleBack() {
+        if (currentStep > 0) {
+          currentStep -= 1;
+          render();
+          scrollToTop();
+        }
+      }
+
+      function handleRestart() {
+        currentStep = 0;
+        answers = [];
+        render();
+        scrollToTop();
+      }
+
+      function renderQuestion() {
+        const q = getQuestionForStep(currentStep);
+        const stepNumber = currentStep + 1;
+        const percent = Math.round((stepNumber / TOTAL_QUESTIONS) * 100);
+
+        const wrap = document.createElement("section");
+        wrap.className = "question-card";
+
+        const progressWrap = document.createElement("div");
+        progressWrap.className = "progress-wrap";
+        progressWrap.innerHTML =
+          '<div class="progress-meta">' +
+            '<span>質問 ' + stepNumber + ' / ' + TOTAL_QUESTIONS + '</span>' +
+            '<span>' + percent + '%</span>' +
+          '</div>' +
+          '<div class="progress-bar" role="progressbar" aria-valuenow="' + stepNumber + '" aria-valuemin="1" aria-valuemax="' + TOTAL_QUESTIONS + '">' +
+            '<div class="progress-fill" style="width:' + percent + '%"></div>' +
+          '</div>';
+        wrap.appendChild(progressWrap);
+
+        const qTitle = document.createElement("h2");
+        qTitle.className = "question-text";
+        qTitle.textContent = q.text;
+        wrap.appendChild(qTitle);
+
+        const optionsDiv = document.createElement("div");
+        optionsDiv.className = "options";
+        q.options.forEach(function (opt) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "option-btn";
+          btn.textContent = opt.label;
+          btn.addEventListener("click", function () {
+            handleSelect(opt);
+          });
+          optionsDiv.appendChild(btn);
+        });
+        wrap.appendChild(optionsDiv);
+
+        if (currentStep > 0) {
+          const navRow = document.createElement("div");
+          navRow.className = "nav-row";
+
+          const backBtn = document.createElement("button");
+          backBtn.type = "button";
+          backBtn.className = "btn-ghost";
+          backBtn.textContent = "← ひとつ戻る";
+          backBtn.addEventListener("click", handleBack);
+
+          const restartLink = document.createElement("button");
+          restartLink.type = "button";
+          restartLink.className = "btn-ghost";
+          restartLink.textContent = "最初からやり直す";
+          restartLink.addEventListener("click", handleRestart);
+
+          navRow.appendChild(backBtn);
+          navRow.appendChild(restartLink);
+          wrap.appendChild(navRow);
+        }
+
+        appEl.innerHTML = "";
+        appEl.appendChild(wrap);
+      }
+
+      function renderResult() {
+        const resultKey = calculateResultKey();
+        const result = RESULTS[resultKey];
+
+        const wrap = document.createElement("section");
+        wrap.className = "result-card";
+
+        const badge = document.createElement("span");
+        badge.className = "result-badge";
+        badge.textContent = "診断結果";
+        wrap.appendChild(badge);
+
+        const typeTitle = document.createElement("h2");
+        typeTitle.className = "result-type";
+        typeTitle.textContent = result.name;
+        wrap.appendChild(typeTitle);
+
+        const typeSub = document.createElement("p");
+        typeSub.className = "result-sub";
+        typeSub.textContent = result.sub;
+        wrap.appendChild(typeSub);
+
+        const summary = document.createElement("div");
+        summary.className = "summary-list";
+        summary.innerHTML =
+          '<p class="summary-item">' +
+            '<span class="summary-label">強み</span>' +
+            '<span class="summary-value"></span>' +
+          '</p>' +
+          '<p class="summary-item">' +
+            '<span class="summary-label">つまずきやすい点</span>' +
+            '<span class="summary-value"></span>' +
+          '</p>' +
+          '<p class="summary-item">' +
+            '<span class="summary-label">今日できる小さな一歩</span>' +
+            '<span class="summary-value"></span>' +
+          '</p>';
+
+        const values = summary.querySelectorAll(".summary-value");
+        values[0].textContent = result.strength;
+        values[1].textContent = result.weakness;
+        values[2].textContent = result.nextStep;
+        wrap.appendChild(summary);
+
+        const recTitle = document.createElement("h3");
+        recTitle.className = "section-title";
+        recTitle.textContent = "いまのあなたにおすすめの3本";
+        wrap.appendChild(recTitle);
+
+        const list = document.createElement("div");
+        list.className = "article-list";
+
+        const seenIds = {};
+        result.articles.forEach(function (item, index) {
+          if (seenIds[item.id]) return;
+          seenIds[item.id] = true;
+
+          const article = ARTICLES[item.id];
+          if (!article) return;
+
+          const card = document.createElement("a");
+          card.className = "article-card" + (index === 0 ? " is-first" : "");
+          card.href = article.url;
+          card.target = "_blank";
+          card.rel = "noopener noreferrer";
+
+          const tags = document.createElement("div");
+          tags.className = "article-tags";
+
+          const orderTag = document.createElement("span");
+          if (index === 0) {
+            orderTag.className = "tag-first";
+            orderTag.textContent = "まず読むなら、この1本";
+          } else {
+            orderTag.className = "tag-order";
+            orderTag.textContent = (index + 1) + "本目";
+          }
+          tags.appendChild(orderTag);
+
+          const priceTag = document.createElement("span");
+          priceTag.className = "tag-price";
+          priceTag.textContent = article.priceLabel;
+          tags.appendChild(priceTag);
+
+          const titleEl = document.createElement("p");
+          titleEl.className = "article-title";
+          titleEl.textContent = article.title;
+
+          const reasonEl = document.createElement("p");
+          reasonEl.className = "article-reason";
+          reasonEl.textContent = item.reason;
+
+          const linkText = document.createElement("span");
+          linkText.className = "article-link-text";
+          linkText.textContent = "noteで読む ↗";
+
+          card.appendChild(tags);
+          card.appendChild(titleEl);
+          card.appendChild(reasonEl);
+          card.appendChild(linkText);
+          list.appendChild(card);
+        });
+
+        wrap.appendChild(list);
+
+        const actions = document.createElement("div");
+        actions.className = "result-actions";
+
+        const restartBtn = document.createElement("button");
+        restartBtn.type = "button";
+        restartBtn.className = "btn-primary";
+        restartBtn.textContent = "もう一度診断する";
+        restartBtn.addEventListener("click", handleRestart);
+
+        const backBtn = document.createElement("button");
+        backBtn.type = "button";
+        backBtn.className = "btn-ghost";
+        backBtn.textContent = "← ひとつ戻る（最後の質問へ）";
+        backBtn.addEventListener("click", handleBack);
+
+        actions.appendChild(restartBtn);
+        actions.appendChild(backBtn);
+        wrap.appendChild(actions);
+
+        appEl.innerHTML = "";
+        appEl.appendChild(wrap);
+      }
+
+      function render() {
+        if (currentStep < TOTAL_QUESTIONS) {
+          renderQuestion();
+        } else {
+          renderResult();
+        }
+      }
+
+      render();
+    })();
+  </script>
+</body>
+</html>
