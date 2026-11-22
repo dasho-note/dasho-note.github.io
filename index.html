@@ -274,6 +274,25 @@
       .article-item .a-note { display: block; font-size: .82rem; color: var(--ink-soft); margin-top: 2px; line-height: 1.6; }
       .media-card .btn { min-height: 44px; }
 
+      /* ---------- 診断への案内 ---------- */
+      .shindan-box {
+        margin-top: 16px;
+        background: var(--surface); border: 1.5px solid var(--line); border-radius: 18px;
+        padding: 22px; box-shadow: var(--shadow);
+        display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      }
+      .shindan-box .shindan-text { flex: 1 1 320px; min-width: 0; }
+      .shindan-box .tag {
+        display: inline-block; font-size: .75rem; font-weight: 700;
+        background: var(--orange-soft); color: var(--orange-deep);
+        padding: 2px 10px; border-radius: 999px; margin-bottom: 10px;
+      }
+      @media (prefers-color-scheme: dark) { .shindan-box .tag { color: var(--orange); } }
+      .shindan-box h3 { margin: 0 0 6px; font-size: 1.12rem; font-weight: 700; }
+      .shindan-box p { margin: 0; font-size: .93rem; color: var(--ink-soft); }
+      .shindan-box .btn { flex: none; }
+      @media (max-width: 560px) { .shindan-box .btn { width: 100%; justify-content: center; } }
+
       /* ---------- 歩み ---------- */
       .timeline { display: grid; gap: 0; }
       .t-item { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1.5px dashed var(--line); }
@@ -408,6 +427,14 @@
             </div>
             <a class="btn btn-line" href="https://note.com/dasho_note" target="_blank" rel="noopener">noteを見る</a>
           </article>
+        </div>
+        <div class="shindan-box">
+          <div class="shindan-text">
+            <span class="tag">診断</span>
+            <h3>いまのあなたに合うnote診断</h3>
+            <p>迷ったら、6つの質問に答える診断で、今のあなたに合う記事が分かります。あなたのタイプに合わせて、おすすめの3本をご案内します。</p>
+          </div>
+          <a class="btn btn-orange" href="https://dasho-note.github.io/shindan.html" target="_blank" rel="noopener">診断してみる</a>
         </div>
       </section>
 
