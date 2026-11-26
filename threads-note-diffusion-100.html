@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>noteの拡散はどう語られているか｜Threads100件・note100本の調査</title>
+<meta name="description" content="noteの拡散・告知のやり方について、Threadsの投稿100件とnoteの記事100本を集めて分類した調査記録。リンク直貼りの告知の反応、数字報告型や紹介し合いの反応、note内で語られる方法の本数をまとめました。売れてるnote研究所の調査レポートです。">
+<link rel="icon" type="image/png" href="https://dasho-note.github.io/favicon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="売れてるnote研究所">
+<meta property="og:title" content="noteの拡散はどう語られているか｜Threads100件・note100本の調査">
+<meta property="og:description" content="Threads100件・note100本から見た、noteの拡散と告知の実態を分類した調査記録。">
+<meta property="og:url" content="https://dasho-note.github.io/threads-note-diffusion-100.html">
+<meta property="og:image" content="https://dasho-note.github.io/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQWHS9QV71"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GQWHS9QV71');</script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;color:#333;background:#fffaf3;line-height:1.8}
+.wrap{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+a{color:#e07b00}
+header.site{display:flex;justify-content:space-between;align-items:center;padding:8px 0 16px;border-bottom:2px solid #f39800}
+header.site .logo{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;color:#f39800;text-decoration:none}
+h1{font-family:"Zen Maru Gothic",sans-serif;font-size:1.55rem;line-height:1.5;margin:28px 0 8px}
+.meta{color:#888;font-size:.85rem;margin-bottom:24px}
+h2{font-family:"Zen Maru Gothic",sans-serif;font-size:1.15rem;border-left:6px solid #f39800;padding-left:10px;margin:36px 0 12px}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.85rem}
+th,td{border:1px solid #f0dcc0;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#fdeeda}
+td.c{text-align:center;white-space:nowrap}
+.sum td:last-child{text-align:center;font-weight:700}
+.tblwrap{overflow-x:auto}
+.note{background:#fff;border:1px solid #f0dcc0;border-radius:10px;padding:14px 16px;font-size:.9rem}
+.toc{background:#fff;border:1px solid #f0dcc0;border-radius:10px;padding:14px 16px;margin:20px 0}
+.toc p{margin:0 0 8px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif}
+.toc ol{margin:0;padding-left:22px}
+.toc li{margin:2px 0}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid #eee;color:#999;font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="logo" href="https://dasho-note.github.io/">売れてるnote研究所</a><a href="https://dasho-note.github.io/">トップへ</a></header>
+
+<h1>noteの拡散はどう語られているか、Threads100件・note100本を分類しました</h1>
+<p class="meta">調査：2026年11月25日｜売れてるnote研究所・所長ふわ</p>
+
+<p>「noteをどう広げるか」は、Threadsでもnoteでも繰り返し語られるテーマです。Threads側では告知や広め方に触れた投稿100件を、note側では拡散方法を扱った記事100本を集め、型と反応、語られている方法を分類しました。note記事版のレポートは「noteが読まれない人へ。Threads100件・note100本を調べて分かった、広げる順番」として公開しています。このページは、その全200件の記録です。</p>
+
+<nav class="toc">
+<p>このページの内容</p>
+<ol>
+<li><a href="#method">調べ方</a></li>
+<li><a href="#threads-sum">Threads側の集計（告知の型と反応）</a></li>
+<li><a href="#note-sum">note側の集計（語られている方法）</a></li>
+<li><a href="#mitate">所長の見立て</a></li>
+<li><a href="#threads-list">Threads100件の一覧</a></li>
+<li><a href="#note-list">note100本の一覧（スキの多い順）</a></li>
+</ol>
+</nav>
+
+<h2 id="method">調べ方</h2>
+<div class="note">
+Threads側：検索（新しい順）で「note 拡散」「note 告知」「note 広め方」など20種類の検索語を使い、候補235件から本文を確認して100件を採用しました。告知の型は9分類（A リンク直貼り／B リンクを返信に置く／C 感想・内容紹介つき／D プロフィール・固定誘導／E 連載・連続告知／F 他者紹介・相互／G 企画・キャンペーン／H 数字報告型／I その他）です。Bは検索で拾える範囲では0件でした（方法自体の不在を意味しません）。<br>
+note側：note内検索で18種類の検索語を使い、候補1,487件からタイトルで絞った436件のうち本文を確認して100本を採用しました。方法の分類はタイトルと本文冒頭のキーワード判定で、1本が複数の方法にまたがります。<br>
+<strong>数字についての注意：要約や本文に出てくる割合・部数・売上・フォロワー数などの数字は、各投稿者・著者本人の報告で、研究所では確認できていません（出どころは未確認です）。いいね・スキ数は取得時点（2026年11月25日）の表示です。投稿・記事の本文は転載せず、要約は調査者の言葉で書いています。</strong>
+</div>
+
+<h2 id="threads-sum">Threads側の集計（告知の型と反応）</h2>
+<table class="sum"><tr><th>告知の型</th><th>件数</th><th>いいね中央値</th><th>いいね最大</th></tr>
+<tr><td>A リンク直貼り告知</td><td>10</td><td>0</td><td>1</td></tr>
+<tr><td>C 感想・内容紹介つき告知</td><td>15</td><td>0</td><td>9</td></tr>
+<tr><td>D プロフィール・固定投稿への誘導</td><td>3</td><td>1</td><td>1</td></tr>
+<tr><td>E 連載・連続投稿での告知</td><td>8</td><td>0</td><td>7</td></tr>
+<tr><td>F 他者紹介・相互の広げ合い</td><td>9</td><td>7</td><td>69</td></tr>
+<tr><td>G 企画・キャンペーン</td><td>4</td><td>0</td><td>39</td></tr>
+<tr><td>H 数字報告型の告知</td><td>25</td><td>4</td><td>40</td></tr>
+<tr><td>I その他（方法・助言・問いかけ）</td><td>26</td><td>1</td><td>12</td></tr>
+<tr><td>合計</td><td>100</td><td></td><td></td></tr></table>
+<p>全体では、いいね0が52件、1〜9が33件、10以上は15件だけでした。</p>
+
+<h2 id="note-sum">note側の集計（語られている方法）</h2>
+<table class="sum"><tr><th>方法</th><th>言及した本数</th></tr>
+<tr><td>SNS連携</td><td>68</td></tr>
+<tr><td>note内のおすすめ・回遊</td><td>67</td></tr>
+<tr><td>告知文・タイトル</td><td>61</td></tr>
+<tr><td>有料無料の使い分け</td><td>54</td></tr>
+<tr><td>相互フォロー・紹介し合い</td><td>47</td></tr>
+<tr><td>投稿時間・頻度</td><td>42</td></tr>
+<tr><td>マガジン</td><td>32</td></tr>
+<tr><td>検索・SEO</td><td>29</td></tr>
+<tr><td>ハッシュタグ・お題</td><td>21</td></tr></table>
+<p>記事の型では、実践報告型が65本（スキ中央値90）、解説型が35本（同55）で、実数つきの報告のほうが読まれていました。スキ全体の中央値は71.5、最大は677です。</p>
+
+<h2 id="mitate">所長の見立て</h2>
+<p>1つ目。告知リンク自体は弱い。Threadsではリンク直貼りが10件すべて、いいね0〜1でした。リンクを置くことと、届くことは別です。</p>
+<p>2つ目。効いているように見えるのは「紹介し合いの場」「継続的な数字報告」「note内の回遊設計」の3つです。Threadsでは相互の場づくりと数字報告に反応が集まり、note側では回遊（67本）とタイトル・告知の工夫（61本）が多く語られていました。</p>
+<p>3つ目。まだ手をつけている人が少ないのはマガジンです（note側で32本が言及）。ただし、この調査で分かるのは「どの方法がどれくらい語られているか」と「語っている記事がどれくらい読まれているか」までで、方法の因果までは言えません。</p>
+
+<h2 id="threads-list">Threads100件の一覧</h2>
+<div class="tblwrap"><table><tr><th>日時</th><th>投稿者</th><th>分類</th><th>🩷</th><th>リプ</th><th>内容の要約</th><th>投稿</th></tr>
+<tr><td>11-25 08:56</td><td>@kyokomochiduki</td><td class="c">A</td><td class="c">1</td><td class="c">0</td><td>連載小説の公開告知。複数媒体のリンクと「#拡散希望」を直貼り</td><td><a href="https://www.threads.com/@kyokomochiduki/post/DgJL38yk31u" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 06:51</td><td>@tooboeallnight</td><td class="c">A</td><td class="c">0</td><td class="c">0</td><td>自分の記事リンクに「シェアとスキお願いします」という依頼を添えた直貼り</td><td><a href="https://www.threads.com/@tooboeallnight/post/DgI9i-WhFjV" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:56</td><td>@kyokomochiduki</td><td class="c">A</td><td class="c">0</td><td class="c">0</td><td>「宣伝失礼いたします」＋作品リンクとランキング順位の提示</td><td><a href="https://www.threads.com/@kyokomochiduki/post/DgJL7JNk84_" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 09:00</td><td>@rakusukiru</td><td class="c">A</td><td class="c">0</td><td class="c">0</td><td>【PR】表記の有料記事（500円）の案内とリンク</td><td><a href="https://www.threads.com/@rakusukiru/post/DgJMT5jkzP6" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 06:00</td><td>@kujira.design_aya</td><td class="c">A</td><td class="c">0</td><td class="c">1</td><td>「note更新しました」に読書記録の内容紹介を添えた告知（リンクなし）</td><td><a href="https://www.threads.com/@kujira.design_aya/post/DgI3zPMk4sJ" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 21:32</td><td>@k.bass_gourmet</td><td class="c">A</td><td class="c">0</td><td class="c">0</td><td>「note更新しました」＋タイトルとリンクだけの簡潔な告知</td><td><a href="https://www.threads.com/@k.bass_gourmet/post/DgH9mKQD9Hr" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 23:13</td><td>@yukiko_tsutsumi78</td><td class="c">A</td><td class="c">0</td><td class="c">0</td><td>【note公開！】＋番組のテーマ紹介とリンク</td><td><a href="https://www.threads.com/@yukiko_tsutsumi78/post/DgIJIfuEbtR" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 23:08</td><td>@xmariaxrosex</td><td class="c">A</td><td class="c">0</td><td class="c">0</td><td>「note公開しました」＋一言とリンク</td><td><a href="https://www.threads.com/@xmariaxrosex/post/DgIInu0Es8m" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 09:01</td><td>@une.digital.jp</td><td class="c">A</td><td class="c">0</td><td class="c">0</td><td>新記事公開の告知。タイトルと「読んでほしい」を添えてリンク</td><td><a href="https://www.threads.com/@une.digital.jp/post/DgJMffciTUH" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:57</td><td>@craftbear459</td><td class="c">A</td><td class="c">0</td><td class="c">0</td><td>新記事公開。商品名・価格入りの見出し文とリンク</td><td><a href="https://www.threads.com/@craftbear459/post/DgJMAz1mbKT" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 22:08</td><td>@bea.8_8</td><td class="c">C</td><td class="c">9</td><td class="c">0</td><td>掌編小説の内容説明を添えてマガジンへのリンクを置く告知</td><td><a href="https://www.threads.com/@bea.8_8/post/DgIBzP6CaFw" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 08:44</td><td>@life.career.nao</td><td class="c">C</td><td class="c">3</td><td class="c">1</td><td>更新告知に記事の要点（ミニワーク付き）を要約してリンク</td><td><a href="https://www.threads.com/@life.career.nao/post/DgGlugJD2Bm" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 22:14</td><td>@cruisenews_jp</td><td class="c">C</td><td class="c">3</td><td class="c">2</td><td>取材の経緯を説明してから記事リンクを置く告知</td><td><a href="https://www.threads.com/@cruisenews_jp/post/DgICdpRk_FD" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:30</td><td>@july_soukakoubou</td><td class="c">C</td><td class="c">1</td><td class="c">0</td><td>noteに書いた「9つの順番」をThreads上に再掲して置いておく告知</td><td><a href="https://www.threads.com/@july_soukakoubou/post/DgJCHHrDCAA" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 09:08</td><td>@hippivv</td><td class="c">C</td><td class="c">1</td><td class="c">0</td><td>新記事の要約（有料エリアの中身まで）を書いてリンク</td><td><a href="https://www.threads.com/@hippivv/post/DgJNRSCCWbw" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:02</td><td>@threetno3</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>記事の目次を載せてリンクを置く告知</td><td><a href="https://www.threads.com/@threetno3/post/DgI-282gcR2" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:50</td><td>@jima_0820</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>「たまには宣伝を」と切り出し、内容と読む場面を添えてリンク</td><td><a href="https://www.threads.com/@jima_0820/post/DgJEYcPEtwN" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 10:35</td><td>@kyou_no_itte</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>自己紹介記事へのリンクと、毎日書く内容の説明</td><td><a href="https://www.threads.com/@kyou_no_itte/post/DgGyfE8I5v0" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:12</td><td>@4343chii</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>記事のテーマと背景を書いて「書きました」とリンク</td><td><a href="https://www.threads.com/@4343chii/post/DgJG0dTDx84" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:31</td><td>@shizuoka.trip</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>ガイド記事の内容（行き方・時間配分）を説明してリンク</td><td><a href="https://www.threads.com/@shizuoka.trip/post/DgJCHXplTmA" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 09:09</td><td>@nekonekokun_2</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>記事の主張を短く紹介し、図解つきであることを添えてリンク</td><td><a href="https://www.threads.com/@nekonekokun_2/post/DgJNaAQifBQ" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:44</td><td>@mitukun_smile</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>記事タイトルと読みどころを紹介してリンク</td><td><a href="https://www.threads.com/@mitukun_smile/post/DgJKi5wkmEi" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:39</td><td>@tomo.ryouiku</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>記事のテーマ（面談で言えない保護者の気持ち）を紹介してリンク</td><td><a href="https://www.threads.com/@tomo.ryouiku/post/DgJJ77dj70x" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 21:45</td><td>@oshi_guide</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>記事の書き出しの内容を紹介してリンク</td><td><a href="https://www.threads.com/@oshi_guide/post/DgH_KD3E9rB" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:34</td><td>@nete_machico</td><td class="c">C</td><td class="c">0</td><td class="c">0</td><td>検証結果の数字を本文に載せて新記事を告知</td><td><a href="https://www.threads.com/@nete_machico/post/DgJJaJFk-kE" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 11:24</td><td>@kuri_dialogue</td><td class="c">D</td><td class="c">1</td><td class="c">0</td><td>記事を書けた報告の締めに「リンクはプロフィールから」と誘導</td><td><a href="https://www.threads.com/@kuri_dialogue/post/DgG4DpIk8m7" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 20:22</td><td>@mato_note_3527</td><td class="c">D</td><td class="c">1</td><td class="c">0</td><td>交流の必要性を説き、届け方のまとめは「プロフのリンクから」と誘導</td><td><a href="https://www.threads.com/@mato_note_3527/post/DgH1m3cGjAt" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 20:47</td><td>@_8.6.3_</td><td class="c">D</td><td class="c">0</td><td class="c">0</td><td>自己紹介の締めに「プロフィールのURLから飛べます」と誘導</td><td><a href="https://www.threads.com/@_8.6.3_/post/DgH4f8UmZFp" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 07:26</td><td>@misumisu0722</td><td class="c">E</td><td class="c">7</td><td class="c">0</td><td>毎朝の挨拶投稿に「note更新しました」を添える日課型の告知</td><td><a href="https://www.threads.com/@misumisu0722/post/DgGcw23EWeD" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:03</td><td>@igoshi.1800</td><td class="c">E</td><td class="c">0</td><td class="c">0</td><td>連載『AIの気になる話』第55回の告知（リンク・タグつき）</td><td><a href="https://www.threads.com/@igoshi.1800/post/DgI-7HQE7Ln" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 09:09</td><td>@yokky.u</td><td class="c">E</td><td class="c">0</td><td class="c">0</td><td>連載第5回の本文をそのままThreadsに載せる転載型</td><td><a href="https://www.threads.com/@yokky.u/post/DgJNccEEo9l" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:32</td><td>@morinagamituhiro</td><td class="c">E</td><td class="c">0</td><td class="c">0</td><td>新聞感想の連載コラム更新告知（内容要約＋リンク）</td><td><a href="https://www.threads.com/@morinagamituhiro/post/DgJJLxkCZ82" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:24</td><td>@you_111sima</td><td class="c">E</td><td class="c">0</td><td class="c">0</td><td>連載コラム「カワスケのひとり言」の更新告知</td><td><a href="https://www.threads.com/@you_111sima/post/DgJITF9DdzW" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 21:13</td><td>@ai_fukugyo47</td><td class="c">E</td><td class="c">0</td><td class="c">0</td><td>日次記録（第81回note公開）と合わせてリンクを置く告知</td><td><a href="https://www.threads.com/@ai_fukugyo47/post/DgH7b56Gi9w" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 07:23</td><td>@ojin_01navi</td><td class="c">E</td><td class="c">0</td><td class="c">2</td><td>商品設計を説く連載（方法の連続発信）</td><td><a href="https://www.threads.com/@ojin_01navi/post/DgGcadLkwUv" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:35</td><td>@takeshi_fanc_04</td><td class="c">E</td><td class="c">0</td><td class="c">1</td><td>「売れないときの直し方」連載6回目。次回は本編の案内と予告</td><td><a href="https://www.threads.com/@takeshi_fanc_04/post/DgJJfCOCMEm" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 22:08</td><td>@__o_mik_8</td><td class="c">F</td><td class="c">69</td><td class="c">25</td><td>note開始の挨拶で「みんな何を書いてる？」とコメントとリアクションを募集</td><td><a href="https://www.threads.com/@__o_mik_8/post/DgIBzP5mDm8" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 18:14</td><td>@karasumakei39</td><td class="c">F</td><td class="c">35</td><td class="c">49</td><td>「今週読んでほしいnoteを置いていって」と募り、自分も読みに行く企画</td><td><a href="https://www.threads.com/@karasumakei39/post/DgHm6B5DwgV" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-23 13:29</td><td>@ai_kenkyujyo</td><td class="c">F</td><td class="c">22</td><td class="c">23</td><td>コメント欄に自分のnoteを貼ってもらう、読み合いの場づくり</td><td><a href="https://www.threads.com/@ai_kenkyujyo/post/DgEhi9oiAA5" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 06:30</td><td>@aruhossi</td><td class="c">F</td><td class="c">15</td><td class="c">17</td><td>noteとThreads開始の自己紹介。「絡もう」と交流を呼びかけ</td><td><a href="https://www.threads.com/@aruhossi/post/DgI7NAqD2sh" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-19 17:37</td><td>@hiroomisueyoshi</td><td class="c">F</td><td class="c">7</td><td class="c">0</td><td>他者の感想noteをシェアしていくという紹介の宣言</td><td><a href="https://www.threads.com/@hiroomisueyoshi/post/Df6qzc0lDqg" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 17:02</td><td>@mako_0to1</td><td class="c">F</td><td class="c">6</td><td class="c">14</td><td>「今週書いたnote見せてください。広げます」と募る場づくり</td><td><a href="https://www.threads.com/@mako_0to1/post/DgHewe2ElNn" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:21</td><td>@ai_yajuu_senpai</td><td class="c">F</td><td class="c">0</td><td class="c">0</td><td>書き上げ告知にフォロバと「あなたのnoteを教えて、見に行く」をセット</td><td><a href="https://www.threads.com/@ai_yajuu_senpai/post/DgJH7sajh-U" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:13</td><td>@chiianecoi</td><td class="c">F</td><td class="c">0</td><td class="c">0</td><td>他人のnote記事を感想つきでシェア</td><td><a href="https://www.threads.com/@chiianecoi/post/DgJG7VzEvEN" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 06:12</td><td>@srx40090</td><td class="c">F</td><td class="c">0</td><td class="c">0</td><td>アニメ再放送を記念して関連するnoteをシェア</td><td><a href="https://www.threads.com/@srx40090/post/DgI5Hznkxx1" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 00:00</td><td>@mesu_mania00</td><td class="c">G</td><td class="c">39</td><td class="c">111</td><td>「記事を添削します」と実績数字を掲げた集客企画</td><td><a href="https://www.threads.com/@mesu_mania00/post/DgIOndrDPZY" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:41</td><td>@yomemame_noter</td><td class="c">G</td><td class="c">0</td><td class="c">0</td><td>有料noteの公開5日前から知らせる発売予告</td><td><a href="https://www.threads.com/@yomemame_noter/post/DgJDTdGEkIh" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 09:01</td><td>@ahousecreate</td><td class="c">G</td><td class="c">0</td><td class="c">0</td><td>「Xで拡散して応援してくれた方は100円引き」という拡散連動の割引</td><td><a href="https://www.threads.com/@ahousecreate/post/DgJMbCBE1Hj" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:59</td><td>@u_tan_ryouiku</td><td class="c">G</td><td class="c">0</td><td class="c">1</td><td>noteに質問箱を設置し、質問を募って発信につなげる仕掛け</td><td><a href="https://www.threads.com/@u_tan_ryouiku/post/DgJMTKNDUDC" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 15:06</td><td>@mokuta.house</td><td class="c">H</td><td class="c">40</td><td class="c">19</td><td>有料noteが初めて売れた報告（フォロワー10人未満の小さなアカウント）</td><td><a href="https://www.threads.com/@mokuta.house/post/DgHRe7fkwaj" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-21 20:06</td><td>@aruhossi</td><td class="c">H</td><td class="c">33</td><td class="c">13</td><td>宣伝なし・交流なしでも5日でフォロワー72人、という結果報告</td><td><a href="https://www.threads.com/@aruhossi/post/DgAFYoBjkrQ" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 21:20</td><td>@natori_note</td><td class="c">H</td><td class="c">25</td><td class="c">14</td><td>止まっていたnoteで14部目が売れた報告</td><td><a href="https://www.threads.com/@natori_note/post/DgH8RO4mu9O" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 21:33</td><td>@kamihikouki69</td><td class="c">H</td><td class="c">19</td><td class="c">0</td><td>本と短編小説が売れた報告（読者のコメントをもらえた喜び）</td><td><a href="https://www.threads.com/@kamihikouki69/post/DgH9vMzD6VA" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 19:27</td><td>@makiy3111</td><td class="c">H</td><td class="c">17</td><td class="c">2</td><td>コメント戦略の有無でフォロワーの伸びがどう違ったかの記録を、noteにまとめる予告</td><td><a href="https://www.threads.com/@makiy3111/post/DgHvSXglAwW" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 14:00</td><td>@haru.note___4828</td><td class="c">H</td><td class="c">16</td><td class="c">5</td><td>開始1ヶ月でフォロワー約200人・3部売れた通過点の報告</td><td><a href="https://www.threads.com/@haru.note___4828/post/DgHJ2KnEtsX" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 13:42</td><td>@aruhossi</td><td class="c">H</td><td class="c">12</td><td class="c">8</td><td>有料note（480円・5部限定）が0部だった結果の報告</td><td><a href="https://www.threads.com/@aruhossi/post/DgHH4j4k72t" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 20:32</td><td>@papipapi_essay</td><td class="c">H</td><td class="c">10</td><td class="c">2</td><td>1ヶ月でフォロワー51人・累計36部、対フォロワー比70.5%という数字の提示</td><td><a href="https://www.threads.com/@papipapi_essay/post/DgH2xH_D9_B" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:33</td><td>@kumi__jam</td><td class="c">H</td><td class="c">7</td><td class="c">0</td><td>フォロワー500人到達と、プロフィール記事が読まれているという反応の報告</td><td><a href="https://www.threads.com/@kumi__jam/post/DgJCahmE4mi" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-23 20:00</td><td>@note0to1</td><td class="c">H</td><td class="c">6</td><td class="c">8</td><td>初月の売上約44,000円の報告</td><td><a href="https://www.threads.com/@note0to1/post/DgFOQpZivy0" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-20 20:00</td><td>@aruhossi</td><td class="c">H</td><td class="c">5</td><td class="c">3</td><td>note開始8日、有料note販売0部の記録</td><td><a href="https://www.threads.com/@aruhossi/post/Df9f3RvDexO" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 12:59</td><td>@mu__xx__jp</td><td class="c">H</td><td class="c">4</td><td class="c">3</td><td>実験2日目の記録（公開2本・売上0円・読まれていない実感）</td><td><a href="https://www.threads.com/@mu__xx__jp/post/DgHC-SAiKal" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:00</td><td>@mikazuki.note417</td><td class="c">H</td><td class="c">4</td><td class="c">0</td><td>フォロワー3,725人到達と年内5,000人目標の提示</td><td><a href="https://www.threads.com/@mikazuki.note417/post/DgI-oepEcbT" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:29</td><td>@ebichan_noted</td><td class="c">H</td><td class="c">3</td><td class="c">1</td><td>フォロワー3,000人台でメンバーシップ1,100名という数字の提示</td><td><a href="https://www.threads.com/@ebichan_noted/post/DgJI06fE-dS" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 20:09</td><td>@note0to1</td><td class="c">H</td><td class="c">2</td><td class="c">2</td><td>公開3日目に20部超、初月43,955円・累計73部の報告</td><td><a href="https://www.threads.com/@note0to1/post/DgH0LE0k0zW" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:30</td><td>@yoko_note_life333</td><td class="c">H</td><td class="c">1</td><td class="c">0</td><td>売れているnoteを買って学び、2アカウントで累計126部の実績提示</td><td><a href="https://www.threads.com/@yoko_note_life333/post/DgJCEYhimVR" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:30</td><td>@note0to1</td><td class="c">H</td><td class="c">0</td><td class="c">0</td><td>38日で累計100部、月別の売上数字つき報告</td><td><a href="https://www.threads.com/@note0to1/post/DgJCF4Igg54" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 02:51</td><td>@ailon.ceo1305</td><td class="c">H</td><td class="c">0</td><td class="c">0</td><td>192日目の記録（フォロワー56人・新記事のスキ0）をリンクつきで報告</td><td><a href="https://www.threads.com/@ailon.ceo1305/post/DgIiKtCE9Z8" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:59</td><td>@gakusei.bot</td><td class="c">H</td><td class="c">0</td><td class="c">0</td><td>前作はスキ13・売上0円。無料部分・告知・画像を変えた記録をnoteに書いたという告知</td><td><a href="https://www.threads.com/@gakusei.bot/post/DgJMS5WjP63" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:59</td><td>@gakusei.bot</td><td class="c">H</td><td class="c">0</td><td class="c">0</td><td>Threads告知アカウントの運用報告（フォロワー0→1人、反応があった告知の種類）</td><td><a href="https://www.threads.com/@gakusei.bot/post/DgJMR4ejEPE" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-23 20:36</td><td>@notemaker_ai</td><td class="c">H</td><td class="c">0</td><td class="c">1</td><td>PVとスキの週次推移（29→21、14→9）を比べた振り返り</td><td><a href="https://www.threads.com/@notemaker_ai/post/DgFSaCJEzcF" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 05:43</td><td>@kazuishi.nakamura</td><td class="c">H</td><td class="c">0</td><td class="c">0</td><td>3ヶ月の累計数字と「フォロ活の結果か」という自己評価</td><td><a href="https://www.threads.com/@kazuishi.nakamura/post/DgI12v2E_nb" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 20:04</td><td>@jissoku_note</td><td class="c">H</td><td class="c">0</td><td class="c">0</td><td>スキ・PV・インプレッション・売上0円まで並べる日次実測ログ</td><td><a href="https://www.threads.com/@jissoku_note/post/DgHzmGHDkzt" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 14:36</td><td>@ms20000202609</td><td class="c">H</td><td class="c">0</td><td class="c">0</td><td>インプレッションが翌日集計で12→256に上方修正された、という数字の見方の報告</td><td><a href="https://www.threads.com/@ms20000202609/post/DgHODTCjtcF" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 06:41</td><td>@tattsun_4680</td><td class="c">H</td><td class="c">0</td><td class="c">1</td><td>昨日の投稿本数・スキ・フォローの増減を全部並べる日次報告</td><td><a href="https://www.threads.com/@tattsun_4680/post/DgI8eF5E4ra" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-23 19:16</td><td>@kazusx007</td><td class="c">I</td><td class="c">12</td><td class="c">1</td><td>販売のためにやってきたこと（タイトルと無料部分の書き直し、投稿で記事を紹介、数字確認と改善）</td><td><a href="https://www.threads.com/@kazusx007/post/DgFJUhHEizN" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-23 12:20</td><td>@goyagoya_note</td><td class="c">I</td><td class="c">10</td><td class="c">13</td><td>公開24時間でインプレッション500台という伸び悩みの吐露</td><td><a href="https://www.threads.com/@goyagoya_note/post/DgEZs2-k0_R" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:30</td><td>@ai_depression0</td><td class="c">I</td><td class="c">7</td><td class="c">2</td><td>売れない原因の9割はコンセプトのぼやけ、という売り方の持論</td><td><a href="https://www.threads.com/@ai_depression0/post/DgJI5dDCa77" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 20:00</td><td>@yuu_____note</td><td class="c">I</td><td class="c">7</td><td class="c">6</td><td>書いたら読んでもらえるわけではなく、見つけてもらう工夫が要るという気づき</td><td><a href="https://www.threads.com/@yuu_____note/post/DgHzGLIAWnF" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-20 12:09</td><td>@mogu_4man</td><td class="c">I</td><td class="c">6</td><td class="c">4</td><td>会社員ほど宣伝・告知の投稿を減らしたほうがいい、という助言</td><td><a href="https://www.threads.com/@mogu_4man/post/Df8qA_UiO7m" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:11</td><td>@fuuchan.papa0123</td><td class="c">I</td><td class="c">5</td><td class="c">6</td><td>スキすら増えない。「どうやって世に届けてる？」と方法を募る問い</td><td><a href="https://www.threads.com/@fuuchan.papa0123/post/DgI_4kgkhuB" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 19:02</td><td>@mako_0to1</td><td class="c">I</td><td class="c">5</td><td class="c">0</td><td>売れないときは投稿数を増やす前に販売ページの4点を見直す、という助言</td><td><a href="https://www.threads.com/@mako_0to1/post/DgHsbduE_4C" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 06:00</td><td>@bonjinika3</td><td class="c">I</td><td class="c">3</td><td class="c">2</td><td>読まれないのは文章力だけが理由ではない。見直したい3つの提示</td><td><a href="https://www.threads.com/@bonjinika3/post/DgI3zUUiWgi" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>10-07 19:41</td><td>@hiitoo_afuso</td><td class="c">I</td><td class="c">3</td><td class="c">2</td><td>noteの記事をThreadsで広めるものなのか、という素朴な疑問</td><td><a href="https://www.threads.com/@hiitoo_afuso/post/DeMKvXhn5RX" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 12:02</td><td>@mako_0to1</td><td class="c">I</td><td class="c">3</td><td class="c">2</td><td>伸びる応援には「一人に向ける型」と「場を作る型」がある、という観察</td><td><a href="https://www.threads.com/@mako_0to1/post/DgG8buWghRX" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 11:59</td><td>@senobi_papa</td><td class="c">I</td><td class="c">2</td><td class="c">0</td><td>noteは直後がピーク、ブログは検索で長く読まれる、という読まれ方の比較と置き分け</td><td><a href="https://www.threads.com/@senobi_papa/post/DgG8GsfAZia" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 21:00</td><td>@mm.fukugyo</td><td class="c">I</td><td class="c">2</td><td class="c">2</td><td>売れない原因は宣伝の少なさ。売れてる人＝宣伝してる人、という主張</td><td><a href="https://www.threads.com/@mm.fukugyo/post/DgH59zWkqSW" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 12:37</td><td>@shosuke0401</td><td class="c">I</td><td class="c">1</td><td class="c">0</td><td>note公式データでは長期記事の流入は検索64%・note内回遊16%・SNS経由3%、という指摘</td><td><a href="https://www.threads.com/@shosuke0401/post/DgHAWTiDIpq" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>10-23 07:41</td><td>@sabakawa_vlog_note</td><td class="c">I</td><td class="c">1</td><td class="c">1</td><td>noteを広めるならSNSも必要、という前提で書籍の感想をまとめた記事の紹介</td><td><a href="https://www.threads.com/@sabakawa_vlog_note/post/De0FFzXE5Mp" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 19:04</td><td>@nagorilog</td><td class="c">I</td><td class="c">1</td><td class="c">1</td><td>記事を3つの無料マガジンに整理した、という回遊のための整理報告</td><td><a href="https://www.threads.com/@nagorilog/post/DgHsquYIxQN" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:37</td><td>@komame_shacho</td><td class="c">I</td><td class="c">1</td><td class="c">0</td><td>書き直しても売れない。次に直す場所をどう決めるか、という相談</td><td><a href="https://www.threads.com/@komame_shacho/post/DgJC1kPmlbR" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:30</td><td>@kaishain_ainikki</td><td class="c">I</td><td class="c">0</td><td class="c">0</td><td>読者の流入を調べたら76%はnoteの中からだった、という結果と問いかけ</td><td><a href="https://www.threads.com/@kaishain_ainikki/post/DgJCCYKkaot" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 19:00</td><td>@piyomaru.note</td><td class="c">I</td><td class="c">0</td><td class="c">0</td><td>告知1本だけでは初日の数部で止まる。発売前から知ってもらう日を作る、という助言</td><td><a href="https://www.threads.com/@piyomaru.note/post/DgHsPADihYK" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:20</td><td>@tomozo_ai_50s</td><td class="c">I</td><td class="c">0</td><td class="c">0</td><td>AIに作らせた告知文が上から目線に感じたので直させた、という告知文づくりの記録</td><td><a href="https://www.threads.com/@tomozo_ai_50s/post/DgJA6pLgvzs" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 12:00</td><td>@masaki_zaitaku0</td><td class="c">I</td><td class="c">0</td><td class="c">0</td><td>読まれないときは新作より過去記事の無料部分の見直しを、という気づき</td><td><a href="https://www.threads.com/@masaki_zaitaku0/post/DgG8NtqIy-X" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 04:43</td><td>@hiroki_asset</td><td class="c">I</td><td class="c">0</td><td class="c">1</td><td>無料で具体的に教える記事は返報性で届く、という届け方の心理の説明</td><td><a href="https://www.threads.com/@hiroki_asset/post/DgIu7q6E3fc" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 07:20</td><td>@the_cozy_office</td><td class="c">I</td><td class="c">0</td><td class="c">0</td><td>有料noteの無料部分を3か所足した改善報告（Threads96本・noteリンク0本という失敗談つき）</td><td><a href="https://www.threads.com/@the_cozy_office/post/DgJA5rEDGk0" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 19:26</td><td>@system_lab0_0</td><td class="c">I</td><td class="c">0</td><td class="c">0</td><td>記事を増やしても読まれない。週1本にして「読みたいと思ってもらえるか」を見直す、という方針転換</td><td><a href="https://www.threads.com/@system_lab0_0/post/DgHvMcRI1oi" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 09:02</td><td>@amimi.ai.note</td><td class="c">I</td><td class="c">0</td><td class="c">1</td><td>読まれても売上につながりにくいテーマと、悩み系が売れる理由というテーマ論</td><td><a href="https://www.threads.com/@amimi.ai.note/post/DgJMjETCBfk" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-25 08:20</td><td>@koharu.note_lab</td><td class="c">I</td><td class="c">0</td><td class="c">0</td><td>無料部分で答えを出し切ると有料部分に進む理由が消える、という無料部分の設計論</td><td><a href="https://www.threads.com/@koharu.note_lab/post/DgJHxIQEvrj" target="_blank" rel="noopener">開く</a></td></tr>
+<tr><td>11-24 20:25</td><td>@rabichan.noter</td><td class="c">I</td><td class="c">0</td><td class="c">3</td><td>1,500部売って分かった、売れないジャンルと売れるものの対比</td><td><a href="https://www.threads.com/@rabichan.noter/post/DgH16_LE7ZE" target="_blank" rel="noopener">開く</a></td></tr>
+</table></div>
+
+<h2 id="note-list">note100本の一覧（スキの多い順）</h2>
+<p>型：実＝実践報告型、解＝解説型。方法はキーワード判定による分類です。</p>
+<div class="tblwrap"><table><tr><th>公開日</th><th>タイトル</th><th>著者</th><th>スキ</th><th>型</th><th>方法</th></tr>
+<tr><td>2026-11-13</td><td><a href="https://note.com/kuraudo_9999/n/n4f2788bfe12f" target="_blank" rel="noopener">「はじめてのnote」を伸ばす方法｜13万インプ・500スキを超えたので全部解説します</a></td><td>くらうど</td><td class="c">677</td><td class="c">実</td><td>SNS全般／タグ・お題／SEO／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-18</td><td><a href="https://note.com/potemushi/n/n3d7217162d63" target="_blank" rel="noopener">【80部突破】ふだん1,000〜2,000インプレッションの私が、1本だけ10日で50万インプレッションになった。やったことと、noteのアルゴリズムの基本と、読まれるためにできること</a></td><td>ぽてむし🥔至高のポテチ</td><td class="c">630</td><td class="c">実</td><td>X／有無料</td></tr>
+<tr><td>2026-11-06</td><td><a href="https://note.com/sinbu/n/n4c17fd6993b8" target="_blank" rel="noopener">noteのハッシュタグが（多分）神アップデートしたので、全クリエイターに広めたい［タグのつけ方／アルゴリズム］</a></td><td>ゴリル</td><td class="c">624</td><td class="c">実</td><td>タグ・お題／マガジン</td></tr>
+<tr><td>2026-11-17</td><td><a href="https://note.com/pure_azalea6326/n/ne25f9bb4840a" target="_blank" rel="noopener">[完全版]noteの伸ばし方 フォロワー、スキ、閲覧数全てを爆増させる方法　外部SNSを使用せずnote運用のみ</a></td><td>ゆうか/note収益化の神⚡️</td><td class="c">499</td><td class="c">実</td><td>Threads／SNS全般／告知・タイトル／有無料</td></tr>
+<tr><td>2026-09-26</td><td><a href="https://note.com/ai_work_design00/n/n6a8fe4cf3edb" target="_blank" rel="noopener">note運用で6つの施策を試して分かったこと｜フォロワーを増やす方法と、読者を増やす方法は同じではなかった</a></td><td>ハズシロ</td><td class="c">487</td><td class="c">実</td><td>相互・紹介／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-10-12</td><td><a href="https://note.com/wakamon_manga/n/na2493bed6fbe" target="_blank" rel="noopener">100人を応援するつもりが、私が応援されていました！！ 有料note年間8桁の大先輩まで動いてくれた話✨️遊びながら一緒にnoteを伸ばす応援団✨️🌱初見さん#note初心者 大歓迎</a></td><td>わかモン＠フォロバ100🌈楽しんで伸ばす稼ぐ応援団✨️</td><td class="c">463</td><td class="c">実</td><td>X／相互・紹介／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-10-15</td><td><a href="https://note.com/jackal_franking/n/n6c9560102b42" target="_blank" rel="noopener">【無料プレゼント】noteだけで完結！10日間で200人に読まれるアカウントに変わる仕組みづくり</a></td><td>ジャッカル🦊┆40代からのスモールビジネス構築</td><td class="c">439</td><td class="c">解</td><td>X／Instagram／SNS全般／有無料</td></tr>
+<tr><td>2026-09-26</td><td><a href="https://note.com/wakamon_manga/n/n6f5ff44340af" target="_blank" rel="noopener">note初心者 39日目、ついに1000フォロワー達成！！ 🌱遊びながら一緒にnoteを伸ばす応援団✨️　はじめてのnote も大歓迎🌈✨️</a></td><td>わかモン＠フォロバ100🌈楽しんで伸ばす稼ぐ応援団✨️</td><td class="c">394</td><td class="c">実</td><td>相互・紹介／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-07</td><td><a href="https://note.com/hurry_room/n/nd3c81ee821bb" target="_blank" rel="noopener">【企画】もっとフォロワーを増やしたい・読まれたい人、集まれ！🦔｜DAY71</a></td><td>ハリー</td><td class="c">361</td><td class="c">実</td><td>マガジン／相互・紹介／回遊</td></tr>
+<tr><td>2026-10-30</td><td><a href="https://note.com/ozu_bone/n/n47ff35b9783f" target="_blank" rel="noopener">SNS集客は今すぐ捨てろ。note1本＆『1本の型』で月5万稼ぐ引き算の戦略</a></td><td>パンプくん｜SNSなし・実績0から月5万のロードマップを伝える人@フォロバ100</td><td class="c">331</td><td class="c">実</td><td>Instagram／SNS全般／相互・紹介／回遊／頻度／有無料</td></tr>
+<tr><td>2026-11-18</td><td><a href="https://note.com/____mana/n/n83901edbd4f9" target="_blank" rel="noopener">【note戦術の集大成】0から伸ばす設計と運用のすべて</a></td><td>まな</td><td class="c">323</td><td class="c">実</td><td>SNS全般／頻度／有無料</td></tr>
+<tr><td>2026-10-03</td><td><a href="https://note.com/bright_eel176/n/n73d68358fb21" target="_blank" rel="noopener">noteのフォロワーを増やす方法｜読者をファンに変える「入り口と出口」の設計!</a></td><td>山梨県の古民家和み庵</td><td class="c">309</td><td class="c">解</td><td>X／Instagram／SNS他／SNS全般／マガジン／告知・タイトル</td></tr>
+<tr><td>2026-10-25</td><td><a href="https://note.com/mocapon_960/n/nffdb64a9d742" target="_blank" rel="noopener">【note副業】noteにバズり不要！SNSなしでnoteを伸ばす方法</a></td><td>もかぽん｜noteビジネス全力組｜時間とお金と心の余裕を手に入れる＠フォロバ100</td><td class="c">278</td><td class="c">実</td><td>SNS全般／SEO／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-10</td><td><a href="https://note.com/mebaruchan/n/na01acd27c679" target="_blank" rel="noopener">[完全版] note戦略    設計と構造化でnoteを伸ばす</a></td><td>メバルちゃん｜noteで月50万を稼ぐ</td><td class="c">269</td><td class="c">実</td><td>SNS全般／頻度／有無料</td></tr>
+<tr><td>2026-10-14</td><td><a href="https://note.com/tattsun_cw/n/n13088fb4c6ff" target="_blank" rel="noopener">noteで多くのかたに読んでもらえる記事を書くための、わりと再現性のある方法。</a></td><td>たっつん｜読むと心が軽くなる。</td><td class="c">248</td><td class="c">解</td><td>SNS全般／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-08-17</td><td><a href="https://note.com/ebikotonya/n/n2f5a168c405b" target="_blank" rel="noopener">【えびちゃん式】無名からバズらせずにnoteのメンバーシップを1,000人にした構造を全公開します。</a></td><td>海老子</td><td class="c">247</td><td class="c">実</td><td>X／SNS全般／有無料</td></tr>
+<tr><td>2026-11-13</td><td><a href="https://note.com/kun1aki/n/n0ae5451877e1" target="_blank" rel="noopener">noteを多くの人に読んでもらって、お金にもする方法（2027年最新版）</a></td><td>やまだくにあき</td><td class="c">236</td><td class="c">実</td><td>頻度／有無料</td></tr>
+<tr><td>2026-11-03</td><td><a href="https://note.com/kuraudo_9999/n/n24f014e5d97d" target="_blank" rel="noopener">「はじめてのnote」を書いて気づいた、フォロワーを増やす4つのコツ</a></td><td>くらうど</td><td class="c">226</td><td class="c">実</td><td>SNS全般／相互・紹介／回遊／有無料</td></tr>
+<tr><td>2026-10-13</td><td><a href="https://note.com/goya_note/n/n96547222d2a0" target="_blank" rel="noopener">noteだけでnoteを伸ばす</a></td><td>ごーや</td><td class="c">216</td><td class="c">実</td><td>Threads／SNS全般／相互・紹介／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-03</td><td><a href="https://note.com/sena_aichance/n/n10259c298428" target="_blank" rel="noopener">noteのスタートダッシュを決めたいあなたへ｜開始1週間でフォロワー・スキ・PV各500超え✨読者に届ける最短ルート！！</a></td><td>せな｜仕事と副業のAI活用</td><td class="c">211</td><td class="c">実</td><td>相互・紹介</td></tr>
+<tr><td>2026-10-12</td><td><a href="https://note.com/bright_lotus8230/n/n98041f99b776" target="_blank" rel="noopener">小説の読者を増やす方法とは　34,000字の本編と24本の関連記事で実践したコンテンツマーケティング</a></td><td>佐藤永治</td><td class="c">208</td><td class="c">実</td><td>X／マガジン／回遊／頻度</td></tr>
+<tr><td>2026-11-19</td><td><a href="https://note.com/mikity4_businote/n/n0a8d4cc38638" target="_blank" rel="noopener">「もっとスキ♡がほしい」たくさん読まれるnoteにする3つの工夫</a></td><td>みきてぃ</td><td class="c">203</td><td class="c">解</td><td>タグ・お題／マガジン／回遊／告知・タイトル</td></tr>
+<tr><td>2026-10-09</td><td><a href="https://note.com/tabinoloop/n/ne202ec86fcf7" target="_blank" rel="noopener">【note初心者】読んでくれるフォロワーを増やす具体的手順</a></td><td>たびのる</td><td class="c">192</td><td class="c">実</td><td>相互・紹介／SEO／回遊</td></tr>
+<tr><td>2026-10-22</td><td><a href="https://note.com/bright_eel176/n/n36741dd11c6b" target="_blank" rel="noopener">【SNS歴30年の直伝】アクセス数を増やす「読まれる記事」の書き方と文章構成‼</a></td><td>山梨県の古民家和み庵</td><td class="c">187</td><td class="c">解</td><td>X／Instagram／SNS他／SNS全般／マガジン／相互・紹介／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-17</td><td><a href="https://note.com/kuraudo_9999/n/n3f096a64c0a6" target="_blank" rel="noopener">「はじめてのnoteを伸ばす方法」が伸びた方法（笑）｜フォロワー急上昇ランキング1位！</a></td><td>くらうど</td><td class="c">184</td><td class="c">実</td><td>SNS全般</td></tr>
+<tr><td>2026-10-21</td><td><a href="https://note.com/frisk01/n/nddc7a3175252" target="_blank" rel="noopener">【note×PDF】1記事から集客・販売・教材づくりが同時に進む仕組み</a></td><td>フリスク｜静かに文章で生きる</td><td class="c">178</td><td class="c">実</td><td>Threads／SNS全般／回遊／頻度／有無料</td></tr>
+<tr><td>2026-10-11</td><td><a href="https://note.com/ganma_cat/n/na50ce3dcfc43" target="_blank" rel="noopener">バズなし、8日間で約1.3万人。Dotsにサイト運営を任せて、ほぼ全自動でSEO集客した話</a></td><td>何</td><td class="c">173</td><td class="c">実</td><td>SNS全般／SEO／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-10-09</td><td><a href="https://note.com/aulora/n/n512fe0ae678e" target="_blank" rel="noopener">自分の経験を、読まれる資産に変える。激務の一級建築士が描く、積上式note設計図</a></td><td>aulora</td><td class="c">157</td><td class="c">実</td><td>SNS全般／告知・タイトル</td></tr>
+<tr><td>2026-09-27</td><td><a href="https://note.com/rosy_roses6610/n/nd738f6d3948b" target="_blank" rel="noopener">note内SEOを極振りした結果、Google先生から有罪判決を受けた話｜ファンタジー小説の広め方</a></td><td>アイ</td><td class="c">145</td><td class="c">実</td><td>SEO／回遊／告知・タイトル</td></tr>
+<tr><td>2026-11-16</td><td><a href="https://note.com/hidebu_note/n/n7e598e37c2a9" target="_blank" rel="noopener">マガジン活用法！記事をまとめて読者の回遊率を劇的に伸ばすテク</a></td><td>ひでぶー｜売れないnoteの直し方</td><td class="c">142</td><td class="c">解</td><td>マガジン／回遊／頻度／有無料</td></tr>
+<tr><td>2026-11-17</td><td><a href="https://note.com/bmwx5/n/n3f8039d12d09" target="_blank" rel="noopener">フォロワーを増やすポイントは、良い記事を書くことじゃなく◯◯◯◯❗️</a></td><td>はる🌻時短note運営</td><td class="c">141</td><td class="c">実</td><td>マガジン／相互・紹介／回遊／有無料</td></tr>
+<tr><td>2026-11-17</td><td><a href="https://note.com/sena_aichance/n/ne982096a418e" target="_blank" rel="noopener">大切に書いた記事、知ってもらえていますか？共同運営マガジンという入口</a></td><td>せな｜仕事と副業のAI活用</td><td class="c">138</td><td class="c">解</td><td>マガジン／回遊</td></tr>
+<tr><td>2026-11-18</td><td><a href="https://note.com/aikakinlab/n/ndbbdbbdb619d" target="_blank" rel="noopener">初めてXに登録。フォロワー0人でも拡散できました。</a></td><td>ラクダ｜RAKUDA WORLD</td><td class="c">135</td><td class="c">実</td><td>X／有無料</td></tr>
+<tr><td>2026-11-21</td><td><a href="https://note.com/nisetarzan/n/n109d6828d9c9" target="_blank" rel="noopener">【今ならリポストで無料】Xのススメ｜noteの読者を増やす第一歩</a></td><td>マボロシプロレス</td><td class="c">127</td><td class="c">解</td><td>X／SNS他／タグ・お題／相互・紹介／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-21</td><td><a href="https://note.com/koisi_/n/n84f6144dbc1b" target="_blank" rel="noopener">note運用を構造化して100人ペースでフォロワーを増やしていく方法</a></td><td>こいし</td><td class="c">125</td><td class="c">実</td><td>相互・紹介／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-14</td><td><a href="https://note.com/hidebu_note/n/n21ced8848ece" target="_blank" rel="noopener">固定記事とは？初見の読者を見込み客に変える集客導線の作り方</a></td><td>ひでぶー｜売れないnoteの直し方</td><td class="c">124</td><td class="c">解</td><td>回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-10-15</td><td><a href="https://note.com/rechalle/n/nd7d606f343b0" target="_blank" rel="noopener">noteが伸びないとき、どこから直す？｜PV・アクセス数から「次に直す1つ」がわかる分析・改善テンプレート【ChatGPTプロンプト対応】</a></td><td>リチャレ｜note×Threads×ChatGPTで再挑戦</td><td class="c">115</td><td class="c">実</td><td>Threads／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-10</td><td><a href="https://note.com/365real/n/nf4e652c229b2" target="_blank" rel="noopener">noteで読まれる人が自然と理解している「仕組み」の話。</a></td><td>井口宏大｜マーケティング翻訳家</td><td class="c">113</td><td class="c">実</td><td>SNS全般／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-10-21</td><td><a href="https://note.com/happy_echium7563/n/n37f3b7eef183" target="_blank" rel="noopener">【note🔰必読】ビュー数だけでは稼げない──アクセス分析から読者を増やし、収益につなげる実践マニュアル📝✨️✨️✨️</a></td><td>空波DX100%</td><td class="c">112</td><td class="c">実</td><td>マガジン／相互・紹介／SEO／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-07</td><td><a href="https://note.com/tomato_tatenoshi/n/n58a3c5d766e2" target="_blank" rel="noopener">【相互フォロー企画】noteのフォロワーを増やしたい人、集まれ！</a></td><td>とまと｜生活立て直しノート</td><td class="c">110</td><td class="c">実</td><td>相互・紹介</td></tr>
+<tr><td>2026-10-31</td><td><a href="https://note.com/like_dietes405/n/n4345bba3ddc4" target="_blank" rel="noopener">あなたの素敵な記事をもっと見つけてもらいたい。ハッシュタグは案内札</a></td><td>だんじょう｜あなたの「初投稿」を応援します</td><td class="c">99</td><td class="c">解</td><td>タグ・お題／マガジン／相互・紹介</td></tr>
+<tr><td>2026-11-18</td><td><a href="https://note.com/amikanote1122/n/nba907ff85a2c" target="_blank" rel="noopener">自分が寝ている間にも読まれるnoteへ　PVとフォロワーを増やす記事のつなげ方</a></td><td>あみ　フォロバ100</td><td class="c">97</td><td class="c">解</td><td>SNS全般／相互・紹介／SEO／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-10-17</td><td><a href="https://note.com/merry_pipit1562/n/n6c7d805c07d7" target="_blank" rel="noopener">【スマホ1台で月3万】スキルなしの凡人がThreads・X・noteを繋げて稼いだ「トリプル集客」の仕組みと全体像【超・初心者向け】</a></td><td>働くメンタルカウンセラー</td><td class="c">96</td><td class="c">実</td><td>X／Threads／SNS全般／SEO</td></tr>
+<tr><td>2026-11-20</td><td><a href="https://note.com/amikanote1122/n/n46a843041ceb" target="_blank" rel="noopener">note初心者が伸びないのは、記事の質だけが原因じゃない。読者に見つけてもらい、また読みたいと思われる5つの仕掛け</a></td><td>あみ　フォロバ100</td><td class="c">94</td><td class="c">解</td><td>相互・紹介／回遊／告知・タイトル</td></tr>
+<tr><td>2026-10-15</td><td><a href="https://note.com/rayna_levnet/n/n6d6e4f14b393" target="_blank" rel="noopener">SNSで宣伝しなくてもnoteは売れます。初心者は知らないnoteだけで読者を集める仕組みの作り方【AI副業ゼロ・フォロワーゼロの人へ】</a></td><td>Rayna</td><td class="c">90</td><td class="c">実</td><td>X／Threads／Instagram／SNS全般／タグ・お題／マガジン／SEO／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-03</td><td><a href="https://note.com/haruki835/n/n17a019f2aa06" target="_blank" rel="noopener">noteの告知や宣伝は必要？読者は増えても、売上は伸び悩んだ私の記録</a></td><td>エイト｜noteを育てる実験記録</td><td class="c">88</td><td class="c">実</td><td>マガジン／回遊／有無料</td></tr>
+<tr><td>2026-11-21</td><td><a href="https://note.com/cave_huntress/n/n33c057dc7580" target="_blank" rel="noopener">noteの記事を読んでもらうには？書くだけじゃ届かない、読まれるための工夫</a></td><td>note原始人｜遊びながら目指せ収益化！！</td><td class="c">86</td><td class="c">解</td><td>マガジン／相互・紹介／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-02</td><td><a href="https://note.com/marble_school/n/nd60687e8b297" target="_blank" rel="noopener">AI時代は、動いて書ける人にチャンスが巡る！「好き」や「経験」を読まれるnoteにする方法</a></td><td>Marble｜マーブル</td><td class="c">85</td><td class="c">実</td><td>マガジン／相互・紹介／回遊／頻度／有無料</td></tr>
+<tr><td>2026-11-19</td><td><a href="https://note.com/bmwx5/n/n53bcbee4cd07" target="_blank" rel="noopener">まず先にフォロワーを増やす！複数のアカウント運営で気づいた、note運営の順番</a></td><td>はる🌻時短note運営</td><td class="c">78</td><td class="c">実</td><td>相互・紹介／有無料</td></tr>
+<tr><td>2026-11-15</td><td><a href="https://note.com/freedom_zetto/n/n0ac540800959" target="_blank" rel="noopener">noteを読んでもらうには？読まれない原因と対策で考える</a></td><td>Zetto</td><td class="c">72</td><td class="c">実</td><td>SNS全般／タグ・お題／マガジン／相互・紹介／SEO／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-11-13</td><td><a href="https://note.com/great_kiwi905/n/nd1b8cfcd9d8e" target="_blank" rel="noopener">noteの記事を読んでもらうための改善方法7選｜初心者でもできる見直しポイント</a></td><td>honoka</td><td class="c">71</td><td class="c">解</td><td>回遊／告知・タイトル</td></tr>
+<tr><td>2026-11-13</td><td><a href="https://note.com/takumi_ai_web3/n/n888d4b099eab" target="_blank" rel="noopener">フォロワーが少ないうちの「見つけてもらい方」｜noteのハッシュタグとお題を上手に使う</a></td><td>AI×Web3ナビゲーター｜タクミ</td><td class="c">70</td><td class="c">解</td><td>X／SNS全般／タグ・お題／マガジン／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-04</td><td><a href="https://note.com/kojimaemi/n/nd5af5a2b75d8" target="_blank" rel="noopener">手帳で深め、noteで届ける。200スキ超え「手帳note」がバズる秘密を聞いてみた！</a></td><td>こじえみ⌇読書家・料理家</td><td class="c">66</td><td class="c">解</td><td>マガジン／SEO／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-11-01</td><td><a href="https://note.com/hono9556/n/n6c530bb57914" target="_blank" rel="noopener">noteのフォロワーを増やすための「行動の選び方」｜279人→1,000人、14日間の実践記録</a></td><td>Hono｜実験室のマラカスネキ🪇｜年内目標3,500人</td><td class="c">66</td><td class="c">実</td><td>SNS全般／マガジン／相互・紹介／有無料</td></tr>
+<tr><td>2026-10-13</td><td><a href="https://note.com/ak_hikiyose/n/nc04c7e2b4566" target="_blank" rel="noopener">noteのアクセスを増やす方法｜月500PVから10万PVの発想「有益さの衣」と読まれる文章の作り方</a></td><td>けい｜AIと共に未来を作るクリエイター🌈</td><td class="c">65</td><td class="c">実</td><td>回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-15</td><td><a href="https://note.com/nenne_mw_aus/n/nd0c609b4c6e0" target="_blank" rel="noopener">noteのハッシュタグ、どう選んでる？フォロワーを増やしたい私が考えた3つのこと</a></td><td>Yoshie｜豪州助産師×50代からのnote副業</td><td class="c">64</td><td class="c">実</td><td>タグ・お題／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-10</td><td><a href="https://note.com/mizanne/n/n120e532743ee" target="_blank" rel="noopener">PV・スキ・フォロワー、noteで伸ばしたいのはどれ？3つの数字で読み取れる読者の行動。</a></td><td>甲田和美｜Webプラン設計士</td><td class="c">64</td><td class="c">実</td><td>SNS全般／タグ・お題／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-11</td><td><a href="https://note.com/aya_realrecord/n/n13917ecde4f4" target="_blank" rel="noopener">SNS疲れ・noteが読まれない人へ。インプ100以下でも検索から読まれる二刀流の運用術</a></td><td>あや｜資産型note実践研究者📚</td><td class="c">63</td><td class="c">解</td><td>X／SNS全般／マガジン／相互・紹介／SEO／回遊</td></tr>
+<tr><td>2026-07-30</td><td><a href="https://note.com/anatorihigashi/n/nd31f6b56092b" target="_blank" rel="noopener">noteについて書けば読まれるって本当？ #結果編</a></td><td>癒shinアナトリ</td><td class="c">62</td><td class="c">実</td><td>回遊／告知・タイトル</td></tr>
+<tr><td>2026-10-01</td><td><a href="https://note.com/akira_sakai/n/n4f08879cb417" target="_blank" rel="noopener">noteのハッシュタグは何個が最適？アクセスを増やす正しいタグ付けと運用のコツ</a></td><td>堺あきら（Aki）｜AI伴走サポーター｜Claude・CodexでAI社員を作る人</td><td class="c">59</td><td class="c">実</td><td>タグ・お題／マガジン／SEO／回遊／告知・タイトル</td></tr>
+<tr><td>2026-11-16</td><td><a href="https://note.com/forty_new_life/n/n22e0c9ef4a57" target="_blank" rel="noopener">【noteからの挑戦】続・SNSでフォロワー増やしたい｜第3弾</a></td><td>ナタ＠40代大人の全力チャレンジ</td><td class="c">57</td><td class="c">実</td><td>X／Threads／Instagram／SNS全般／相互・紹介／有無料</td></tr>
+<tr><td>2026-10-29</td><td><a href="https://note.com/right_knot317/n/n522c27513ff5" target="_blank" rel="noopener">【note集客】半年でフォロワー1,000人・集客1件に根拠なんかねえよ（笑）</a></td><td>だいすけ＠治療院note集客｜稼働率３割・週休2日で月商130万</td><td class="c">57</td><td class="c">実</td><td>回遊／頻度</td></tr>
+<tr><td>2026-11-19</td><td><a href="https://note.com/darumaya_my_life/n/n35bc99d18fca" target="_blank" rel="noopener">noteでバズるより、PVを追いかける理由</a></td><td>達磨屋（だるまや）</td><td class="c">55</td><td class="c">解</td><td>SNS全般／告知・タイトル</td></tr>
+<tr><td>2026-11-19</td><td><a href="https://note.com/mipii/n/ne148401bc7aa" target="_blank" rel="noopener">「SNSのフォロワーが少ないから売れない」は大嘘。拡散力ゼロの個人でも有料noteが売れ続ける人が密かにやっている『市場のズラし方』と買い手の見つけ方</a></td><td>ミッピ｜noteを読み、書き、生きる人（累計1,000部販売・自腹購入検証）</td><td class="c">52</td><td class="c">実</td><td>X／SNS全般／タグ・お題／マガジン／相互・紹介／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-11-11</td><td><a href="https://note.com/arakumarestart/n/n55785dc0f863" target="_blank" rel="noopener">noteかSNSか。集客方法に迷った40代会社員が、まずThreadsを優先してみる</a></td><td>アラクマ｜AIで人生再起動</td><td class="c">50</td><td class="c">実</td><td>Threads／SNS全般／相互・紹介／回遊／告知・タイトル</td></tr>
+<tr><td>2026-11-21</td><td><a href="https://note.com/aicolumnwriter/n/na7a8d0c9913b" target="_blank" rel="noopener">noteのフォロワーを増やす方法。数字より大切にしたい読者との関係</a></td><td>アトカ【AIコラムライター】@AI副業</td><td class="c">47</td><td class="c">実</td><td>SNS全般／マガジン／相互・紹介／SEO／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-20</td><td><a href="https://note.com/kore_kara_note/n/n4f2f720ae046" target="_blank" rel="noopener">21日目。noteって、どこから読んでもらえるんだろう。Threadsを始めて1週間の数字を見てみます。</a></td><td>ノート、やってみよう。</td><td class="c">46</td><td class="c">実</td><td>Threads／SNS全般／相互・紹介／回遊／有無料</td></tr>
+<tr><td>2026-10-31</td><td><a href="https://note.com/muramoto123/n/n0af74ad48371" target="_blank" rel="noopener">毎日バズらなくていい。noteで少しずつ読者を増やす方法。</a></td><td>静観｜ネット商売20年｜売れる仕組みの作り方</td><td class="c">45</td><td class="c">解</td><td>Threads／SNS他／相互・紹介／回遊／告知・タイトル</td></tr>
+<tr><td>2026-11-15</td><td><a href="https://note.com/challenge_wamama/n/n809a10f3b239" target="_blank" rel="noopener">noteをもっと多くの人に読んでもらいたい人へ。44部の無料配布を達成して分かった、認知を広げるためのつながり方</a></td><td>きりん🦒ワーママnoter</td><td class="c">43</td><td class="c">実</td><td>X／相互・紹介／回遊／有無料</td></tr>
+<tr><td>2026-11-19</td><td><a href="https://note.com/kocori256/n/nc7cd63d46fca" target="_blank" rel="noopener">【実証データ公開】noteのフォロワーを増やす方法❗️ランキングTOP10入りまでにやったこと📈❗️</a></td><td>ラナ🌺　相互フォローで盛りあがろう💪</td><td class="c">42</td><td class="c">実</td><td>相互・紹介／回遊／有無料</td></tr>
+<tr><td>2026-11-20</td><td><a href="https://note.com/nakasi77/n/nc752d83aa5f2" target="_blank" rel="noopener">ChatGPTでnoteを書いても読まれない？読者を増やす記事設計の改善ポイント3選</a></td><td>なかしー@AIライター｜国語赤点→３ヵ月後収益化＋宝島社掲載</td><td class="c">40</td><td class="c">解</td><td>マガジン／相互・紹介／回遊／告知・タイトル</td></tr>
+<tr><td>2026-10-18</td><td><a href="https://note.com/coco_woman/n/nf8407acf5fd3" target="_blank" rel="noopener">フォロワー0人でもnoteは読まれる！初心者がやるべき7つのこと</a></td><td>こゆき｜知る・試す・活かす@好奇心の探究ノート</td><td class="c">37</td><td class="c">解</td><td>Threads／SNS全般／タグ・お題／マガジン／SEO／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-11-05</td><td><a href="https://note.com/tom0220/n/nb13b64353115" target="_blank" rel="noopener">noteのインプレッションを増やす方法10選！初心者でも記事を多くの人に届ける集客戦略</a></td><td>ジェリー@AI×noteで副業を始めたい人へ🎁</td><td class="c">35</td><td class="c">解</td><td>X／SNS全般／タグ・お題／相互・紹介／SEO／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-08-09</td><td><a href="https://note.com/axcel0901/n/nc36f625a5c25" target="_blank" rel="noopener">noteを売るなら、SNSだけを頑張らなくていい。僕が「note内集客」に切り替えるために作った2つのツール</a></td><td>アクセル先生</td><td class="c">34</td><td class="c">実</td><td>Threads／Instagram／SNS全般／相互・紹介／SEO／回遊／頻度</td></tr>
+<tr><td>2026-11-16</td><td><a href="https://note.com/regal_squid7240/n/nca0d242b8285" target="_blank" rel="noopener">note内でnoteを1万人に広める方法</a></td><td>アルファ</td><td class="c">29</td><td class="c">実</td><td>Threads／マガジン／回遊</td></tr>
+<tr><td>2026-11-07</td><td><a href="https://note.com/kobunrobo0716/n/n2ce38afe29a4" target="_blank" rel="noopener">【初心者向け】SNSで宣伝しなくても読まれる、noteの書き方とネタの見つけ方</a></td><td>コぶんロボnoteで息子の夢を叶える</td><td class="c">28</td><td class="c">解</td><td>SNS全般／タグ・お題／相互・紹介／SEO／告知・タイトル</td></tr>
+<tr><td>2026-11-20</td><td><a href="https://note.com/mari0419nurse/n/n876259667b79" target="_blank" rel="noopener">【note収益化教科書④第4回 SNSを使った集客方法】｜noteの記事を読んでもらうための5つのコツ</a></td><td>現役看護師の日常💉</td><td class="c">25</td><td class="c">解</td><td>X／Threads／Instagram／SNS全般／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-10-08</td><td><a href="https://note.com/fukuriwork/n/ne5eec379d96e" target="_blank" rel="noopener">noteの宣伝が苦手な人へ。7人が入会した日の告知の共通点｜30日企画5日目</a></td><td>ふくり</td><td class="c">25</td><td class="c">実</td><td>Threads／有無料</td></tr>
+<tr><td>2026-11-13</td><td><a href="https://note.com/fujii_shinri/n/nca2c91a4fdaf" target="_blank" rel="noopener">有料noteが売れない人へ｜SNS拡散以外にできること</a></td><td>藤井悠真｜看護師パパのAI × note術</td><td class="c">22</td><td class="c">解</td><td>SNS全般／回遊／有無料</td></tr>
+<tr><td>2026-11-19</td><td><a href="https://note.com/stellar_guide/n/n670697a2b25e" target="_blank" rel="noopener">noteのアクセス解析、どこを見ればいい？記事を読まれるようにする分析と改善の方法</a></td><td>あまかい｜note・AI・Web制作</td><td class="c">22</td><td class="c">実</td><td>SNS全般／SEO／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-10</td><td><a href="https://note.com/crisp_pony6752/n/n5c6b4d222a70" target="_blank" rel="noopener">noteはバズらなくても伸びる！フォロワーを着実に増やす考え方</a></td><td>三木勇二｜BSSマーケティングラボ</td><td class="c">20</td><td class="c">実</td><td>X／Instagram／SNS全般／SEO／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-10</td><td><a href="https://note.com/lovely_holly1616/n/nd280cd4a9c04" target="_blank" rel="noopener">バズった2本と、伸びなかった記事を並べて分かった。「noteで読まれるタイトル」の違い</a></td><td>十六茶＠30代独身女性の挑戦。</td><td class="c">19</td><td class="c">解</td><td>SNS全般／SEO／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-08-06</td><td><a href="https://note.com/tobisara/n/nbe4bafc94f22" target="_blank" rel="noopener">SNSを頑張らなくても大丈夫。匿名noteの集客は「検索」で始められる</a></td><td>とびさら｜遅咲き副業攻略</td><td class="c">19</td><td class="c">解</td><td>SNS全般／相互・紹介／SEO／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-15</td><td><a href="https://note.com/promptdesign/n/n18d4bd0666a3" target="_blank" rel="noopener">noteのコメント欄から読者を増やす方法｜宣伝に見えない交流の始め方</a></td><td>読まれるAI画像ナビ＠フォロバ100【画像生成×note副業】</td><td class="c">13</td><td class="c">実</td><td>SNS他／SNS全般／マガジン／相互・紹介／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-07-28</td><td><a href="https://note.com/rich_stilt8795/n/nd425405a7118" target="_blank" rel="noopener">note初心者向け｜30日でフォロワーを増やす発信の始め方</a></td><td>瀬加 健（せか けん）｜初心者の副業成功を支援</td><td class="c">13</td><td class="c">解</td><td>SNS全般／回遊／告知・タイトル</td></tr>
+<tr><td>2026-10-06</td><td><a href="https://note.com/promptdesign/n/n94c0056673f4" target="_blank" rel="noopener">note SEO完全入門｜Google検索から読者を増やすタイトル・見出し・本文の作り方</a></td><td>読まれるAI画像ナビ＠フォロバ100【画像生成×note副業】</td><td class="c">13</td><td class="c">実</td><td>SNS他／SNS全般／マガジン／相互・紹介／SEO／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-16</td><td><a href="https://note.com/nanace_wss25/n/ncc5551a34b84" target="_blank" rel="noopener">【成長記録｜6日でフォロワー3人→124人】増えないのは、記事のせいじゃなかった。note初心者の&quot;知ってもらう&quot;全手順（随時追記・主軸マップ付き）</a></td><td>七星（ななせ） ｜未経験でも最速で結果を出す仕事術</td><td class="c">12</td><td class="c">実</td><td>Threads／Instagram／マガジン／相互・紹介／SEO／回遊／告知・タイトル／有無料</td></tr>
+<tr><td>2026-11-22</td><td><a href="https://note.com/safe_spirea1050/n/nf943958597d8" target="_blank" rel="noopener">MuseにThreads運用を丸投げしたら、noteの宣伝が自動になった</a></td><td>楽に暮らしたいガジェットおたくパパ</td><td class="c">12</td><td class="c">解</td><td>X／Threads／SNS全般／SEO／回遊／頻度</td></tr>
+<tr><td>2026-11-19</td><td><a href="https://note.com/bonds_swift1981/n/n2273cd1388b2" target="_blank" rel="noopener">ハッシュタグ選定とプラットフォーム内回遊：フォロワー外に記事を爆発的に届ける検索ハッキング</a></td><td>BONDS</td><td class="c">11</td><td class="c">実</td><td>SNS全般／タグ・お題／マガジン／SEO／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-09-23</td><td><a href="https://note.com/tonatake/n/naf4c98558023" target="_blank" rel="noopener">フォロワーが少なくても読まれる記事は、出すタイミングが違っていた。天体イベントのnoteを数えてみた</a></td><td>となりのたけもとさん</td><td class="c">11</td><td class="c">解</td><td>タグ・お題／相互・紹介／告知・タイトル／頻度</td></tr>
+<tr><td>2026-08-09</td><td><a href="https://note.com/loyal_gnu2078/n/n72041b623ab4" target="_blank" rel="noopener">noteを検索で伸ばすから、noteを楽しむへ｜10万PV目前で方向転換する理由</a></td><td>美斉津商店WEB｜RYO</td><td class="c">11</td><td class="c">実</td><td>SNS全般／マガジン／相互・紹介／SEO／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-08</td><td><a href="https://note.com/mp_report1/n/n25792bebdcde" target="_blank" rel="noopener">99％の初心者が知らない、noteのアクセスを増やす考え方</a></td><td>MAMO流</td><td class="c">11</td><td class="c">解</td><td>SNS全般／SEO／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-11-13</td><td><a href="https://note.com/mp_report1/n/nf1528ef3188b" target="_blank" rel="noopener">【note収益化】アクセスを増やすnoteのハッシュタグの選び方</a></td><td>MAMO流</td><td class="c">10</td><td class="c">解</td><td>SNS全般／タグ・お題／告知・タイトル</td></tr>
+<tr><td>2026-11-07</td><td><a href="https://note.com/rich_stilt8795/n/n8c075c11b436" target="_blank" rel="noopener">【note初心者必見】アクセス数0から抜け出す！読まれる記事を増やす7つの方法</a></td><td>瀬加 健（せか けん）｜初心者の副業成功を支援</td><td class="c">10</td><td class="c">実</td><td>X／SNS全般／相互・紹介／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-11-17</td><td><a href="https://note.com/mp_report1/n/nf3eeef24fc51" target="_blank" rel="noopener">【note収益化】noteでバズる人が毎日やっている、読者の心をつかむ7つの小さな習慣</a></td><td>MAMO流</td><td class="c">9</td><td class="c">解</td><td>SNS全般／相互・紹介／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-10-16</td><td><a href="https://note.com/b0ysbe_ambitious/n/n4730042ac1b5" target="_blank" rel="noopener">発信を「必要な人」に届けるnote運用術——アルゴリズムと読者心理を味方につけるノウハウ＆考え方</a></td><td>ボーイ/発信の哲学</td><td class="c">6</td><td class="c">実</td><td>X／SNS全般／タグ・お題／マガジン／相互・紹介／SEO／回遊／告知・タイトル／頻度</td></tr>
+<tr><td>2026-07-12</td><td><a href="https://note.com/pauuu/n/n31a42347f36f" target="_blank" rel="noopener">【2026年最新版】noteをX（Twitter）で拡散する方法｜アクセス・スキ・売上を伸ばす実践テクニック</a></td><td>パウーAI副業</td><td class="c">5</td><td class="c">解</td><td>X／SNS全般／タグ・お題／相互・紹介／回遊／告知・タイトル／頻度／有無料</td></tr>
+<tr><td>2026-08-23</td><td><a href="https://note.com/complain_ns09/n/n8f4f6c9072b4" target="_blank" rel="noopener">拡散力を伸ばす、フォロワー伸ばすためのnote✖️Threadsの利用方法</a></td><td>NPを目指す男性Ns</td><td class="c">5</td><td class="c">実</td><td>Threads</td></tr>
+<tr><td>2026-11-24</td><td><a href="https://note.com/lucid_hornet3616/n/n2bb2b3ecb086" target="_blank" rel="noopener">フォロワー0でも読まれる。note初心者がまずやる3つのこと</a></td><td>副業お悩みラボ</td><td class="c">5</td><td class="c">解</td><td>Threads／タグ・お題／告知・タイトル／有無料</td></tr>
+<tr><td>2026-10-22</td><td><a href="https://note.com/katoras/n/n6195fa67a60e" target="_blank" rel="noopener">【note運営9ヶ月】200万インプレッション・72万PVを達成した私が教える「読まれる方法」と、書かなければもっと伸びていた話【100円】</a></td><td>カトラス｜映画・ドラマ・アニメ、ときどき世の中。気になったことは何でも書く雑食系エンタメ作家。</td><td class="c">2</td><td class="c">実</td><td>SNS全般／相互・紹介／頻度／有無料</td></tr>
+</table></div>
+
+<footer>
+売れてるnote研究所（所長ふわ／実践者だしょ）｜<a href="https://dasho-note.github.io/">トップページへ</a>｜基礎：<a href="https://dasho-note.github.io/toha-yuryo-note.html">有料noteとは</a>
+</footer>
+</div>
+</body>
+</html>
