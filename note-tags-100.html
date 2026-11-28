@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>有料note100本のタグの付け方を調べた記録｜売れてるnote研究所</title>
+<meta name="description" content="売れている有料note100本のタグを実際に取得して数えた調査記録。タグ個数の分布、頻出タグ、内容分類（ジャンル／悩み・課題／目的・属性）、価格帯・スキ数との関係と、タグの選び方への言及をまとめました。売れてるnote研究所の調査レポートです。">
+<link rel="icon" type="image/png" href="https://dasho-note.github.io/favicon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="売れてるnote研究所">
+<meta property="og:title" content="有料note100本のタグの付け方を調べた記録｜売れてるnote研究所">
+<meta property="og:description" content="有料note100本のタグを実測。個数の分布・頻出タグ・内容分類と、価格帯・スキでの観測の調査記録。">
+<meta property="og:url" content="https://dasho-note.github.io/note-tags-100.html">
+<meta property="og:image" content="https://dasho-note.github.io/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQWHS9QV71"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GQWHS9QV71');</script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;color:#333;background:#fffaf3;line-height:1.8}
+.wrap{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+a{color:#e07b00}
+header.site{display:flex;justify-content:space-between;align-items:center;padding:8px 0 16px;border-bottom:2px solid #f39800}
+header.site .logo{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;color:#f39800;text-decoration:none}
+h1{font-family:"Zen Maru Gothic",sans-serif;font-size:1.55rem;line-height:1.5;margin:28px 0 8px}
+.meta{color:#888;font-size:.85rem;margin-bottom:24px}
+h2{font-family:"Zen Maru Gothic",sans-serif;font-size:1.15rem;border-left:6px solid #f39800;padding-left:10px;margin:36px 0 12px}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.85rem}
+th,td{border:1px solid #f0dcc0;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#fdeeda}
+td.c{text-align:center;white-space:nowrap}
+.sum td:last-child{text-align:center;font-weight:700}
+.tblwrap{overflow-x:auto}
+.note{background:#fff;border:1px solid #f0dcc0;border-radius:10px;padding:14px 16px;font-size:.9rem}
+.toc{background:#fff;border:1px solid #f0dcc0;border-radius:10px;padding:14px 16px;margin:20px 0}
+.toc p{margin:0 0 8px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif}
+.toc ol{margin:0;padding-left:22px}
+.toc li{margin:2px 0}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid #eee;color:#999;font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="logo" href="https://dasho-note.github.io/">売れてるnote研究所</a><a href="https://dasho-note.github.io/">トップへ</a></header>
+
+<h1>有料note100本のタグの付け方を調べました</h1>
+<p class="meta">調査：2026年11月28日｜売れてるnote研究所・所長ふわ</p>
+
+<p>売れている有料noteには、どんなタグが何個付けられているか。「タグ」は研究所の全体構成の中で唯一の完全な未調査テーマで、サイト上も「まだ調べていません」と表記してきました。今回は、タイトル調査・見出し画像調査と同じ母集団（有料note100本）のタグを実際に取得して数えました。このページは、その全100本の記録です。</p>
+
+<nav class="toc">
+<p>このページの内容</p>
+<ol>
+<li><a href="#method">調べ方</a></li>
+<li><a href="#result">集計結果（100本）</a></li>
+<li><a href="#sub">補助調査：タグの「選び方」への言及</a></li>
+<li><a href="#mitate">所見</a></li>
+<li><a href="#caution">注意書き</a></li>
+<li><a href="#list">付録：100本のタグ一覧</a></li>
+<li><a href="#related">関連する調査記録</a></li>
+</ol>
+</nav>
+
+<h2 id="method">調べ方</h2>
+<div class="note">
+対象：タイトル調査（2026年11月22〜23日実施）の対象になった有料noteのうち、URL一覧に残っている103本。だしょ自身の記事は含まれていません。この100本は「売れている根拠（部数・完売・売上の申告）が公開情報にあるもの」を集めた標本で、第3回は高価格帯（5,000円以上）、第4回は副業以外のジャンル、第5回は小規模な著者（フォロワー1,000人未満）に意図的に寄せてあります。無作為抽出ではありません。<br>
+取得方法：note公開APIで各記事のタグ・価格・スキ数を取得しました。取得できたのは100本。3本はAPIが404を返し（削除・非公開化とみられる）、対象から外しました。1記事ごとに、タグの個数とタグの全リストを記録しています（付録に100本分を掲載）。<br>
+内容分類：各タグを次の5種類に分類しました。分類はキーワードルールによる機械判定で、優先順位は「属性・対象→悩み・課題→目的・得られるもの→ジャンル→その他」。複数に当てはまるタグは優先順位の高い方に入れました。1. ジャンル（分野・媒体・テーマ・手法を表すタグ。例：note、Threads、副業、noteの書き方、SNS運用）　2. 悩み・課題（困りごとや状態を表すタグ。例：有料noteが売れない、子育ての悩み、リバウンド）　3. 目的・得られるもの（成果やゴールを表すタグ。例：収益化、Note収益化、売れるnote、フォロワー）　4. 属性・対象（読者や著者の属性を表すタグ。例：note初心者、副業初心者、アラフォー婚活）　5. その他（上記に当てはまらないタグ。固有名詞、呼びかけ、1回だけ使われた個別の言葉など）。<br>
+表記ゆれ（例：「Note収益化」と「収益化」、「Threads」と「スレッズ」）は正規化せず、そのまま別タグとして数えました。<br>
+価格とスキ数は2026年11月28日の取得時点のAPI値です。価格が0円と返ったものが5本あり、無料化・外部サービスでの販売などに切り替わった可能性があります（区別はできないため「0円（API値）」として分けました）。<br>
+<strong>数字についての注意：価格・スキ数は取得時点の表示で、販売部数ではありません。部数・売上に関する数字は各著者本人の報告で、研究所では確認できていません（出どころは未確認です）。</strong>
+</div>
+
+<h2 id="result">集計結果（100本）</h2>
+<p>タグ個数の分布です。平均7.5個、中央値6個、最大71個。中心は6〜10個（39％）で、4〜10個の範囲に62本が入ります。最大71個は1本だけの突出した例（980円の記事）で、次点以下は20個台まで。大量に付ける型は少数派でした。</p>
+<table class="sum"><tr><th>個数</th><th>本数</th><th>割合</th></tr>
+<tr><td>0個</td><td>9</td><td>9％</td></tr>
+<tr><td>1〜3個</td><td>12</td><td>12％</td></tr>
+<tr><td>4〜5個</td><td>23</td><td>23％</td></tr>
+<tr><td>6〜10個</td><td>39</td><td>39％</td></tr>
+<tr><td>11個以上</td><td>17</td><td>17％</td></tr></table>
+<p>タグなしは9本（9％）。この9本には高価格帯の記事が目立ち、スキ数612・598・563の記事も含まれます。タグが無くても読まれている記事は存在します。</p>
+
+<p>頻出タグの上位です（表記そのまま）。ユニークなタグは全部で442種類、出現回数の合計は753回。442種類のうち353種類（80％）は1回だけの出現で、頻出タグは一握り、残りは長い裾野（ロングテール）になっています。上位は「note」「Threads」「副業」という媒体・分野の言葉が中心で、標本が副業・note運用系に寄っていることの表れでもあります。</p>
+<table><tr><th>順位</th><th>タグ</th><th>出現本数</th><th>分類</th></tr>
+<tr><td class="c">1</td><td>note</td><td class="c">36</td><td>ジャンル</td></tr>
+<tr><td class="c">2</td><td>Threads</td><td class="c">27</td><td>ジャンル</td></tr>
+<tr><td class="c">3</td><td>副業</td><td class="c">20</td><td>ジャンル</td></tr>
+<tr><td class="c">4</td><td>note初心者</td><td class="c">15</td><td>属性・対象</td></tr>
+<tr><td class="c">5</td><td>有料note</td><td class="c">14</td><td>ジャンル</td></tr>
+<tr><td class="c">6</td><td>noteの書き方</td><td class="c">13</td><td>ジャンル</td></tr>
+<tr><td class="c">7</td><td>Note収益化</td><td class="c">9</td><td>目的・得られるもの</td></tr>
+<tr><td class="c">7</td><td>収益化</td><td class="c">9</td><td>目的・得られるもの</td></tr>
+<tr><td class="c">7</td><td>Threads運用</td><td class="c">9</td><td>ジャンル</td></tr>
+<tr><td class="c">10</td><td>有料記事</td><td class="c">8</td><td>ジャンル</td></tr>
+<tr><td class="c">10</td><td>SNS運用</td><td class="c">8</td><td>ジャンル</td></tr>
+<tr><td class="c">12</td><td>副業初心者</td><td class="c">7</td><td>属性・対象</td></tr>
+<tr><td class="c">13</td><td>noteのつづけ方</td><td class="c">6</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>売れるnote</td><td class="c">5</td><td>目的・得られるもの</td></tr>
+<tr><td class="c">14</td><td>スレッズ</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>AI副業</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>はじめてのnote</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>文章術</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>ChatGPT</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>記事</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>コンテンツ販売</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>note副業</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>投稿</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>フォロワー</td><td class="c">5</td><td>目的・得られるもの</td></tr>
+<tr><td class="c">14</td><td>プロンプト</td><td class="c">5</td><td>ジャンル</td></tr>
+<tr><td class="c">14</td><td>AI</td><td class="c">5</td><td>ジャンル</td></tr></table>
+
+<p>内容分類です。記事単位で「その種類のタグを1つ以上含む記事」の割合を見ました。ジャンル系はほぼ全記事に付いていて、タグの基本形は「分野・媒体を並べる」ものでした。「その他」は出現回数で2番目に多いのですが、その中身は196種類のうち192種類が1回だけの出現で、固有名詞・イベント名・呼びかけ（「スキしてみて」「読んでほしい有料記事」など）・記事固有の言葉の寄せ集めです。共通の型とは言えません。悩み・課題系はわずか7本。タイトルでは悩みを掲げる記事が多いのと対照的に、タグでは悩みの言葉はほとんど使われていません。属性・対象系は「note初心者」（15本）と「副業初心者」（7本）が中心で、「初心者」を含むタグが属性系の出現の大半を占めます。</p>
+<table><tr><th>分類</th><th>含む記事</th><th>割合</th><th>出現回数</th></tr>
+<tr><td>ジャンル</td><td class="c">87本</td><td class="c">87％</td><td class="c">436回</td></tr>
+<tr><td>その他</td><td class="c">59本</td><td class="c">59％</td><td class="c">200回</td></tr>
+<tr><td>目的・得られるもの</td><td class="c">33本</td><td class="c">33％</td><td class="c">62回</td></tr>
+<tr><td>属性・対象</td><td class="c">29本</td><td class="c">29％</td><td class="c">45回</td></tr>
+<tr><td>悩み・課題</td><td class="c">7本</td><td class="c">7％</td><td class="c">10回</td></tr></table>
+
+<p>組み合わせの傾向です。出現4回以上のタグ同士で、よく一緒に出る組の上位を並べました。共起の中心は「note」で、分野タグ（副業）・属性タグ（note初心者）・媒体タグ（Threads）を「note」と束ねる形が基本の組み立てになっています。</p>
+<table><tr><th>組</th><th>共起本数</th></tr>
+<tr><td>note ＋ Threads</td><td class="c">17</td></tr>
+<tr><td>note ＋ 副業</td><td class="c">12</td></tr>
+<tr><td>note ＋ note初心者</td><td class="c">9</td></tr>
+<tr><td>note ＋ 有料note</td><td class="c">8</td></tr>
+<tr><td>note ＋ noteの書き方</td><td class="c">7</td></tr>
+<tr><td>副業 ＋ 副業初心者</td><td class="c">7</td></tr>
+<tr><td>noteの書き方 ＋ note初心者</td><td class="c">6</td></tr>
+<tr><td>note初心者 ＋ 有料note</td><td class="c">6</td></tr>
+<tr><td>Threads ＋ 副業</td><td class="c">6</td></tr>
+<tr><td>Note収益化 ＋ 有料note</td><td class="c">6</td></tr></table>
+
+<p>価格帯による違いです。価格が高い帯ほどタグ数がやや少ない傾向が見えます（平均8.6→6.9→6.0）。ただし標本数が少なく、断定はできません。種類の違いは小さく、どの価格帯でもジャンル系が中心でした。10,000円以上の帯では目的系を含む記事が12本中2本と少なくなっています。</p>
+<table><tr><th>価格帯</th><th>本数</th><th>タグ数 平均</th><th>タグ数 中央値</th></tr>
+<tr><td>〜2,999円</td><td class="c">45</td><td class="c">8.6</td><td class="c">6</td></tr>
+<tr><td>3,000〜9,999円</td><td class="c">38</td><td class="c">6.9</td><td class="c">7</td></tr>
+<tr><td>10,000円以上</td><td class="c">12</td><td class="c">6.0</td><td class="c">4.5</td></tr>
+<tr><td>0円（API値）</td><td class="c">5</td><td class="c">6.2</td><td class="c">6</td></tr></table>
+
+<p>スキ上位・下位による違いです。スキ数の中央値（100）で上位50本・下位50本に分けて比べました。タグの個数に大きな違いはありません。むしろ下位の平均がやや多いのは、71個の突出した1本（スキ86）が下位側に入っている影響が大きいです。種類では、上位の方が目的・得られるもの系を含む記事がやや多く（上位19本／下位14本）、ジャンル系は上下ともほぼ同じ（43本／44本）でした。頻出タグの顔ぶれも上下でほぼ同じで、「このタグがあるからスキが多い」と言えるタグは見当たりませんでした。</p>
+<table><tr><th>区分</th><th>タグ数 平均</th><th>タグ数 中央値</th></tr>
+<tr><td>スキ上位50本</td><td class="c">7.0</td><td class="c">6.5</td></tr>
+<tr><td>スキ下位50本</td><td class="c">8.1</td><td class="c">6.0</td></tr></table>
+
+<h2 id="sub">補助調査：タグの「選び方」への言及</h2>
+<p>実測とは別枠で、著者本人がタグの選び方を語った言及をThreadsで探し、3件拾えました。</p>
+<p>・1記事に40個くらい付けているという人。本文に出てくる言葉の中から、合うものだけを選んでいるつもり、と述べていて、関係のないタグを入れる行為への疑問も呈していました。<br>
+・小説に9〜11個付けているという人。ジャンル／棚／題材の言葉、の3種類で組んでいて、題材の言葉は「検索される言葉のうち、題名に自然に入らなかったものの行き先」として使っていました。<br>
+・13本目までタグなしで投稿し、14本目に4つだけ付けて観察した記録を残した人。インプレッション33→146、PV2→21と動きましたが、マガジン追加など他の出来事も重なっており、本人も「タグのおかげ」とは片付けずに数字を残しています。</p>
+<p>言及自体が少なく、「選び方」を体系立てて語る投稿は見つかりませんでした。個数の考え方（40個前後／9〜11個／4個で実験）も人によって大きく分かれています。</p>
+
+<h2 id="mitate">所見</h2>
+<p>1つ目。売れている側のタグは「6〜10個、分野・媒体の言葉が中心」という穏当な姿でした。100個級の大量タグや、悩みの言葉を並べる型は、この標本では確認できませんでした。</p>
+<p>2つ目。タグなしが9本あり、その中にスキ600前後の記事が複数あります。タグは「付けなければ読まれない」ものではないことが、少なくともこの標本では言えます。</p>
+<p>3つ目。頻出タグは一握りで、残りの8割は1回だけの出現でした。多くの書き手が「定番タグ＋その記事だけの言葉」を組み合わせている姿が見えます。</p>
+<p>4つ目。スキ上位・下位でタグの個数や顔ぶれに目立った差はありませんでした。タグの頻度が高いことと、売れていること（スキが多いこと）は別の話であり、この調査からタグの売上への貢献や効果は証明できません。分かるのは「売れているとされる記事で、どのようなタグが使われているか」までです。</p>
+<p>5つ目。だしょ自身の付け方（記事ごとに5個前後、暫定運用）と比べると、個数は中央値6個に近く、大きく外れてはいません。ただし「note初心者」のような属性タグの使い方は、だしょの記事ではまだ薄いところです。</p>
+
+<h2 id="caution">注意書き</h2>
+<div class="note">
+・タグの頻度が高いことと売上への貢献は別の話です。この調査から、タグの効果は証明できません。分かるのは使われ方の実態までです。<br>
+・標本は無作為抽出ではありません（「売れている根拠が公開情報にあるもの」を集め、一部は価格帯・ジャンル・著者規模に意図的に寄せてあります）。母集団全体の姿とは限りません。<br>
+・タグは2026年11月28日の取得時点のものです。タグは公開後に著者が追加・変更・削除できるため、公開当時のタグとは異なる場合があります。<br>
+・価格・スキ数は取得時点のAPI値です。タイトル調査時点（2026年11月22〜23日）の値とは変わっている場合があります。<br>
+・内容分類はキーワードルールによる機械判定で、判定が割れるタグもあります（例：「フォロワー」は目的系に入れました）。分類の定義は「調べ方」に明記しました。<br>
+・補助調査の言及はThreads検索で拾えた範囲のもので、網羅的ではありません。言及中の数字は各投稿者本人の報告で、研究所では確認できていません。<br>
+・部数・売上などの数字は各著者本人の報告であり、未検証です。
+</div>
+
+<h2 id="list">付録：100本のタグ一覧</h2>
+<p>価格・スキは2026年11月28日の取得時点のAPI値です。タイトルは先頭40字までを表示しています。</p>
+<div class="tblwrap"><table><tr><th>記事キー</th><th>タイトル（先頭40字）</th><th>価格（円）</th><th>スキ</th><th>タグ数</th><th>タグ</th></tr>
+<tr><td>n914ec1da2cdf</td><td>副業占いで稼げない本当の原因は、“スキル不足”じゃなかった。〜潜在意識とエネルギ</td><td class="c">0</td><td class="c">37</td><td class="c">6</td><td>副業、ヒーリング、浄化、稼ぎ方、占い副業、AI占い副業</td></tr>
+<tr><td>nb7e4e2d37429</td><td>【300部限定】AIに書かせた記事は、1本も売れへんかった。売れる有料noteに</td><td class="c">9800</td><td class="c">184</td><td class="c">3</td><td>note、売れるnote、売れるnoteの書き方</td></tr>
+<tr><td>ncda7ccdb7fce</td><td>🟥【完全保存版】出逢いは「運」ちゃう、100%「物理」やねん！会いたい人と"絶対</td><td class="c">29800</td><td class="c">295</td><td class="c">12</td><td>恋愛、ビジネス、スピリチュアル、婚活、引き寄せ、引き寄せの法則、パートナーシップ、波動、アラフォー婚活、ご縁、お見合い、出逢い</td></tr>
+<tr><td>nffa369f4569e</td><td>ただの会社員が開始23日で100万円達成し、放置でも毎日売れる"アフィリエイト系</td><td class="c">7980</td><td class="c">88</td><td class="c">3</td><td>note、アフィリエイト、スレッズ</td></tr>
+<tr><td>n58b3e58fe3d2</td><td>【18部突破 2025年振り返り】ゼロからnoteを始めたあかりの6ヶ月間の全記</td><td class="c">9800</td><td class="c">179</td><td class="c">9</td><td>AI副業、メンバーシップ、Note収益化、2025年振り返り、あかり、有料記事の書き方、副業収益化、挫折からの復活、note販売術</td></tr>
+<tr><td>n19dba989982d</td><td>302部突破 ｜noteの伸ばし方_デザインと戦略で紐解く。【保存版】</td><td class="c">4980</td><td class="c">575</td><td class="c">15</td><td>エッセイ、note、HSP、note初心者、はじめてのnote、文章、考察、noteの書き方、有料note、デザイナー、収益化、スキ、文章術、Threads、タイトル</td></tr>
+<tr><td>nf3083980b8a1</td><td>「読まなきゃ」をやめた。noteを7ヶ月続けて思うこと🥹</td><td class="c">100</td><td class="c">164</td><td class="c">6</td><td>エッセイ、note、note初心者、有料記事、noteの続け方、noteでつながる</td></tr>
+<tr><td>nd379d89f0ba4</td><td>【インスタ攻略】1人もフォローせず、たった４か月で1万人にフォローされるバズで伸</td><td class="c">1980</td><td class="c">219</td><td class="c">3</td><td>インスタ、インスタ運用、インスタ攻略</td></tr>
+<tr><td>nb4160b79d5a2</td><td>【50部突破】YouTubeアダルトアフィリエイトで圧倒的な収益を生む構造と再現</td><td class="c">10000</td><td class="c">46</td><td class="c">5</td><td>副業、ショート動画、アダルトアフィリエイト、非属人youtube、YouTubeアダアフィ</td></tr>
+<tr><td>n4988f134ce3a</td><td>[50部突破]会社員が10日で6桁マネタイズしたnote完全攻略ロードマップ｜初</td><td class="c">1980</td><td class="c">102</td><td class="c">5</td><td>副業、note、毎日投稿、Threads、ノウハウ</td></tr>
+<tr><td>n0b754d6557d1</td><td>【Threads】初心者が10日で1,000フォロワー＆note200部。交流ゼ</td><td class="c">9980</td><td class="c">286</td><td class="c">4</td><td>スレッズ、Threads運用、Threads初心者、Threads攻略</td></tr>
+<tr><td>n5497d6414ee9</td><td>[700部突破]甘いものをやめないダイエットで92kgから57kgになれた話</td><td class="c">1400</td><td class="c">478</td><td class="c">10</td><td>ダイエット、体重、腸活、血糖値、菓子、カロリー、リバウンド、むくみ、産後ダイエット、停滞期</td></tr>
+<tr><td>n59ac4b8ea5d2</td><td>80部突破｜暴落で迷わない べびかぶ流投資の完全攻略本</td><td class="c">7500</td><td class="c">60</td><td class="c">11</td><td>自分、投資、資産運用、米国株、日本株、株、確認、分析、銘柄、暴落、ファンダメンタルズ</td></tr>
+<tr><td>n769f8cd02bbf</td><td>TOEIC完全攻略All in Oneパック【図解付き】</td><td class="c">6980</td><td class="c">1055</td><td class="c">4</td><td>英語、英語学習、TOEIC、TOEIC勉強法</td></tr>
+<tr><td>n322bba28ae56</td><td>有料noteを出したのに1本も売れない人へ｜「次に直す1つ」がわかる原因チェック</td><td class="c">1000</td><td class="c">63</td><td class="c">29</td><td>副業、note、スキしてみて、生成AI、ChatGPT、副業初心者、note初心者、記事、Gemini、有料記事書いてみた、AI副業、noteの書き方、ライティング、メンバーシップ、有料note、有料記事、Note収益化、文章術、コンテンツ販売、note副業、有料、読んでほしい有料記事、note有料記事、note運営、有料note販売、有料noteの作り方、noteが売れない、凡才ラボ、有料noteが売れない</td></tr>
+<tr><td>n02308a067d44</td><td>【120部突破】育児ジャンルで毎月10万以上収益化する方法</td><td class="c">4980</td><td class="c">232</td><td class="c">10</td><td>note、子育て、子育ての悩み、投稿、Threads、アカウント、リサーチ、ジャンル、Threads運用、育児ジャンル</td></tr>
+<tr><td>ncbea21884d47</td><td>【集客が苦手な人へ】売り込まずにファンが集まる最強コミュニティの作り方【講義動画</td><td class="c">6980</td><td class="c">261</td><td class="c">6</td><td>集客、オンラインサロン、コミュニティ運営、ファンづくり、コミュニティづくり、山﨑拓巳</td></tr>
+<tr><td>nc8b2e59a87db</td><td>500部突破！！【完全攻略】Threads×Amazonアフィリエイトの教科書</td><td class="c">8480</td><td class="c">592</td><td class="c">4</td><td>Amazon、Threads、Amazonアソシエイト、楽天アフィリエイト</td></tr>
+<tr><td>na03037f829bf</td><td>【1,000部達成】Threads×note｜スピ系を収益化する完全設計図【現実</td><td class="c">9800</td><td class="c">646</td><td class="c">4</td><td>note、占い、スピリチュアル、Threads</td></tr>
+<tr><td>n85cb35f6bbf6</td><td>売れてるnote記事のタイトル50個を分析してわかったパターン【0→1チャレンジ</td><td class="c">0</td><td class="c">24</td><td class="c">5</td><td>副業、note、ライティング、収益化、タイトル</td></tr>
+<tr><td>n441b51d03017</td><td>【200部突破】アカウント開設2ヶ月目で月70万円越え！！Threads×高単価</td><td class="c">21980</td><td class="c">239</td><td class="c">7</td><td>副業、副業初心者、アフィリエイト、Threads、副業初心者向け、アフィ、ASPアフィリエイト</td></tr>
+<tr><td>n630edbc4dafd</td><td>つまらない君たちへ</td><td class="c">100</td><td class="c">98</td><td class="c">7</td><td>note初心者、noteの書き方、ブランディング、noteのつづけ方、文章術、読者、がらてあ</td></tr>
+<tr><td>nf38c10098720</td><td>【ブログ初心者向け】SEOを完全無視した𝕏(Twitter)×VODアフィリエイ</td><td class="c">14800</td><td class="c">46</td><td class="c">5</td><td>ブログ初心者、アフィリエイト初心者、Xアフィリエイト、X集客、VODアフィリエイト</td></tr>
+<tr><td>n7d9e70114bbb</td><td>【保存版】0から月10万円を達成する「AI×note」完全ロードマップ</td><td class="c">0</td><td class="c">6</td><td class="c">8</td><td>副業、note、記事、はじめてのnote、テーマ、ステップ、無料記事、副業ロードマップ</td></tr>
+<tr><td>n74a10e0859eb</td><td>Threads開始13日でフォロワー0→400人｜40代会社員がやったこと・失敗</td><td class="c">700</td><td class="c">43</td><td class="c">12</td><td>副業、note、AI活用、副業初心者、子育てママ、フォロワー、SNS運用、Threads、Chatgpt活用、子育てパパ、会社員副業、40代からの挑戦</td></tr>
+<tr><td>n0f188e8d9347</td><td>【累計50部突破】追うのをやめた瞬間、彼が「手放したくない」と焦りだす。男性心理</td><td class="c">1980</td><td class="c">21</td><td class="c">6</td><td>恋愛、復縁、男性心理、沼落ちnote、溺愛、沼らせ</td></tr>
+<tr><td>n4ed61038ce4e</td><td>40部突破 ｜ Threadsの伸ばし方_無名でも選ばれるブランディング戦略</td><td class="c">1980</td><td class="c">65</td><td class="c">7</td><td>HSP、ブランディング、SNS運用、HSP気質、セルフブランディング、Threads運用、Threads伸ばし方</td></tr>
+<tr><td>nf8cdcae22109</td><td>あなたが英語を上達させたいなら、これを読むべきです。　(You should r</td><td class="c">1200</td><td class="c">2383</td><td class="c">5</td><td>英語、勉強、アメリカ、留学、英会話</td></tr>
+<tr><td>nd85a8fcd6b2a</td><td>AIで「ドラマ」を撮る｜累計1000万回再生『網戸一枚』は、こう作りました</td><td class="c">9800</td><td class="c">392</td><td class="c">8</td><td>生成AI、ChatGPT、プロンプト、動画生成AI、ai動画、映像制作、ショートドラマ、Seedance</td></tr>
+<tr><td>ndc7b30576a94</td><td>Threads初心者のためのnote販売戦略｜売れるカギは、フォロワー数でも投稿</td><td class="c">980</td><td class="c">34</td><td class="c">8</td><td>note、note初心者、挑戦、発信、Threads、情熱大陸、Threads初心者、発信迷子</td></tr>
+<tr><td>n4d229e6b646e</td><td>AI時代の“バズるインスタストーリーズ”の教科書｜35,000フォロワーで5,3</td><td class="c">14800</td><td class="c">28</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>n0c7b31952fd3</td><td>伝説の期間工のアフィリエイト初心者向け期間工ブログ講座</td><td class="c">4980</td><td class="c">4</td><td class="c">9</td><td>副業、ブログ、アフィリエイト、SEO、ブロガー、稼ぎ方、稼ぐ方法、アクセスアップ、期間工</td></tr>
+<tr><td>nf1d32eb120d3</td><td>【180部】1980円の内容を100円で売る　たった1つのからくり</td><td class="c">100</td><td class="c">537</td><td class="c">6</td><td>副業、副業note、思考力、100円、スマホ副業、noteマネタイズ</td></tr>
+<tr><td>n1a5535071409</td><td>【100部突破】Claude Code×Threads｜半自動で稼ぐAI副業の完</td><td class="c">8980</td><td class="c">89</td><td class="c">7</td><td>自分、note、Claude、AI副業、ClaudeCode、投稿、Thereads</td></tr>
+<tr><td>na9626baced4e</td><td>【460部突破】Claude Codeで1人会社を作る完全ロードマップ｜AI社員</td><td class="c">9800</td><td class="c">563</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>n97cc7c392503</td><td>【35部突破】先惚制勝｜恋愛圏外低スペ男が年下清楚美女OLを「会わずして落とす」</td><td class="c">5480</td><td class="c">74</td><td class="c">14</td><td>note、恋愛、自己紹介、女性、会話、彼女、デート、空気、沼落ちnote、モテる方法、非モテ、彼女の作り方、沼、沼らせ</td></tr>
+<tr><td>n91d2d415937c</td><td>【note初心者🔰】0→1を目指す有料note作成ロードマップ5STEP｜実践プ</td><td class="c">500</td><td class="c">10</td><td class="c">5</td><td>副業、note、note初心者、note副業、副業迷子</td></tr>
+<tr><td>n404c46361ecc</td><td>Stable Diffusionなどで使えるプロンプト・呪文集大全【永久保存版】</td><td class="c">980</td><td class="c">177</td><td class="c">10</td><td>プロンプト、AI画像生成、画像生成AI、画像生成、midjourney、StableDiffusion、呪文、SeaArt、novelai、StableDiffusionWebUI</td></tr>
+<tr><td>n690f3679c52d</td><td>【26部突破】有料noteを出したのに売れない人へ｜0→1を達成する作り方と改善</td><td class="c">1980</td><td class="c">270</td><td class="c">10</td><td>note、AI、有料note、収益化、有料記事、Threads、実験、育休中、仮説、noteフェス2026</td></tr>
+<tr><td>nceb298861048</td><td>【高評価100%】有料noteが1部売れた。でも、その後が続かない人へ｜販売を伸</td><td class="c">1480</td><td class="c">42</td><td class="c">11</td><td>AI、AI活用、AIとやってみた、有料note、収益化、有料記事、Note収益化、Threads、実験、仮説、noteフェス2026</td></tr>
+<tr><td>n2c88187b835e</td><td>【120部突破】【まめきち式】食べても体重が減る秘密。誰でもマネするだけで５キロ</td><td class="c">3980</td><td class="c">80</td><td class="c">4</td><td>ダイエット、体重、減量、体脂肪</td></tr>
+<tr><td>nacf5ba39a9ca</td><td>【48部突破🎉】noteで売れる有料記事徹底攻略｜5ヶ月売上0から逆転できたわけ</td><td class="c">980</td><td class="c">112</td><td class="c">9</td><td>note、note初心者、noteの書き方、ライティング、収益化、有料記事、コンテンツ販売、note副業、0から1</td></tr>
+<tr><td>nef2f0da81e45</td><td>【すぐに真似できるInstagramのはじめかた教科書】特技・スキルなし主婦が3</td><td class="c">2980</td><td class="c">680</td><td class="c">12</td><td>ブログ、SNS、インスタ、インフルエンサー、SNS活用、インスタ運用、インスタ集客、インスタグラマー、インスタ活用、インスタ使い方、まゆてぃnote、ぱる塾</td></tr>
+<tr><td>n5f1f43a7dcc7</td><td>脳科学的に正しい0歳から1歳半までの脳育大辞典</td><td class="c">3980</td><td class="c">40</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>n7f609261dedc</td><td>脳科学的に正しい最強の「寝かしつけの」教科書</td><td class="c">3980</td><td class="c">61</td><td class="c">4</td><td>子育て、脳科学、寝かしつけ、夜泣き</td></tr>
+<tr><td>na624509a3abf</td><td>【労働の対価で稼ぐ生活を終わらせる】ミナトが明かす「自前コンテンツ配信・自動化シ</td><td class="c">14800</td><td class="c">407</td><td class="c">19</td><td>note、業務効率化、プログラミング、python、システム、他人、ビジネスモデル、コンテンツ販売、システム開発、GAS、プラットフォーム、アーキテクチャ、API連携、購入者、ミナト、自前、自動化戦略、ストリーム処理、決済自動化</td></tr>
+<tr><td>na159a9819ba4</td><td>みお流note自動化キット🎁noteで月10万目指す完全ガイドBOOK</td><td class="c">100</td><td class="c">123</td><td class="c">4</td><td>副業、note、商品、収入</td></tr>
+<tr><td>n4efc0586f2d3</td><td>90部届きました!｜自分の言葉で、人に響く・刺さるnoteを育てる｜感覚派の脳内</td><td class="c">1880</td><td class="c">128</td><td class="c">7</td><td>自分軸、noteの書き方、ライティング、noteのつづけ方、文章術、読んでほしい有料記事、自分の言葉で伝える力</td></tr>
+<tr><td>n7cc8e9ff0c8c</td><td>noteに書くことがない人へ。コンプレックスも逆転ストーリーもいらない理由</td><td class="c">850</td><td class="c">43</td><td class="c">6</td><td>フリーランス、noteの書き方、noteのつづけ方、コンプレックス、自由な働き方、1人仕事</td></tr>
+<tr><td>n186149cc65d0</td><td>【累計70部】4万円のnoteで学んだことが、本当に売上につながった。たった1ヶ</td><td class="c">3480</td><td class="c">218</td><td class="c">4</td><td>はじめてのnote、noteの書き方、収益化、Threads</td></tr>
+<tr><td>n941bd572fd2a</td><td>15部突破、高評価率60%！【1本で69部】0→1で止まる人と、売れ続ける人の差</td><td class="c">1080</td><td class="c">23</td><td class="c">3</td><td>note、noteの書き方、Threads</td></tr>
+<tr><td>nb5779a8d67ed</td><td>講座代0円でインスタ5万人。私のリアルな収益と戦略を全部公開【20,000字】</td><td class="c">3980</td><td class="c">423</td><td class="c">8</td><td>副業、レシピ、収益化、フォロワー、インスタ、案件、インスタ運用、フォロワーの増やし方</td></tr>
+<tr><td>n4b1c65d0b5dd</td><td>noteが売れないあなたへ。7時出勤22時退勤の僕が、売上0円→月6桁までにやっ</td><td class="c">600</td><td class="c">17</td><td class="c">6</td><td>副業、note、AI、時間、副業初心者、Threads</td></tr>
+<tr><td>n96f8ef9b3369</td><td>【20部突破】【超初心者歓迎！】中・高単価記事でもどんどん売れる！「無料部分の型</td><td class="c">1980</td><td class="c">56</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>nb474c896bff1</td><td>【初版完売】フォロワーを増やす前に読んでください。初期アカで7時間で0→1を達成</td><td class="c">980</td><td class="c">134</td><td class="c">6</td><td>副業、副業初心者、note初心者、SNSマーケティング、Note収益化、noteマネタイズ</td></tr>
+<tr><td>ne82ae3809245</td><td>Threads✕占いで収益化した話</td><td class="c">2980</td><td class="c">38</td><td class="c">5</td><td>自分、メルカリ、鑑定、手相鑑定、鑑定書</td></tr>
+<tr><td>n45c1f1f713e0</td><td>【50部完売🔥】note販売で退職を目指す会社員が売れているnoteに6780円</td><td class="c">1000</td><td class="c">126</td><td class="c">9</td><td>note、投稿、画像、販売、Threads、アカウント、note販売、実績、売れるnote</td></tr>
+<tr><td>nebc95c2191da</td><td>100部突破｜はじめての有料noteの挑戦の仕方｜4ヶ月で230部を突破した僕が</td><td class="c">2980</td><td class="c">1495</td><td class="c">15</td><td>note初心者、挑戦、はじめてのnote、SNS、noteの書き方、有料note、分析、収益化、有料記事、Note収益化、Threads、価格設定、転換期、note執筆、これからのnote</td></tr>
+<tr><td>n3706a5699de9</td><td>【500部突破】1日たった2万ビューで30フォロワー以上獲得したThreads運</td><td class="c">4980</td><td class="c">402</td><td class="c">2</td><td>Threads、Threads運用</td></tr>
+<tr><td>nac809dbdd8a9</td><td>激務会社員でもnote参入たった1ヶ月で100部達成したThreads×note</td><td class="c">4980</td><td class="c">204</td><td class="c">8</td><td>note、体験談、noteの書き方、noteのつづけ方、SNS集客、Threads、note運用、Threads運用</td></tr>
+<tr><td>nbfeade8cee15</td><td>ぽちこ式スレッズリサーチツール</td><td class="c">2980</td><td class="c">162</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>n30cf6b517844</td><td>【AI会社の作り方】Claude CodeでAI社員を雇って収益化する完全マニュ</td><td class="c">21800</td><td class="c">57</td><td class="c">4</td><td>Claude、AI副業、ClaudeCode、生成</td></tr>
+<tr><td>n8d2324d840c6</td><td>【残り１部！／3部限定】ChatGPT×note収益化｜初心者が0→1を最短で実</td><td class="c">12800</td><td class="c">203</td><td class="c">18</td><td>副業、note、生成AI、ChatGPT、AI活用、note初心者、記事、プロンプト、AI画像生成、画像生成AI、有料note、画像、SNS運用、Note収益化、画像生成、コンテンツ販売、note運用、見出し画像</td></tr>
+<tr><td>n12f6ffa33b89</td><td>200部突破【note×Threads完全攻略】900部販売した主婦が教える「有</td><td class="c">3980</td><td class="c">1150</td><td class="c">8</td><td>note、AI、自己紹介、記事、はじめてのnote、投稿、主婦、Threads</td></tr>
+<tr><td>n3b1a0d792324</td><td>【らびちゃん式】AI×noteの教科書</td><td class="c">16480</td><td class="c">612</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>n99c124ec049d</td><td>【30部突破！】Threads×note スピリチュアルの知識不要！たった1投稿</td><td class="c">2980</td><td class="c">43</td><td class="c">4</td><td>副業、note、SNS運用、Threads</td></tr>
+<tr><td>n0382d54379eb</td><td>美肌ケア入門書</td><td class="c">3980</td><td class="c">183</td><td class="c">2</td><td>美容、スキンケア</td></tr>
+<tr><td>n6911fa358b1a</td><td>ガチャ運に疲れた人へ。狙い通り描けるAIイラスト設計大全＋プロンプト設計GPT</td><td class="c">5980</td><td class="c">157</td><td class="c">19</td><td>AI、生成AI、ChatGPT、アート、AIとやってみた、プロンプト、AIイラスト、AI画像生成、画像生成AI、有料note、AIアート、プロンプトエンジニアリング、aiart、AI活用術、nijijourney、プロンプト設計、コンセプト設計、中級者向け、niji7</td></tr>
+<tr><td>nd3f473b0b682</td><td>【4日で10万】初心者が楽天アフィリエイト始めて4日で6桁達成した方法【200部</td><td class="c">1980</td><td class="c">258</td><td class="c">2</td><td>楽天、楽天アフィリエイト</td></tr>
+<tr><td>n46b130433518</td><td>【110部販売】実績ゼロから、noteで家賃を払えるまでにやったこと全部。500</td><td class="c">4980</td><td class="c">251</td><td class="c">8</td><td>note、AI活用、note初心者、SNS運用、タスク管理、X運用、note記事、AI時短</td></tr>
+<tr><td>nf5b773972876</td><td>note完全初心者→収益5桁。最初の10日でやったこと。読まれるnoteをかくた</td><td class="c">300</td><td class="c">98</td><td class="c">9</td><td>副業、note、副業初心者、50代、有料note、最初、売れるnote、noteで副業、note副収入</td></tr>
+<tr><td>n51a1ce85812e</td><td>【完全版・累計1,000部突破】私が“未経験×フルリモート正社員”を勝ち取るまで</td><td class="c">2980</td><td class="c">814</td><td class="c">6</td><td>在宅ワーク、転職活動、面接対策、在宅勤務、フルリモート、未経験から転職</td></tr>
+<tr><td>n816d5bb665d8</td><td>【100部突破】買われないnoteに足りない決定的な一言</td><td class="c">1980</td><td class="c">72</td><td class="c">27</td><td>副業、note、副業初心者、note初心者、ワーママ、在宅ワーク、お小遣い稼ぎ、育休、フォロワー、Threads、note副業、ワーママの働き方、フォロワーの増やし方、稼ぎ方、スレッズ、ビュー、月5万円、noteで稼ぐ、Threads運用、売れる仕組み、育休中の過ごし方、売れない、Threads初心者、売れる方法、Threads攻略、Threads副業、売れるnote</td></tr>
+<tr><td>nd820c85b27e0</td><td>【60部突破】noteを買ってくれるフォロワーがどんどん増える磁石投稿</td><td class="c">7980</td><td class="c">47</td><td class="c">10</td><td>投稿、SNSマーケティング、フォロワー、SNS運用、SNS集客、Threads、ポスト、バズる、スレッズ、Threads運用</td></tr>
+<tr><td>ndd81d9402d06</td><td>【永久保存版】ポジション取りを極めるプライスアクション究極マニュアル</td><td class="c">49800</td><td class="c">598</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>n584b96fefb79</td><td>ガツガツせず、世界観で収益や仕事につながった。感覚派のThreadsバイブル【9</td><td class="c">4980</td><td class="c">143</td><td class="c">9</td><td>note、フリーランス、SNS、発信、有料note、SNS集客、Threads、スレッズ、感覚派</td></tr>
+<tr><td>n2fe84c7a48dc</td><td>【大好評】しものん式 Threads図解の攻略マニュアル ～1万人フォロワーにな</td><td class="c">3980</td><td class="c">67</td><td class="c">3</td><td>フォロワー、Threads、図解</td></tr>
+<tr><td>n583d782ee88b</td><td>noteのフォロワーさんが2週間で215人→700人に｜やったことと、伸びた理由</td><td class="c">980</td><td class="c">79</td><td class="c">4</td><td>note、noteの書き方、noteのつづけ方、有料note</td></tr>
+<tr><td>n064f2f38edfa</td><td>【悪用厳禁】人を「沼らせる」Threads運用 〜70名以上を巻き込んだ「目標宣</td><td class="c">1480</td><td class="c">77</td><td class="c">4</td><td>Threads、Threads運用、ファン化、沼らせる</td></tr>
+<tr><td>n7e2a7ffa9e86</td><td>【これだけで即戦力】資料作成のプロに学ぶ「伝わるスライド」作成プロンプト完全版</td><td class="c">5000</td><td class="c">78</td><td class="c">11</td><td>Claude、プロンプト、構造、資料作成、ファイル、スライド、情報設計、Claude37sonnet、モーリー、NotionFreak、IvyGain</td></tr>
+<tr><td>n1e108a6fb7d7</td><td>note有料記事が売れない人へ｜「アカウント設計」で月100万を達成する裏技</td><td class="c">9800</td><td class="c">490</td><td class="c">12</td><td>note、記事、集客、noteの書き方、有料note、収益化、戦略、有料記事、Note収益化、売上、note運用、運営</td></tr>
+<tr><td>n57d970c0f76a</td><td>【330部突破】本垢公開！月40万達成。Threads×noteの教科書</td><td class="c">10480</td><td class="c">455</td><td class="c">2</td><td>note、Threads</td></tr>
+<tr><td>nea259d8bfe7c</td><td>映画業界から学ぶ ローンチの極意</td><td class="c">39800</td><td class="c">41</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>nba8c73b0f122</td><td>90部突破｜noteで挫折してからの再挑戦で失敗したいために、3ヶ月でぼくがやっ</td><td class="c">1480</td><td class="c">271</td><td class="c">8</td><td>note初心者、noteのつづけ方、書く習慣、有料note、有料記事、挫折、心が軽くなる、自分をコンテンツ化</td></tr>
+<tr><td>na2f13ca49da9</td><td>34年間貯金ゼロ。残高638円だった私が、1年で100万円貯めた「8週間人生再建</td><td class="c">980</td><td class="c">86</td><td class="c">71</td><td>副業収入、有料記事書いてみた、副業で稼ぐ、引き寄せの法則、家計管理、有料note、貯金、HSS型HSP、Note収益化、家計簿、note副業、節約術、副業note、お金の使い方、潜在意識の書き換え、読んでほしい有料記事、借金返済、節約生活、わたしの新NISA、貧乏、note有料記事、投資は自己責任、固定費削減、副業Webライター、家計改善、家計見直し、引き寄せの法則のコツ、お金のブロック、有料note販売、副業女子、noteで稼ぐ、ブログ収益化、今月の家計簿、Threads運用、貯金術、お金の引き寄せ、積み立てNISA、幸運引き寄せ、借金地獄、NOTE収益化方法、有料コンテンツ販売、有料noteの作り方、借金返済中、初めての有料記事、引き寄せ体質、先取り貯金、お金を貯める、Threads攻略、NISA貧乏、貧乏人、貯金ゼロ、有料記事成功例、積み立て投資、貯金できない、Threads副業、引き寄せのコツ、引き寄せの法則実践記、引き寄せ難民、貯金生活、Threads集客、Threads収益化、家計管理術、新NISA活用、資産形成術、貯金したい、NOTE収益化まで、貯金ゼロからの挑戦、note収益化計画、貯金なし、お金の引き寄せの法則、貯金ゼロからのスタート</td></tr>
+<tr><td>n00084cab230d</td><td>【200部突破】回避系彼を覚醒させて溺愛してくる“犬系彼氏”の育て方</td><td class="c">3980</td><td class="c">62</td><td class="c">6</td><td>恋愛、LINE、復縁、復縁する方法、愛情表現、犬系彼氏</td></tr>
+<tr><td>nf8e6953d34a0</td><td>【累計450部突破】スレッズ×エックス×アフィリエイト完全攻略〜収益0の日をなく</td><td class="c">9980</td><td class="c">5</td><td class="c">3</td><td>アフィリエイト、X、Threads</td></tr>
+<tr><td>n38c2f882603c</td><td>フォロワー1,000人以下でも買われた稼ぐ系note 4本（11/20）</td><td class="c">0</td><td class="c">38</td><td class="c">4</td><td>note初心者、有料note、noteの始め方、売れるnote</td></tr>
+<tr><td>n40e680fd21ac</td><td>【祝：８０部突破】愛欲再生ー２年間妻に触れられなかった男が、たった１ヶ月で求めら</td><td class="c">5980</td><td class="c">68</td><td class="c">13</td><td>自分、言葉、相手、夫婦、夫婦関係、カップル、セックスレス、夫、妻、性欲、性、再構築、レス</td></tr>
+<tr><td>nf50dacc8661a</td><td>noteで最初の1円が稼げない人へ...0→1を達成する完全ロードマップ</td><td class="c">0</td><td class="c">37</td><td class="c">8</td><td>note、スキしてみて、ChatGPT、AIとやってみた、Claude、AI副業、nanobanana、NanoBananaPro</td></tr>
+<tr><td>nb70819f5d3a2</td><td>170部突破！！【7年間の集大成】外見磨きを徹底追求。ブサイクからイケメンになる</td><td class="c">4980</td><td class="c">167</td><td class="c">7</td><td>クリニック、整形、外見、髪質改善、二重整形、メンズメイク、スト値</td></tr>
+<tr><td>n2dcc5f9a1903</td><td>Xを伸ばすために知っておきたい交流術とその限界</td><td class="c">1980</td><td class="c">96</td><td class="c">1</td><td>X運用</td></tr>
+<tr><td>n137ecbf3de84</td><td>第2章　完了食〜幼児食note</td><td class="c">2480</td><td class="c">71</td><td class="c">5</td><td>時短、炊飯器、幼児食、炊飯器レシピ、離乳食完了期</td></tr>
+<tr><td>nea658b1adf6b</td><td>第1章　炊飯器でつくる離乳食note</td><td class="c">1480</td><td class="c">41</td><td class="c">6</td><td>離乳食、離乳食初期、離乳食中期、離乳食後期、離乳食レシピ、離乳食ストック</td></tr>
+<tr><td>ndcb39ee54189</td><td>Claude Codeで『ひとりThreads運用会社』を作って月7桁目指す全手</td><td class="c">3980</td><td class="c">365</td><td class="c">0</td><td>（なし）</td></tr>
+<tr><td>n3f245594fc44</td><td>【年間40万ビュー】未経験・SNSバズなし｜ゼロからnoteが100部売れるまで</td><td class="c">2980</td><td class="c">73</td><td class="c">8</td><td>副業、note初心者、有料記事書いてみた、noteの書き方、SNS運用、Webマーケティング、Note収益化、未経験</td></tr>
+<tr><td>na3c6be296635</td><td>失敗しない転職活動の設計 完全ガイド｜23部突破</td><td class="c">3980</td><td class="c">44</td><td class="c">10</td><td>転職、キャリア、転職活動、面接、職務経歴書、履歴書、40代の転職、30代の転職、35歳からの転職、35歳からの働き方</td></tr>
+<tr><td>n17c2b1e3c9e5</td><td>「これ、読まれない方がおかしいよ」と言われる記事を作るための、たった2つの方法</td><td class="c">1200</td><td class="c">46</td><td class="c">2</td><td>文章、文章術</td></tr>
+<tr><td>n4c1f597d65f9</td><td>【Threadsシリーズ第3弾】Threads始めたけど「何すればいい？」が分か</td><td class="c">2480</td><td class="c">122</td><td class="c">5</td><td>note、SNS運用、Threads、コンテンツ販売、SNS収益化</td></tr>
+<tr><td>n4e03f5420c36</td><td>【ご報告】仕事を辞めて、SNS一本で生きていくことにしました</td><td class="c">980</td><td class="c">59</td><td class="c">4</td><td>note、脱サラ、アカウント、noteで暮らす</td></tr>
+</table></div>
+<h2 id="related">関連する調査記録</h2>
+<p>・<a href="https://dasho-note.github.io/note-eyecatch-100.html">有料noteの見出し画像100本を調べた記録</a>（同じ母集団の調査）<br>
+・<a href="https://dasho-note.github.io/note-price-decision-42.html">有料noteの価格の決め方、実践例42件を調べた記録</a><br>
+・<a href="https://dasho-note.github.io/note-profiles-96.html">noteのプロフィール、著者96人を調べた記録</a><br>
+・<a href="https://dasho-note.github.io/">売れてるnote研究所トップページ</a>（調査の一覧はこちら）</p>
+
+<footer>
+売れてるnote研究所（所長ふわ／実践者だしょ）｜<a href="https://dasho-note.github.io/">トップページへ</a>｜基礎：<a href="https://dasho-note.github.io/toha-yuryo-note.html">有料noteとは</a>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>noteのプロフィール、著者96人を調べた記録｜売れてるnote研究所</title>
+<meta name="description" content="売れている有料noteの著者96人の表示名とプロフィール文を調べた調査記録。表示名の型（名前のみ／肩書き・専門分野／実績・数字／対象読者）の分布、プロフィール文の要素（実績・導線・経歴・メリット等）の割合、フォロワー規模帯での違いをまとめました。売れてるnote研究所の調査レポートです。">
+<link rel="icon" type="image/png" href="https://dasho-note.github.io/favicon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="売れてるnote研究所">
+<meta property="og:title" content="noteのプロフィール、著者96人を調べた記録｜売れてるnote研究所">
+<meta property="og:description" content="著者96人の表示名の型とプロフィール文の要素を実測。規模帯での違いも含めた調査記録。">
+<meta property="og:url" content="https://dasho-note.github.io/note-profiles-96.html">
+<meta property="og:image" content="https://dasho-note.github.io/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQWHS9QV71"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GQWHS9QV71');</script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;color:#333;background:#fffaf3;line-height:1.8}
+.wrap{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+a{color:#e07b00}
+header.site{display:flex;justify-content:space-between;align-items:center;padding:8px 0 16px;border-bottom:2px solid #f39800}
+header.site .logo{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;color:#f39800;text-decoration:none}
+h1{font-family:"Zen Maru Gothic",sans-serif;font-size:1.55rem;line-height:1.5;margin:28px 0 8px}
+.meta{color:#888;font-size:.85rem;margin-bottom:24px}
+h2{font-family:"Zen Maru Gothic",sans-serif;font-size:1.15rem;border-left:6px solid #f39800;padding-left:10px;margin:36px 0 12px}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.85rem}
+th,td{border:1px solid #f0dcc0;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#fdeeda}
+td.c{text-align:center;white-space:nowrap}
+.sum td:last-child{text-align:center;font-weight:700}
+.tblwrap{overflow-x:auto}
+.note{background:#fff;border:1px solid #f0dcc0;border-radius:10px;padding:14px 16px;font-size:.9rem}
+.toc{background:#fff;border:1px solid #f0dcc0;border-radius:10px;padding:14px 16px;margin:20px 0}
+.toc p{margin:0 0 8px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif}
+.toc ol{margin:0;padding-left:22px}
+.toc li{margin:2px 0}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid #eee;color:#999;font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="logo" href="https://dasho-note.github.io/">売れてるnote研究所</a><a href="https://dasho-note.github.io/">トップへ</a></header>
+
+<h1>noteのプロフィール、著者96人の表示名とプロフィール文を調べました</h1>
+<p class="meta">調査：2026年11月28日｜売れてるnote研究所・所長ふわ</p>
+
+<p>売れている有料noteの著者は、表示名とプロフィール文をどう作っているか。研究所の「プロフィール」の章は、固定記事の調査（100人）は済んでいましたが、表示名とプロフィール文そのものの横断調査は未実施でした。今回は固定記事の調査とは分けて、タイトル・見出し画像・タグ・無料部分の調査と同じ母集団の著者96人を対象に、表示名の型とプロフィール文の要素を数えました。このページは、その96人の記録です。</p>
+
+<nav class="toc">
+<p>このページの内容</p>
+<ol>
+<li><a href="#method">調べ方</a></li>
+<li><a href="#result">集計結果（96人）</a></li>
+<li><a href="#mitate">所見</a></li>
+<li><a href="#caution">注意書き</a></li>
+<li><a href="#list">付録：対象者一覧（96人）</a></li>
+<li><a href="#related">関連する調査記録</a></li>
+</ol>
+</nav>
+
+<h2 id="method">調べ方</h2>
+<div class="note">
+対象：タイトル調査（2026年11月22〜23日実施）の母集団である有料note103本の著者97人（重複を除く）。だしょ自身はこの母集団に含まれていません。この母集団は「売れている根拠（部数・完売・売上の申告）が公開情報にあるもの」を集めた標本で、第3回は高価格帯、第4回は副業以外のジャンル、第5回は小規模な著者（フォロワー1,000人未満）に意図的に寄せてあります。無作為抽出ではありません。<br>
+取得方法：note公開API（著者API）で表示名・プロフィール文・フォロワー数を取得しました。取得できたのは96人。1人はAPIが404を返し（退会・非公開化とみられる）、対象から外しました。<br>
+分類（表示名）：キーワードルールによる機械判定を基本とし、境界例は目視で調整しました。主分類は次の優先順で1人1型に決めました。1. 名前＋実績・数字（金額・部数・フォロワー数・達成などの実績を示す語を含む。なお「収益化」のような分野語だけでは実績とみなさない。年齢（40代・35歳）や期間（6ヶ月）だけの数字も実績とみなさない）　2. 名前＋対象読者（初心者／〜な人／向け／ママ・パパ・主婦等の対象を示す語を含み、分野語を含まない）　3. 名前＋肩書き・専門分野（副業／note／Threads／投資／英語等の分野語や、会社員・エンジニア・クリエイター等の肩書きを含む。経歴・期間の表示もここに含めた）　4. 名前のみ（区切り記号（｜など）の後ろに説明がなく、上記の語も含まない）　5. その他（区切り記号の後ろがキャッチフレーズや立場表示で、上記の型に当たらない）。<br>
+分類（プロフィール文）：次の6要素について、キーワードルールで「含む／含まない」を判定しました。実績・数字（数字＋単位、または「実績」）／経歴・肩書き（職業・立場・経験を示す語）／誰に向けた発信か（初心者／〜な人／向け／悩んでいる等）／フォローするメリット・提供価値（学べる／分かる／役立つ／発信しています等）／有料note・他SNSへの導線（URL／有料note／メンバーシップ／マガジン／Threads／LINE／相談・依頼の案内等）／人柄・価値観（好き／大切／夢／家族／暮らし等）。<br>
+<strong>数字についての注意：フォロワー数などは2026年11月28日の取得時点の値です。他者の部数・売上などの数字は本人の表示・報告に基づくもので、研究所では確認していません。</strong>
+</div>
+
+<h2 id="result">集計結果（96人）</h2>
+<p>対象者の姿です。96人のフォロワー数は中央値495人。規模帯は1,000人未満が72人（75%）、1,000〜9,999人が24人（25%）、10,000人以上は0人でした。母集団の作り方（小規模な著者に寄せた回を含む）を反映しており、大規模な著者の姿はこの調査では見えていません。</p>
+
+<p>表示名の型です。「名前のみ」と「名前＋肩書き・専門分野」がほぼ並んで約8割を占めます。要素の保有率（重複あり）では、区切り記号（｜など）で説明を足している人が49人（51%）、分野・肩書きの語を含む人が47人（49%）、数字を含む人が20人（21%）、対象読者を示す語を含む人が8人（8%）でした。</p>
+<table class="sum"><tr><th>型</th><th>人数</th><th>割合</th></tr>
+<tr><td>名前＋肩書き・専門分野</td><td>37</td><td>39%</td></tr>
+<tr><td>名前のみ</td><td>36</td><td>38%</td></tr>
+<tr><td>名前＋実績・数字</td><td>12</td><td>12%</td></tr>
+<tr><td>その他（キャッチフレーズ等）</td><td>9</td><td>9%</td></tr>
+<tr><td>名前＋対象読者</td><td>2</td><td>2%</td></tr></table>
+
+<p>プロフィール文です。文があるのは89人（93%）で、文がない7人は全員フォロワー1,000人未満でした。文字数は中央値102字・平均96字・最大141字で、noteのプロフィール文の上限に近い範囲に収まっています。要素を含む人の割合は、実績・数字が中心で、「誰に向けた発信か」は少数派でした。</p>
+<table><tr><th>要素</th><th>全体（96人中）</th><th>文あり中（89人中）</th></tr>
+<tr><td>実績・数字</td><td class="c">70%</td><td class="c">75%</td></tr>
+<tr><td>有料note・他SNSへの導線</td><td class="c">42%</td><td class="c">45%</td></tr>
+<tr><td>経歴・肩書き</td><td class="c">29%</td><td class="c">31%</td></tr>
+<tr><td>人柄・価値観</td><td class="c">27%</td><td class="c">29%</td></tr>
+<tr><td>フォローするメリット・提供価値</td><td class="c">20%</td><td class="c">21%</td></tr>
+<tr><td>誰に向けた発信か</td><td class="c">15%</td><td class="c">16%</td></tr></table>
+
+<p>フォロワー規模帯での違いです。表示名の型は規模帯で大きくは変わりません。プロフィール文は、1,000人以上の著者では文がない人がおらず、実績・数字／経歴／メリット／導線の各要素を含む割合が軒並み高くなりました。「誰に向けた発信か」だけは小規模な著者のほうが高い結果です。</p>
+<table><tr><th>項目</th><th>1,000人未満（72人）</th><th>1,000〜9,999人（24人）</th></tr>
+<tr><td>表示名：名前＋肩書き・専門分野</td><td class="c">38%</td><td class="c">42%</td></tr>
+<tr><td>表示名：名前のみ</td><td class="c">39%</td><td class="c">33%</td></tr>
+<tr><td>表示名：名前＋実績・数字</td><td class="c">11%</td><td class="c">17%</td></tr>
+<tr><td>プロフィール文なし</td><td class="c">7人</td><td class="c">0人</td></tr>
+<tr><td>要素：実績・数字</td><td class="c">67%</td><td class="c">79%</td></tr>
+<tr><td>要素：経歴・肩書き</td><td class="c">26%</td><td class="c">38%</td></tr>
+<tr><td>要素：フォローするメリット・提供価値</td><td class="c">17%</td><td class="c">29%</td></tr>
+<tr><td>要素：有料note・他SNSへの導線</td><td class="c">39%</td><td class="c">50%</td></tr>
+<tr><td>要素：誰に向けた発信か</td><td class="c">17%</td><td class="c">8%</td></tr>
+<tr><td>要素：人柄・価値観</td><td class="c">28%</td><td class="c">25%</td></tr></table>
+
+<p>有料noteの有無での比較について。母集団は有料noteの著者で集めているため、対象者96人全員が有料noteを出した経験のある側に寄っており、「有料noteを出していない人」との比較はこの標本では作れませんでした。比較の代わりに、プロフィール文で有料noteや他SNSへ誘導している人の割合（42%）を導線の要素として数えています。</p>
+
+<h2 id="mitate">所見</h2>
+<p>1つ目。表示名は「名前のみ」と「名前＋肩書き・専門分野」がほぼ並んで約8割を占めます。実績・数字を看板にするのは12%と少数派で、タイトル調査で見えた「数字を看板にする」型は、表示名では主流ではありません。対象読者を名乗る型（2%）はほぼ見られませんでした。</p>
+<p>2つ目。プロフィール文の中心は「実績・数字の掲示」（70%）で、次が導線（42%）。一方で「誰に向けた発信か」（15%）と「フォローするメリット」（20%）は少数派でした。タイトル調査では「誰向けかの明示」が33%あったのと比べても、プロフィール文は読者への呼びかけより、実績を見せる場所として使われています。</p>
+<p>3つ目。規模帯の差は表示名よりプロフィール文に出ました。フォロワー1,000人以上では全員に文があり、要素も多い。「文を置き、実績と導線を入れる」という整え方が、規模の大きい側の共通した姿でした。ただし10,000人以上は標本にいないため、それ以上の規模で同じかは分かりません。</p>
+<p>4つ目。だしょの表示名「だしょ｜売れてるnote研究所」は肩書き・専門分野型で、最大派閥の型にいます。研究所の現在地の数字（実績）をプロフィール側に置く形も、実績・数字の掲示という主流側の作りと合っています。</p>
+<p>5つ目。この調査で分かるのは「使われ方の実態」までで、表示名やプロフィール文の型がフォロワー増や売上に効くかどうかは、ここからは言えません。</p>
+
+<h2 id="caution">注意書き</h2>
+<div class="note">
+・標本は無作為抽出ではありません（母集団の作り方は「調べ方」に記載）。フォロワー10,000人以上の著者は含まれていません。<br>
+・分類はキーワードルールによる機械判定＋境界例の目視調整で、判定のしかたにより数%程度は揺れうるものです。特に「実績・数字」は金額・部数・達成の語を基準にし、年齢・期間だけの数字は除きました。<br>
+・プロフィール文と表示名は2026年11月28日の取得時点のもので、著者が後から変更できます。フォロワー数も取得時点の値です。<br>
+・他者の部数・売上などの数字は本人の表示・報告に基づくもので、研究所では確認していません。<br>
+・プロフィール文そのものは転載していません。付録に載せたのは表示名・型・フォロワー数・プロフィール文の文字数までです。
+</div>
+
+<h2 id="list">付録：対象者一覧（96人）</h2>
+<p>フォロワー数の多い順です。表示名・フォロワー数・プロフィール文の文字数は、2026年11月28日の取得時点のものです（プロフィール文の本文は載せていません）。</p>
+<div class="tblwrap"><table><tr><th>urlname</th><th>表示名</th><th>型</th><th>フォロワー数</th><th>プロフィール文字数</th></tr>
+<tr><td>akari_seaart</td><td>赤髪のあかり✨️楽しいnote収益化🐟相互フォロー中</td><td>名前＋肩書き・専門分野</td><td class="c">8,959</td><td class="c">132</td></tr>
+<tr><td>aiju911</td><td>YURI（結梨嘉望）｜世界を繋ぐニューリーダー</td><td>その他</td><td class="c">5,101</td><td class="c">75</td></tr>
+<tr><td>pakucha</td><td>ぱくちゃ</td><td>名前のみ</td><td class="c">3,406</td><td class="c">138</td></tr>
+<tr><td>shibainu_fx</td><td>いぬ</td><td>名前のみ</td><td class="c">3,181</td><td class="c">108</td></tr>
+<tr><td>kippeinpein</td><td>きっぺい｜副業noter📗</td><td>名前＋肩書き・専門分野</td><td class="c">2,913</td><td class="c">136</td></tr>
+<tr><td>minato74_</td><td>現役エンジニア：湊</td><td>名前＋肩書き・専門分野</td><td class="c">2,825</td><td class="c">140</td></tr>
+<tr><td>promptdesign</td><td>読まれるAI画像ナビ＠フォロバ100【画像生成×note副業】</td><td>名前＋肩書き・専門分野</td><td class="c">2,396</td><td class="c">140</td></tr>
+<tr><td>hugh_miyata</td><td>Hugh Miyata</td><td>名前のみ</td><td class="c">2,146</td><td class="c">45</td></tr>
+<tr><td>marimo0101</td><td>まりも ｜ noteで0→1を達成させる人</td><td>名前＋実績・数字</td><td class="c">2,142</td><td class="c">130</td></tr>
+<tr><td>takosuke_c</td><td>たこすけ</td><td>名前のみ</td><td class="c">2,132</td><td class="c">58</td></tr>
+<tr><td>aki_clouds_</td><td>Aki｜note始めて6ヶ月</td><td>名前＋肩書き・専門分野</td><td class="c">2,091</td><td class="c">140</td></tr>
+<tr><td>rinfa_ai</td><td>リンファ@AIアート・ドキュメンタリスト</td><td>名前＋肩書き・専門分野</td><td class="c">1,847</td><td class="c">100</td></tr>
+<tr><td>babylon_toeic900</td><td>バビロン＠TOEICメモ</td><td>名前＋肩書き・専門分野</td><td class="c">1,598</td><td class="c">111</td></tr>
+<tr><td>levelma</td><td>レベルマ【生成AI情報発信】</td><td>名前＋肩書き・専門分野</td><td class="c">1,517</td><td class="c">79</td></tr>
+<tr><td>sssssssnote</td><td>ルナ｜裏技noteで収益100万</td><td>名前＋実績・数字</td><td class="c">1,497</td><td class="c">100</td></tr>
+<tr><td>sena__desuyo</td><td>sena</td><td>名前のみ</td><td class="c">1,463</td><td class="c">49</td></tr>
+<tr><td>yohakulife</td><td>よは</td><td>名前のみ</td><td class="c">1,462</td><td class="c">83</td></tr>
+<tr><td>ryouyuu</td><td>りょうゆう｜noteで月5万!</td><td>名前＋実績・数字</td><td class="c">1,386</td><td class="c">137</td></tr>
+<tr><td>aiteiji_matome</td><td>ていじ</td><td>名前のみ</td><td class="c">1,355</td><td class="c">43</td></tr>
+<tr><td>ori_baku</td><td>おりの中のバク</td><td>名前のみ</td><td class="c">1,297</td><td class="c">137</td></tr>
+<tr><td>enishi_supporter</td><td>えにし｜スピ・占いを仕事に変える人</td><td>名前＋肩書き・専門分野</td><td class="c">1,234</td><td class="c">124</td></tr>
+<tr><td>asa5ji_note</td><td>Asa ｜noteで年収1000万の新卒</td><td>名前＋実績・数字</td><td class="c">1,209</td><td class="c">87</td></tr>
+<tr><td>yama_threads</td><td>やま@Threads×AIの人</td><td>名前＋肩書き・専門分野</td><td class="c">1,108</td><td class="c">27</td></tr>
+<tr><td>tattsun_cw</td><td>たっつん｜読むと心が軽くなる。</td><td>その他</td><td class="c">1,028</td><td class="c">114</td></tr>
+<tr><td>x221130x</td><td>二階堂</td><td>名前のみ</td><td class="c">986</td><td class="c">34</td></tr>
+<tr><td>shizuku_contents</td><td>しずく🍎</td><td>名前のみ</td><td class="c">955</td><td class="c">86</td></tr>
+<tr><td>alive_guppy3873</td><td>にゃんちー【いちご🍓シェイク🥤120%】</td><td>名前のみ</td><td class="c">925</td><td class="c">126</td></tr>
+<tr><td>shimononpiano</td><td>しものん｜ズボラ思考のSNS運用</td><td>名前＋肩書き・専門分野</td><td class="c">883</td><td class="c">134</td></tr>
+<tr><td>mako_0to1</td><td>まこ｜ note×threadsで1万円回収できた人</td><td>名前＋実績・数字</td><td class="c">790</td><td class="c">136</td></tr>
+<tr><td>pure_azalea6326</td><td>ゆうか/note収益化の神⚡️</td><td>名前＋肩書き・専門分野</td><td class="c">785</td><td class="c">110</td></tr>
+<tr><td>simple_sunao</td><td>すなお</td><td>名前のみ</td><td class="c">771</td><td class="c">99</td></tr>
+<tr><td>ayaka_yaseru</td><td>あやか</td><td>名前のみ</td><td class="c">725</td><td class="c">54</td></tr>
+<tr><td>shachiku_n_</td><td>しゃち</td><td>名前のみ</td><td class="c">718</td><td class="c">97</td></tr>
+<tr><td>yurisawa</td><td>ゆりさわ</td><td>名前のみ</td><td class="c">712</td><td class="c">80</td></tr>
+<tr><td>skillfreak</td><td>モーリー</td><td>名前のみ</td><td class="c">691</td><td class="c">139</td></tr>
+<tr><td>miyu_freenote___</td><td>Miyu｜自由ｎｏｔｅ</td><td>その他</td><td class="c">689</td><td class="c">106</td></tr>
+<tr><td>nene_aimama</td><td>ねね ｜ note半年で50万</td><td>名前＋実績・数字</td><td class="c">682</td><td class="c">116</td></tr>
+<tr><td>ryo_0to1</td><td>りょう｜noteで家賃払ってます</td><td>名前＋肩書き・専門分野</td><td class="c">660</td><td class="c">86</td></tr>
+<tr><td>witty_dunlin880</td><td>健太｜AI時代の個人ビジネス構築</td><td>名前＋肩書き・専門分野</td><td class="c">634</td><td class="c">83</td></tr>
+<tr><td>dana37_taku</td><td>山﨑拓巳</td><td>名前のみ</td><td class="c">617</td><td class="c">137</td></tr>
+<tr><td>ao_threads_log</td><td>あお｜Threads×AIで本業を超えた会社員</td><td>名前＋肩書き・専門分野</td><td class="c">607</td><td class="c">114</td></tr>
+<tr><td>galatea_note</td><td>がらてあ│書きたいことを書けばいい</td><td>その他</td><td class="c">606</td><td class="c">129</td></tr>
+<tr><td>rabbit_sns</td><td>らびちゃん｜AI×noteの専門家</td><td>名前＋肩書き・専門分野</td><td class="c">600</td><td class="c">102</td></tr>
+<tr><td>dapper_crane2894</td><td>ごじぴた ｜ Amazonアフィで1人社長</td><td>名前＋肩書き・専門分野</td><td class="c">565</td><td class="c">39</td></tr>
+<tr><td>baby_kabu_page</td><td>べびかぶ/赤ちゃんでもわかる株式投資</td><td>名前＋肩書き・専門分野</td><td class="c">548</td><td class="c">141</td></tr>
+<tr><td>kuroe_claude</td><td>クロエ</td><td>名前のみ</td><td class="c">543</td><td class="c">0</td></tr>
+<tr><td>chiyu_note2025</td><td>ちゆ｜ 育児ジャンルで毎月6桁</td><td>名前＋実績・数字</td><td class="c">516</td><td class="c">51</td></tr>
+<tr><td>suichqn_note</td><td>すいちゃん</td><td>名前のみ</td><td class="c">495</td><td class="c">100</td></tr>
+<tr><td>xotaku</td><td>Xオタクちゃん</td><td>名前のみ</td><td class="c">470</td><td class="c">122</td></tr>
+<tr><td>misa_nobinobi</td><td>Misa｜創作と暮らしでメシを食う</td><td>その他</td><td class="c">421</td><td class="c">140</td></tr>
+<tr><td>mild_wolf1115</td><td>脳科学子育て│イヤイヤさん</td><td>名前＋肩書き・専門分野</td><td class="c">418</td><td class="c">66</td></tr>
+<tr><td>trgfvstg</td><td>Re:Born🎀30代からの人生再建クリエイター</td><td>名前＋肩書き・専門分野</td><td class="c">403</td><td class="c">131</td></tr>
+<tr><td>mio__work</td><td>みお｜特典お渡し</td><td>その他</td><td class="c">389</td><td class="c">0</td></tr>
+<tr><td>bonsailabo</td><td>凡才ラボ｜迷いを終わらせて動ける副業note収益化</td><td>名前＋肩書き・専門分野</td><td class="c">382</td><td class="c">131</td></tr>
+<tr><td>zubora_notelife</td><td>ずぼら｜noteで仕事やめました</td><td>名前＋肩書き・専門分野</td><td class="c">373</td><td class="c">57</td></tr>
+<tr><td>hsp_mylife</td><td>ぐる ｜ 頭の中がうるさい人</td><td>その他</td><td class="c">367</td><td class="c">102</td></tr>
+<tr><td>hata_papa1410</td><td>はたパパ｜40代会社員×AI副業</td><td>名前＋肩書き・専門分野</td><td class="c">359</td><td class="c">110</td></tr>
+<tr><td>uchimochi</td><td>もも＠</td><td>名前のみ</td><td class="c">333</td><td class="c">26</td></tr>
+<tr><td>wattyo_wakamote</td><td>ワッチョ@レス撲滅研究者</td><td>名前＋肩書き・専門分野</td><td class="c">328</td><td class="c">52</td></tr>
+<tr><td>yuasu2453</td><td>ゆうあす｜35歳からの働き方</td><td>名前＋対象読者</td><td class="c">312</td><td class="c">75</td></tr>
+<tr><td>kon_ai</td><td>こん│AIオタクの秘密基地</td><td>名前＋肩書き・専門分野</td><td class="c">302</td><td class="c">136</td></tr>
+<tr><td>junjun_ranran</td><td>ジュンジュンとランラン</td><td>名前のみ</td><td class="c">289</td><td class="c">0</td></tr>
+<tr><td>fukugyo_nikoniko</td><td>にこ｜Threadsで月30まん作ったママ</td><td>名前＋肩書き・専門分野</td><td class="c">283</td><td class="c">0</td></tr>
+<tr><td>y0603yk</td><td>ニナ｜ごはん作り限界ママの炊飯器生活</td><td>名前＋対象読者</td><td class="c">263</td><td class="c">81</td></tr>
+<tr><td>regal_nnnn</td><td>かにちゃん♪</td><td>名前のみ</td><td class="c">258</td><td class="c">64</td></tr>
+<tr><td>kako_kurashi_mum</td><td>かこ ꕥ 管理栄養士ママの子育て</td><td>名前＋肩書き・専門分野</td><td class="c">251</td><td class="c">89</td></tr>
+<tr><td>shiki_moriwaki</td><td>shiki ｜静かな戦略</td><td>その他</td><td class="c">239</td><td class="c">126</td></tr>
+<tr><td>gati_review</td><td>タケ＠SEO完全無視のXアフィリエイター</td><td>名前＋肩書き・専門分野</td><td class="c">235</td><td class="c">86</td></tr>
+<tr><td>yuuki_guremi</td><td>ゆき</td><td>名前のみ</td><td class="c">230</td><td class="c">130</td></tr>
+<tr><td>reika_biyou</td><td>れいか⌇美容ナース</td><td>名前＋肩書き・専門分野</td><td class="c">227</td><td class="c">0</td></tr>
+<tr><td>runo7</td><td>るの＊楽天アフィリエイト</td><td>名前＋肩書き・専門分野</td><td class="c">225</td><td class="c">47</td></tr>
+<tr><td>kazlily</td><td>かずりりぃ👨‍💻 AIマニア・専門家</td><td>名前＋肩書き・専門分野</td><td class="c">214</td><td class="c">49</td></tr>
+<tr><td>mayutearoom</td><td>まゆてぃ</td><td>名前のみ</td><td class="c">205</td><td class="c">121</td></tr>
+<tr><td>pochico_ai</td><td>ぽちこ</td><td>名前のみ</td><td class="c">202</td><td class="c">48</td></tr>
+<tr><td>piyo_dp</td><td>ぴよ</td><td>名前のみ</td><td class="c">195</td><td class="c">124</td></tr>
+<tr><td>momono_life</td><td>桃｜料理家のムスメ</td><td>その他</td><td class="c">177</td><td class="c">39</td></tr>
+<tr><td>mamekichi__diet</td><td>ダイエット大神まめきちくん</td><td>名前＋肩書き・専門分野</td><td class="c">165</td><td class="c">40</td></tr>
+<tr><td>amane_book</td><td>あまね</td><td>名前のみ</td><td class="c">128</td><td class="c">95</td></tr>
+<tr><td>amatotyan</td><td>甘党ちゃん</td><td>名前のみ</td><td class="c">124</td><td class="c">112</td></tr>
+<tr><td>mogu_pk</td><td>もぐ｜4万円、やってみる</td><td>名前＋実績・数字</td><td class="c">121</td><td class="c">57</td></tr>
+<tr><td>kurumi_sis</td><td>くるみ姉</td><td>名前のみ</td><td class="c">113</td><td class="c">24</td></tr>
+<tr><td>popoaimedia</td><td>ぽぽ</td><td>名前のみ</td><td class="c">111</td><td class="c">0</td></tr>
+<tr><td>note0to1</td><td>エグ｜ note×Threadsで退職を目指すヤツ🔥</td><td>名前＋肩書き・専門分野</td><td class="c">109</td><td class="c">93</td></tr>
+<tr><td>norisan0309maru</td><td>ほのぼのさん🤹noteで夢叶え</td><td>名前＋肩書き・専門分野</td><td class="c">108</td><td class="c">52</td></tr>
+<tr><td>5656nya5nya</td><td>そら【稼ぐマインドを整えるヒーラー養成講師】</td><td>名前＋肩書き・専門分野</td><td class="c">100</td><td class="c">116</td></tr>
+<tr><td>honne_kun8</td><td>本音くん。</td><td>名前のみ</td><td class="c">88</td><td class="c">33</td></tr>
+<tr><td>nigi_note</td><td>にぎ｜17万円分のnote研究</td><td>名前＋実績・数字</td><td class="c">86</td><td class="c">127</td></tr>
+<tr><td>yattarou</td><td>はしまとしんご</td><td>名前のみ</td><td class="c">86</td><td class="c">122</td></tr>
+<tr><td>leal_takin2393</td><td>なな｜Threads×noteで副業迷子脱出</td><td>名前＋肩書き・専門分野</td><td class="c">53</td><td class="c">71</td></tr>
+<tr><td>uichan_dayo_</td><td>ういﾁｬﾝ</td><td>名前のみ</td><td class="c">49</td><td class="c">106</td></tr>
+<tr><td>kikankou</td><td>伝説の期間工</td><td>名前のみ</td><td class="c">38</td><td class="c">134</td></tr>
+<tr><td>urenote</td><td>ペンギン</td><td>名前のみ</td><td class="c">36</td><td class="c">68</td></tr>
+<tr><td>kaori_200uru</td><td>カオリ｜夫よ、私が200万円売る</td><td>名前＋実績・数字</td><td class="c">26</td><td class="c">140</td></tr>
+<tr><td>eri_note_1017</td><td>えり ｜ SNS初心者が5日でxフォロワー300人</td><td>名前＋実績・数字</td><td class="c">23</td><td class="c">0</td></tr>
+<tr><td>nao_26479</td><td>なおと｜7時出勤22時帰宅でもnoteで6桁達成</td><td>名前＋実績・数字</td><td class="c">17</td><td class="c">127</td></tr>
+<tr><td>haru_sub8686</td><td>はる｜副業オタクの教科書</td><td>名前＋肩書き・専門分野</td><td class="c">5</td><td class="c">135</td></tr>
+</table></div>
+<h2 id="related">関連する調査記録</h2>
+<p>・<a href="https://dasho-note.github.io/note-eyecatch-100.html">有料noteの見出し画像100本を調べた記録</a>（同じ母集団の調査）<br>
+・<a href="https://dasho-note.github.io/note-price-decision-42.html">有料noteの価格の決め方、実践例42件を調べた記録</a><br>
+・<a href="https://dasho-note.github.io/note-tags-100.html">有料note100本のタグの付け方を調べた記録</a>（同じ母集団の調査）<br>
+・<a href="https://dasho-note.github.io/">売れてるnote研究所トップページ</a>（調査の一覧はこちら）</p>
+
+<footer>
+売れてるnote研究所（所長ふわ／実践者だしょ）｜<a href="https://dasho-note.github.io/">トップページへ</a>｜基礎：<a href="https://dasho-note.github.io/toha-yuryo-note.html">有料noteとは</a>
+</footer>
+</div>
+</body>
+</html>
