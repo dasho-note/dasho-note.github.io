@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>有料noteの見出し画像100本を調べた記録｜売れてるnote研究所</title>
+<meta name="description" content="売れている有料note100本の見出し画像を実際に取得して目視で分類した調査記録。背景の型、文字の量と位置、人物・キャラクター、著者名・ロゴ、メインカラーの分布と、スキ数・価格帯との関係をまとめました。売れてるnote研究所の調査レポートです。">
+<link rel="icon" type="image/png" href="https://dasho-note.github.io/favicon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="売れてるnote研究所">
+<meta property="og:title" content="有料noteの見出し画像100本を調べた記録｜売れてるnote研究所">
+<meta property="og:description" content="有料note100本の見出し画像を目視で分類。背景・文字量・人物・ロゴの分布とクロス集計の調査記録。">
+<meta property="og:url" content="https://dasho-note.github.io/note-eyecatch-100.html">
+<meta property="og:image" content="https://dasho-note.github.io/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQWHS9QV71"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GQWHS9QV71');</script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;color:#333;background:#fffaf3;line-height:1.8}
+.wrap{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+a{color:#e07b00}
+header.site{display:flex;justify-content:space-between;align-items:center;padding:8px 0 16px;border-bottom:2px solid #f39800}
+header.site .logo{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;color:#f39800;text-decoration:none}
+h1{font-family:"Zen Maru Gothic",sans-serif;font-size:1.55rem;line-height:1.5;margin:28px 0 8px}
+.meta{color:#888;font-size:.85rem;margin-bottom:24px}
+h2{font-family:"Zen Maru Gothic",sans-serif;font-size:1.15rem;border-left:6px solid #f39800;padding-left:10px;margin:36px 0 12px}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.85rem}
+th,td{border:1px solid #f0dcc0;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#fdeeda}
+td.c{text-align:center;white-space:nowrap}
+.sum td:last-child{text-align:center;font-weight:700}
+.tblwrap{overflow-x:auto}
+.note{background:#fff;border:1px solid #f0dcc0;border-radius:10px;padding:14px 16px;font-size:.9rem}
+.toc{background:#fff;border:1px solid #f0dcc0;border-radius:10px;padding:14px 16px;margin:20px 0}
+.toc p{margin:0 0 8px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif}
+.toc ol{margin:0;padding-left:22px}
+.toc li{margin:2px 0}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid #eee;color:#999;font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="logo" href="https://dasho-note.github.io/">売れてるnote研究所</a><a href="https://dasho-note.github.io/">トップへ</a></header>
+
+<h1>有料noteの見出し画像100本を、実際に取得して分類しました</h1>
+<p class="meta">調査：2026年11月28日｜売れてるnote研究所・所長ふわ</p>
+
+<p>売れている有料noteの見出し画像は、どう作られているか。これまで研究所の「見出し画像」の章は、自分の型（オレンジ背景＋マスコット＋最大12文字）しか材料がありませんでした。今回は、タイトル調査で集めた有料note100本の見出し画像を実際に取得し、目視で分類して型の分布を数えました。このページは、その全100本の記録です。</p>
+
+<nav class="toc">
+<p>このページの内容</p>
+<ol>
+<li><a href="#method">調べ方</a></li>
+<li><a href="#result">分類結果（100本）</a></li>
+<li><a href="#cross">クロス集計</a></li>
+<li><a href="#mitate">所長の見立て</a></li>
+<li><a href="#caution">注意書き</a></li>
+<li><a href="#list">付録：100本の一覧と分類</a></li>
+<li><a href="#related">関連する調査記録</a></li>
+</ol>
+</nav>
+
+<h2 id="method">調べ方</h2>
+<div class="note">
+対象：タイトル調査（2026年11月22〜23日実施）の対象になった有料noteのうち、URL一覧に残っている103本。だしょ自身の記事は含まれていません。この100本は「売れている根拠（部数・完売・売上の申告）が公開情報にあるもの」を集めた標本で、第3回は高価格帯（5,000円以上）、第4回は副業以外のジャンル、第5回は小規模な著者（フォロワー1,000人未満）に意図的に寄せてあります。無作為抽出ではありません。<br>
+取得方法：note公開APIで各記事の見出し画像URL・価格・スキ数を取得し、画像をダウンロードして目視で分類しました。取得できたのは100本。3本はAPIが404を返し（削除・非公開化とみられる）、対象から外しました。<br>
+分類項目（すべて目視判定）：1. 背景タイプ（単色／写真／イラスト・図／グラデーション／コラージュ／図（画面・表そのもの））　2. 文字の量（主文言の文字数を基準に、なし／短い（〜12字）／中（13〜25字）／長い（26字〜）。特典・実績などの小文字が画面の相当部分を占める場合は1段階上げた）　3. 文字の位置（中央／上部／下部／左／右／全面（画面全体に分散））　4. 人物・キャラクターの有無（実写・イラスト・マスコット・小さなアイコン状のものを含む）　5. 著者名・ロゴ・サイト名の有無　6. メインカラー（画面の印象を決めている色を大まかに1つ）。<br>
+価格とスキ数は2026年11月28日の取得時点のAPI値です。タイトル調査時点（2026年11月22〜23日）の価格とは変わっている場合があります。価格が0円と返ったものが5本あり、無料化・外部サービスでの販売などに切り替わった可能性があります（区別はできないため「0円（API値）」として分けました）。文字量の判定保留が1本あります（データ表のスクリーンショットそのものが見出し画像で、コピー文言が存在しないため文字量は数えませんでした）。<br>
+<strong>数字についての注意：スキ数・価格は取得時点の表示で、販売部数ではありません。部数・売上に関する前提（各本人の自己申告）は、研究所では確認できていません（出どころは未確認です）。</strong>
+</div>
+
+<h2 id="result">分類結果（100本）</h2>
+<p>背景タイプです。イラストと単色で約7割。写真だけの背景は2割にとどまりました。「図」3本の内訳は、データ表のスクリーンショット、PC画面とグラフの図版、電車の行き先表示を模したデザインです。</p>
+<table class="sum"><tr><th>背景</th><th>本数</th><th>割合</th></tr>
+<tr><td>イラスト・図</td><td>36</td><td>36％</td></tr>
+<tr><td>単色</td><td>32</td><td>32％</td></tr>
+<tr><td>写真</td><td>20</td><td>20％</td></tr>
+<tr><td>コラージュ</td><td>6</td><td>6％</td></tr>
+<tr><td>グラデーション</td><td>3</td><td>3％</td></tr>
+<tr><td>図（画面・表そのもの）</td><td>3</td><td>3％</td></tr></table>
+
+<p>文字の量です。6割が「長い」（26字〜）。短い文字（12字まで）は5本だけで、文字なしと合わせても11本でした。文字なし6本の内訳は、写真のみ4本（人物・風景・カフェ・絵画）、イラストのみ1本、写真コラージュ（猫とカラス）1本です。</p>
+<table class="sum"><tr><th>文字量</th><th>本数</th><th>割合</th></tr>
+<tr><td>長い（26字〜）</td><td>60</td><td>60％</td></tr>
+<tr><td>中（13〜25字）</td><td>28</td><td>28％</td></tr>
+<tr><td>なし</td><td>6</td><td>6％</td></tr>
+<tr><td>短い（〜12字）</td><td>5</td><td>5％</td></tr>
+<tr><td>判定保留</td><td>1</td><td>1％</td></tr></table>
+
+<p>文字の位置です（文字がある94本が対象）。「右上に短く1行」という置き方は、この標本では見当たりませんでした。右は2本だけで、どちらも主文言は右寄せの大きな文字でした。</p>
+<table class="sum"><tr><th>位置</th><th>本数</th><th>割合（94本中）</th></tr>
+<tr><td>全面（分散）</td><td>44</td><td>47％</td></tr>
+<tr><td>中央</td><td>22</td><td>23％</td></tr>
+<tr><td>左</td><td>21</td><td>22％</td></tr>
+<tr><td>上部</td><td>4</td><td>4％</td></tr>
+<tr><td>右</td><td>2</td><td>2％</td></tr>
+<tr><td>下部</td><td>1</td><td>1％</td></tr></table>
+
+<p>人物・キャラクターは、あり74本（74％）／なし26本（26％）。内訳は、イラストの人物・キャラクターが最も多く、実写の人物写真も一定数あります。隅に小さく置かれたマスコットやアイコン状の人物も「あり」に数えました。</p>
+<p>著者名・ロゴは、あり13本（13％）／なし87本（87％）。「〇〇式」という著者名入りの型名、プロフィール名の表示、屋号ロゴなどです。思ったより少数派でした。</p>
+
+<p>メインカラーです。白・黒・青・ピンクの4色で64％。オレンジは7本（7％）でした。</p>
+<table class="sum"><tr><th>色</th><th>本数</th><th>割合</th></tr>
+<tr><td>白</td><td>19</td><td>19％</td></tr>
+<tr><td>黒・ダーク系</td><td>16</td><td>16％</td></tr>
+<tr><td>青</td><td>15</td><td>15％</td></tr>
+<tr><td>ピンク</td><td>14</td><td>14％</td></tr>
+<tr><td>ベージュ・クリーム</td><td>8</td><td>8％</td></tr>
+<tr><td>オレンジ</td><td>7</td><td>7％</td></tr>
+<tr><td>緑</td><td>5</td><td>5％</td></tr>
+<tr><td>黄</td><td>4</td><td>4％</td></tr>
+<tr><td>グレー</td><td>4</td><td>4％</td></tr>
+<tr><td>紫</td><td>3</td><td>3％</td></tr>
+<tr><td>赤</td><td>3</td><td>3％</td></tr>
+<tr><td>白黒・その他</td><td>2</td><td>2％</td></tr></table>
+
+<h2 id="cross">クロス集計</h2>
+<p>スキ数は取得時点の値で、中央値は100（最小4〜最大2,383）。公開からの日数や著者の規模の影響を受けるため、あくまで「観測」として並べます。因果は言いません。</p>
+<p>スキ数の上位・下位（中央値100で分割、各50本）で比べた結果です。背景のイラスト（36％対36％）と単色（32％対32％）は上下でまったく同じ割合でした。差が出たのは写真（下位に多い）とコラージュ（6本すべてが上位）です。文字を画面全体に散らす「全面」型は上位に多く、1か所にまとめる「中央」型は下位に多く出ました。</p>
+<table><tr><th>項目</th><th>上位50本</th><th>下位50本</th></tr>
+<tr><td>背景：写真</td><td>7本（14％）</td><td>13本（26％）</td></tr>
+<tr><td>背景：コラージュ</td><td>6本（12％）</td><td>0本（0％）</td></tr>
+<tr><td>文字：長い</td><td>33本（66％）</td><td>27本（54％）</td></tr>
+<tr><td>文字位置：全面</td><td>28本（56％）</td><td>16本（32％）</td></tr>
+<tr><td>文字位置：中央</td><td>6本（12％）</td><td>16本（32％）</td></tr>
+<tr><td>人物・キャラクターあり</td><td>41本（82％）</td><td>33本（66％）</td></tr>
+<tr><td>著者名・ロゴあり</td><td>9本（18％）</td><td>4本（8％）</td></tr></table>
+<p>ただし例外も大きいです。スキ数トップ（2,383）は文字なしの写真1枚（女性の後ろ姿）で、文字なし6本のスキ数は2,383・392・179・79・43・6と大きくばらつきます。文字なしが不利とも有利とも言えません。</p>
+
+<p>価格帯で比べた結果です。価格が高い帯ほど文字量が多く、10,000円以上では12本中11本が「長い」で、「中」が1本、「短い」「なし」はゼロでした。3,000〜9,999円の帯では単色背景が47％（18/38本）と、他の帯より単色の割合が高くなっています。価格帯とスキ中央値が一緒に上がって見えますが、これは高価格帯を意図的に集めた第3回（5,000円以上）を含む標本の作りと、著者の規模の差が混ざっている可能性が高いです。価格を上げればスキが増える、という読み方はしません。</p>
+<table><tr><th>価格帯</th><th>本数</th><th>スキ中央値</th><th>文字「長い」の割合</th><th>人物あり</th></tr>
+<tr><td>〜999円</td><td class="c">16</td><td class="c">92</td><td class="c">50％</td><td>10本（63％）</td></tr>
+<tr><td>1,000〜2,999円</td><td class="c">29</td><td class="c">96</td><td class="c">59％</td><td>25本（86％）</td></tr>
+<tr><td>3,000〜9,999円</td><td class="c">38</td><td class="c">181</td><td class="c">58％</td><td>27本（71％）</td></tr>
+<tr><td>10,000円〜</td><td class="c">12</td><td class="c">221</td><td class="c">92％</td><td>9本（75％）</td></tr>
+<tr><td>0円（API値）</td><td class="c">5</td><td class="c">37</td><td class="c">40％</td><td>3本（60％）</td></tr></table>
+
+<h2 id="mitate">所長の見立て</h2>
+<p>1つ目。売れている側の見出し画像は「文字が多い」のが普通でした。60％が26字以上の主文言を持ち、特典・実績・対象者などの小文字まで含めると、画面はほぼ「読むもの」になっています。タイトル調査で見た「タイトルに数字と実績を詰める」型と、見出し画像の作りは地続きに見えます。</p>
+<p>2つ目。だしょの今の型（オレンジ背景＋マスコット＋12字まで）は、この100本の中では少数派の組み合わせでした。オレンジ背景は7％、短い文字は5％。人物・キャラクターありは74％で、マスコット自体は多数派の側にいます。型が悪いという根拠にはなりませんが、「売れている側の主流」とは違う場所にいることは事実として記録しておきます。</p>
+<p>3つ目。背景はイラストと単色で7割。写真は2割で、スキ下位にやや多く出ました。ただし写真でも文字なしで全体トップの例があります。背景の種類そのものより、文字と人物をどう載せるかの設計のほうが、観測上の差として大きく出ました。</p>
+<p>4つ目。著者名・ロゴを入れるのは13％と少数派でした。「〇〇式」のような型名として著者名を出す例はありますが、多くの売れている記事は著者名なしで、タイトルと中身の提示だけで成立していました。</p>
+<p>5つ目。次に調べるなら、同じ著者の複数記事で見出し画像の型が統一されているか（シリーズの看板として機能しているか）と、見出し画像を差し替えた前後で数字が動いた実例の言及調査が候補になります。今回の調査は1時点の断面で、差し替えの効果は測れていません。</p>
+
+<h2 id="caution">注意書き</h2>
+<div class="note">
+・分類はすべて調査者（ふわ）の目視判定で、判定者によるぶれがありえます。境界の判断（主文言の文字数、小さな人物アイコンの扱いなど）は「調べ方」に書いた定義に従いました。<br>
+・スキ数・価格は2026年11月28日の取得時点のAPI値で、販売部数ではありません。部数・売上に関する前提（各本人の自己申告で未検証）はタイトル調査の記録を引き継ぎます。他者の数字を研究所の外に出すときは「本人の報告・未確認」の扱いを維持します。<br>
+・標本は無作為抽出ではありません（高価格帯・他ジャンル・小規模著者に寄せた回を含む）。割合はこの100本の中での話で、note全体の分布ではありません。<br>
+・見出し画像は記事の公開後に差し替えられることがあります。今回の画像は取得時点のもので、タイトル調査時点の画像とは変わっている場合があります。<br>
+・画像内の文言は、分類に必要な範囲で主なコピーを短く引用しました（付録）。本文の転載はしていません。
+</div>
+
+<h2 id="list">付録：100本の一覧と分類</h2>
+<p>著者はnoteのurlnameです。価格・スキは2026年11月28日の取得時点のAPI値。「主な文言」は分類に必要な範囲で短く引用したものです。</p>
+<div class="tblwrap"><table><tr><th>#</th><th>著者</th><th>価格（API値）</th><th>スキ</th><th>背景</th><th>文字量</th><th>位置</th><th>人物</th><th>著者名・ロゴ</th><th>色</th><th>主な文言（短く引用）</th></tr>
+<tr><td class="c">0</td><td>5656nya5nya</td><td class="c">0円</td><td class="c">37</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>紫</td><td>そら式 浄化ヒーリングの教科書</td></tr>
+<tr><td class="c">1</td><td>aiju911</td><td class="c">9,800円</td><td class="c">184</td><td>写真</td><td class="c">長い</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>“売れる有料note”に変わるまでにやったこと</td></tr>
+<tr><td class="c">2</td><td>aiju911</td><td class="c">29,800円</td><td class="c">295</td><td>コラージュ</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>出逢いは「運」ちゃう、100%「物理」やねん！</td></tr>
+<tr><td class="c">3</td><td>aiteiji_matome</td><td class="c">7,980円</td><td class="c">88</td><td>写真</td><td class="c">長い</td><td class="c">中央</td><td class="c">あり</td><td class="c">あり</td><td>青</td><td>アフェリエイト系×note 完全解説</td></tr>
+<tr><td class="c">4</td><td>akari_seaart</td><td class="c">9,800円</td><td class="c">179</td><td>イラスト</td><td class="c">なし</td><td class="c">-</td><td class="c">あり</td><td class="c">なし</td><td>黄</td><td>―</td></tr>
+<tr><td class="c">5</td><td>aki_clouds_</td><td class="c">4,980円</td><td class="c">575</td><td>単色</td><td class="c">中</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>note戦略×デザイン</td></tr>
+<tr><td class="c">6</td><td>alive_guppy3873</td><td class="c">100円</td><td class="c">164</td><td>イラスト</td><td class="c">中</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>ベージュ</td><td>「読まなきゃ」を、やめました。</td></tr>
+<tr><td class="c">7</td><td>amane_book</td><td class="c">1,980円</td><td class="c">219</td><td>単色</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">あり</td><td>緑</td><td>4ヶ月で0→1万フォロワー</td></tr>
+<tr><td class="c">8</td><td>amatotyan</td><td class="c">10,000円</td><td class="c">46</td><td>単色</td><td class="c">長い</td><td class="c">左</td><td class="c">なし</td><td class="c">なし</td><td>白</td><td>アダルトアフィリエイトで圧倒的な収益を生む構造と再現性</td></tr>
+<tr><td class="c">9</td><td>ao_threads_log</td><td class="c">1,980円</td><td class="c">102</td><td>写真</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>会社員が10日で6桁マネタイズした note完全攻略ロードマップ</td></tr>
+<tr><td class="c">10</td><td>asa5ji_note</td><td class="c">9,980円</td><td class="c">286</td><td>単色</td><td class="c">中</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>白</td><td>Threads 0→2000人</td></tr>
+<tr><td class="c">11</td><td>ayaka_yaseru</td><td class="c">1,400円</td><td class="c">478</td><td>コラージュ</td><td class="c">長い</td><td class="c">右</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>アラフォーママでも 92kg→57kg 甘党ダイエットの教科書</td></tr>
+<tr><td class="c">12</td><td>baby_kabu_page</td><td class="c">7,500円</td><td class="c">60</td><td>イラスト</td><td class="c">長い</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>べびかぶ流 投資の完全攻略本</td></tr>
+<tr><td class="c">13</td><td>babylon_toeic900</td><td class="c">6,980円</td><td class="c">1055</td><td>コラージュ</td><td class="c">長い</td><td class="c">全面</td><td class="c">なし</td><td class="c">なし</td><td>黒</td><td>TOEIC完全攻略 All in One パック</td></tr>
+<tr><td class="c">14</td><td>bonsailabo</td><td class="c">1,000円</td><td class="c">63</td><td>イラスト</td><td class="c">長い</td><td class="c">左</td><td class="c">あり</td><td class="c">あり</td><td>オレンジ</td><td>有料note 1本も売れない？ 次に直す1つ</td></tr>
+<tr><td class="c">15</td><td>chiyu_note2025</td><td class="c">4,980円</td><td class="c">232</td><td>単色</td><td class="c">長い</td><td class="c">中央</td><td class="c">あり</td><td class="c">あり</td><td>ピンク</td><td>育児ジャンルで収益化</td></tr>
+<tr><td class="c">16</td><td>dana37_taku</td><td class="c">6,980円</td><td class="c">260</td><td>写真</td><td class="c">長い</td><td class="c">左</td><td class="c">あり</td><td class="c">あり</td><td>赤</td><td>売り込まずにファンが集まる 最強コミュニティの作り方</td></tr>
+<tr><td class="c">17</td><td>dapper_crane2894</td><td class="c">8,480円</td><td class="c">592</td><td>単色</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>オレンジ</td><td>ごじぴた式 Threads×Amazon アフィリエイトの教科書</td></tr>
+<tr><td class="c">18</td><td>enishi_supporter</td><td class="c">9,800円</td><td class="c">645</td><td>写真</td><td class="c">中</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>紫</td><td>スピ系を収益化する 完全設計図</td></tr>
+<tr><td class="c">19</td><td>eri_note_1017</td><td class="c">0円</td><td class="c">24</td><td>写真</td><td class="c">短い</td><td class="c">中央</td><td class="c">なし</td><td class="c">あり</td><td>グレー</td><td>note</td></tr>
+<tr><td class="c">20</td><td>fukugyo_nikoniko</td><td class="c">21,980円</td><td class="c">239</td><td>グラデーション</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>Threads×高単価ASPアフィ 完全攻略</td></tr>
+<tr><td class="c">21</td><td>galatea_note</td><td class="c">100円</td><td class="c">98</td><td>イラスト</td><td class="c">短い</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>白黒</td><td>つまらない</td></tr>
+<tr><td class="c">22</td><td>gati_review</td><td class="c">14,800円</td><td class="c">46</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>ブログアフィリエイトの教科書</td></tr>
+<tr><td class="c">23</td><td>haru_sub8686</td><td class="c">0円</td><td class="c">6</td><td>写真</td><td class="c">なし</td><td class="c">-</td><td class="c">あり</td><td class="c">なし</td><td>緑</td><td>―</td></tr>
+<tr><td class="c">24</td><td>hata_papa1410</td><td class="c">700円</td><td class="c">43</td><td>写真</td><td class="c">長い</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>黒</td><td>Threads開始13日 0→400の裏側</td></tr>
+<tr><td class="c">25</td><td>honne_kun8</td><td class="c">1,980円</td><td class="c">21</td><td>写真</td><td class="c">長い</td><td class="c">左</td><td class="c">なし</td><td class="c">なし</td><td>紫</td><td>追うのをやめれば、彼が勝手に寄ってくる。</td></tr>
+<tr><td class="c">26</td><td>hsp_mylife</td><td class="c">1,980円</td><td class="c">65</td><td>単色</td><td class="c">長い</td><td class="c">左</td><td class="c">なし</td><td class="c">なし</td><td>青</td><td>Threadsが伸びるブランディング戦略</td></tr>
+<tr><td class="c">27</td><td>hugh_miyata</td><td class="c">1,200円</td><td class="c">2383</td><td>写真</td><td class="c">なし</td><td class="c">-</td><td class="c">あり</td><td class="c">なし</td><td>グレー</td><td>―</td></tr>
+<tr><td class="c">28</td><td>junjun_ranran</td><td class="c">9,800円</td><td class="c">392</td><td>コラージュ</td><td class="c">なし</td><td class="c">-</td><td class="c">なし</td><td class="c">なし</td><td>その他</td><td>―</td></tr>
+<tr><td class="c">30</td><td>kaori_200uru</td><td class="c">980円</td><td class="c">34</td><td>単色</td><td class="c">中</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>夫よ、私が200万円売る。</td></tr>
+<tr><td class="c">31</td><td>kazlily</td><td class="c">14,800円</td><td class="c">28</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>AI時代の“バズるインスタストーリーズ”の教科書</td></tr>
+<tr><td class="c">33</td><td>kikankou</td><td class="c">4,980円</td><td class="c">4</td><td>図</td><td class="c">保留</td><td class="c">全面</td><td class="c">なし</td><td class="c">なし</td><td>白</td><td>（データ表のスクリーンショット）</td></tr>
+<tr><td class="c">34</td><td>kippeinpein</td><td class="c">100円</td><td class="c">535</td><td>単色</td><td class="c">長い</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>緑</td><td>1980円の内容を100円で売る たった1つのからくり</td></tr>
+<tr><td class="c">35</td><td>kon_ai</td><td class="c">8,980円</td><td class="c">89</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>Claude Code×Threads 半自動で稼ぐAI副業 完全教科書</td></tr>
+<tr><td class="c">36</td><td>kuroe_claude</td><td class="c">9,800円</td><td class="c">563</td><td>単色</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>AI社員構築の教科書</td></tr>
+<tr><td class="c">37</td><td>kurumi_sis</td><td class="c">5,480円</td><td class="c">74</td><td>単色</td><td class="c">長い</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>赤</td><td>先惚制勝</td></tr>
+<tr><td class="c">38</td><td>leal_takin2393</td><td class="c">500円</td><td class="c">10</td><td>単色</td><td class="c">長い</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>noteで副業迷子を脱出！ 0→1達成した戦略を公開</td></tr>
+<tr><td class="c">39</td><td>levelma</td><td class="c">980円</td><td class="c">177</td><td>コラージュ</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>呪文集大全</td></tr>
+<tr><td class="c">40</td><td>mako_0to1</td><td class="c">1,980円</td><td class="c">269</td><td>単色</td><td class="c">中</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>オレンジ</td><td>もう一度、前へ進むために。</td></tr>
+<tr><td class="c">41</td><td>mako_0to1</td><td class="c">1,480円</td><td class="c">42</td><td>単色</td><td class="c">中</td><td class="c">右</td><td class="c">あり</td><td class="c">なし</td><td>オレンジ</td><td>1→10を目指す 次の1部につなげる</td></tr>
+<tr><td class="c">42</td><td>mamekichi__diet</td><td class="c">3,980円</td><td class="c">80</td><td>単色</td><td class="c">中</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>ベージュ</td><td>5キロ痩せる食べ痩せダイエット法</td></tr>
+<tr><td class="c">43</td><td>marimo0101</td><td class="c">980円</td><td class="c">112</td><td>イラスト</td><td class="c">中</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>ベージュ</td><td>noteで0→1を達成させる人</td></tr>
+<tr><td class="c">44</td><td>mayutearoom</td><td class="c">2,980円</td><td class="c">680</td><td>コラージュ</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">あり</td><td>ピンク</td><td>フォロワー数3万人 初めてのInstagramの教科書</td></tr>
+<tr><td class="c">45</td><td>mild_wolf1115</td><td class="c">3,980円</td><td class="c">40</td><td>単色</td><td class="c">中</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>0歳から1歳半の脳育大辞典</td></tr>
+<tr><td class="c">46</td><td>mild_wolf1115</td><td class="c">3,980円</td><td class="c">61</td><td>単色</td><td class="c">中</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>最強の「寝かしつけの」教科書</td></tr>
+<tr><td class="c">47</td><td>minato74_</td><td class="c">14,800円</td><td class="c">407</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>労働の対価で稼ぐ生活を終わらせる</td></tr>
+<tr><td class="c">48</td><td>mio__work</td><td class="c">100円</td><td class="c">123</td><td>写真</td><td class="c">長い</td><td class="c">左</td><td class="c">あり</td><td class="c">あり</td><td>白</td><td>みおのnote自動化キット</td></tr>
+<tr><td class="c">49</td><td>misa_nobinobi</td><td class="c">1,880円</td><td class="c">128</td><td>イラスト</td><td class="c">中</td><td class="c">上部</td><td class="c">あり</td><td class="c">なし</td><td>ベージュ</td><td>心に響く、刺さる、人を動かす 文章を書くために。</td></tr>
+<tr><td class="c">50</td><td>miyu_freenote___</td><td class="c">850円</td><td class="c">43</td><td>写真</td><td class="c">なし</td><td class="c">-</td><td class="c">なし</td><td class="c">なし</td><td>ベージュ</td><td>―</td></tr>
+<tr><td class="c">51</td><td>mogu_pk</td><td class="c">3,480円</td><td class="c">218</td><td>単色</td><td class="c">短い</td><td class="c">上部</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>4万円、払いました。</td></tr>
+<tr><td class="c">52</td><td>mogu_pk</td><td class="c">1,080円</td><td class="c">23</td><td>単色</td><td class="c">中</td><td class="c">上部</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>0→1の先で、僕がやったこと。</td></tr>
+<tr><td class="c">53</td><td>momono_life</td><td class="c">3,980円</td><td class="c">423</td><td>単色</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">あり</td><td>ピンク</td><td>講座代0円・独学で5万人</td></tr>
+<tr><td class="c">54</td><td>nao_26479</td><td class="c">600円</td><td class="c">17</td><td>イラスト</td><td class="c">中</td><td class="c">左</td><td class="c">なし</td><td class="c">なし</td><td>ベージュ</td><td>7時出勤、22時退勤。それでも、続けた。</td></tr>
+<tr><td class="c">55</td><td>nene_aimama</td><td class="c">1,980円</td><td class="c">56</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>「無料部分の型」決定版</td></tr>
+<tr><td class="c">56</td><td>nigi_note</td><td class="c">980円</td><td class="c">134</td><td>イラスト</td><td class="c">長い</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>フォロワーを増やす前に読んでください</td></tr>
+<tr><td class="c">57</td><td>norisan0309maru</td><td class="c">2,980円</td><td class="c">38</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>AI×メルカリ占いマニュアル</td></tr>
+<tr><td class="c">58</td><td>note0to1</td><td class="c">1,000円</td><td class="c">126</td><td>イラスト</td><td class="c">中</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ベージュ</td><td>（主文言なし・手書きメモ風の小文字が全面）</td></tr>
+<tr><td class="c">59</td><td>ori_baku</td><td class="c">2,980円</td><td class="c">1492</td><td>単色</td><td class="c">短い</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>黄</td><td>noteの転換期。</td></tr>
+<tr><td class="c">60</td><td>pakucha</td><td class="c">4,980円</td><td class="c">401</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>緑</td><td>Threads運用 -初級編-</td></tr>
+<tr><td class="c">61</td><td>piyo_dp</td><td class="c">4,980円</td><td class="c">204</td><td>単色</td><td class="c">中</td><td class="c">上部</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>激務会社員の好きなことで稼ぐリアル</td></tr>
+<tr><td class="c">62</td><td>pochico_ai</td><td class="c">2,980円</td><td class="c">162</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">あり</td><td>青</td><td>ぽちこ式 Threadsリサーチツール</td></tr>
+<tr><td class="c">63</td><td>popoaimedia</td><td class="c">21,800円</td><td class="c">57</td><td>単色</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>Claude CodeでAI社員を雇って収益化する完全マニュアル</td></tr>
+<tr><td class="c">64</td><td>promptdesign</td><td class="c">12,800円</td><td class="c">203</td><td>図</td><td class="c">長い</td><td class="c">全面</td><td class="c">なし</td><td class="c">なし</td><td>白</td><td>ChatGPT×note 収益化</td></tr>
+<tr><td class="c">65</td><td>pure_azalea6326</td><td class="c">3,980円</td><td class="c">1146</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>900部販売した経験者が語る 収益化ロードマップ</td></tr>
+<tr><td class="c">66</td><td>rabbit_sns</td><td class="c">16,480円</td><td class="c">612</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>AI×noteの教科書</td></tr>
+<tr><td class="c">67</td><td>regal_nnnn</td><td class="c">2,980円</td><td class="c">43</td><td>イラスト</td><td class="c">中</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>Threads×note たった1投稿で売れる。</td></tr>
+<tr><td class="c">68</td><td>reika_biyou</td><td class="c">3,980円</td><td class="c">183</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黄</td><td>美肌ケア入門書</td></tr>
+<tr><td class="c">69</td><td>rinfa_ai</td><td class="c">5,980円</td><td class="c">157</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>プロンプト設計大全</td></tr>
+<tr><td class="c">70</td><td>runo7</td><td class="c">1,980円</td><td class="c">258</td><td>写真</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>フォロワー約150人・たった2投稿で 4日で6桁達成しました！</td></tr>
+<tr><td class="c">71</td><td>ryo_0to1</td><td class="c">4,980円</td><td class="c">251</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>実績ゼロからnoteで家賃を払う 500部売るまでの全記録</td></tr>
+<tr><td class="c">72</td><td>ryouyuu</td><td class="c">300円</td><td class="c">98</td><td>写真</td><td class="c">長い</td><td class="c">左</td><td class="c">なし</td><td class="c">なし</td><td>黒</td><td>→収益5桁。最初の10日でやったこと全部見せます。</td></tr>
+<tr><td class="c">73</td><td>sena__desuyo</td><td class="c">2,980円</td><td class="c">814</td><td>グラデーション</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>私が“未経験×フルリモート正社員”を勝ち取るまでやったこと全部</td></tr>
+<tr><td class="c">74</td><td>shachiku_n_</td><td class="c">1,980円</td><td class="c">72</td><td>イラスト</td><td class="c">中</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>noteの購入ボタンを押させる一言</td></tr>
+<tr><td class="c">75</td><td>shachiku_n_</td><td class="c">7,980円</td><td class="c">47</td><td>単色</td><td class="c">中</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>黒</td><td>磁石投稿</td></tr>
+<tr><td class="c">76</td><td>shibainu_fx</td><td class="c">49,800円</td><td class="c">598</td><td>単色</td><td class="c">中</td><td class="c">全面</td><td class="c">なし</td><td class="c">なし</td><td>赤</td><td>プライスアクションの見極め方 徹底解説</td></tr>
+<tr><td class="c">77</td><td>shiki_moriwaki</td><td class="c">4,980円</td><td class="c">143</td><td>単色</td><td class="c">中</td><td class="c">中央</td><td class="c">なし</td><td class="c">あり</td><td>白</td><td>Threads.</td></tr>
+<tr><td class="c">78</td><td>shimononpiano</td><td class="c">3,980円</td><td class="c">67</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">あり</td><td>ピンク</td><td>しもんぬ式 Threads図解の攻略マニュアル</td></tr>
+<tr><td class="c">79</td><td>shizuku_contents</td><td class="c">980円</td><td class="c">79</td><td>写真</td><td class="c">なし</td><td class="c">-</td><td class="c">なし</td><td class="c">なし</td><td>青</td><td>―</td></tr>
+<tr><td class="c">80</td><td>simple_sunao</td><td class="c">1,480円</td><td class="c">77</td><td>単色</td><td class="c">長い</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>人を“沼らせてしまう” Threads運用教祖マニュアル</td></tr>
+<tr><td class="c">81</td><td>skillfreak</td><td class="c">5,000円</td><td class="c">78</td><td>単色</td><td class="c">長い</td><td class="c">全面</td><td class="c">なし</td><td class="c">なし</td><td>白</td><td>7割の人が見落としがちな『伝わるスライド』</td></tr>
+<tr><td class="c">82</td><td>sssssssnote</td><td class="c">9,800円</td><td class="c">490</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>オレンジ</td><td>有料noteが売れない人へ 裏技を使ったnote戦略</td></tr>
+<tr><td class="c">83</td><td>suichqn_note</td><td class="c">10,480円</td><td class="c">455</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>月40万を達成した戦略 Threads×noteの教科書</td></tr>
+<tr><td class="c">84</td><td>takosuke_c</td><td class="c">39,800円</td><td class="c">41</td><td>写真</td><td class="c">長い</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>映画業界から学ぶ ローンチの極意</td></tr>
+<tr><td class="c">85</td><td>tattsun_cw</td><td class="c">1,480円</td><td class="c">270</td><td>単色</td><td class="c">中</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>緑</td><td>失敗を最強の武器にする。</td></tr>
+<tr><td class="c">86</td><td>trgfvstg</td><td class="c">980円</td><td class="c">86</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黒</td><td>34歳崖っぷちOLが1年で100万貯めた完全ロードマップ</td></tr>
+<tr><td class="c">87</td><td>uchimochi</td><td class="c">3,980円</td><td class="c">62</td><td>単色</td><td class="c">中</td><td class="c">左</td><td class="c">あり</td><td class="c">なし</td><td>グレー</td><td>犬系彼氏の育て方</td></tr>
+<tr><td class="c">88</td><td>uichan_dayo_</td><td class="c">9,980円</td><td class="c">5</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>Threads×X アフィリエイト攻略</td></tr>
+<tr><td class="c">89</td><td>urenote</td><td class="c">0円</td><td class="c">38</td><td>グラデーション</td><td class="c">中</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>ピンク</td><td>フォロワーが少なくても買われたnote</td></tr>
+<tr><td class="c">90</td><td>wattyo_wakamote</td><td class="c">5,980円</td><td class="c">68</td><td>写真</td><td class="c">中</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>オレンジ</td><td>愛欲再生</td></tr>
+<tr><td class="c">91</td><td>witty_dunlin880</td><td class="c">0円</td><td class="c">37</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>黄</td><td>noteで最初の1円が稼げない人へ 0→1を達成する完全ロードマップ</td></tr>
+<tr><td class="c">92</td><td>x221130x</td><td class="c">4,980円</td><td class="c">167</td><td>単色</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">あり</td><td>白</td><td>外見磨きを徹底追及</td></tr>
+<tr><td class="c">93</td><td>xotaku</td><td class="c">1,980円</td><td class="c">96</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>Xを伸ばす交流術とその限界</td></tr>
+<tr><td class="c">94</td><td>y0603yk</td><td class="c">2,480円</td><td class="c">71</td><td>写真</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ベージュ</td><td>完了期・幼児食note</td></tr>
+<tr><td class="c">95</td><td>y0603yk</td><td class="c">1,480円</td><td class="c">41</td><td>写真</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>離乳食note</td></tr>
+<tr><td class="c">96</td><td>yama_threads</td><td class="c">3,980円</td><td class="c">365</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">なし</td><td class="c">なし</td><td>オレンジ</td><td>Claude Code×Threads シン自動化で月7桁稼ぐ全手順</td></tr>
+<tr><td class="c">98</td><td>yohakulife</td><td class="c">2,980円</td><td class="c">73</td><td>写真</td><td class="c">中</td><td class="c">左</td><td class="c">なし</td><td class="c">なし</td><td>グレー</td><td>noteが100部 読まれる、売れるための方法</td></tr>
+<tr><td class="c">99</td><td>yuasu2453</td><td class="c">3,980円</td><td class="c">44</td><td>単色</td><td class="c">中</td><td class="c">中央</td><td class="c">あり</td><td class="c">なし</td><td>白</td><td>転職活動の設計 完全ガイド</td></tr>
+<tr><td class="c">100</td><td>yurisawa</td><td class="c">1,200円</td><td class="c">46</td><td>図</td><td class="c">中</td><td class="c">中央</td><td class="c">なし</td><td class="c">なし</td><td>黒</td><td>この記事、どこ行き？</td></tr>
+<tr><td class="c">101</td><td>yuuki_guremi</td><td class="c">2,480円</td><td class="c">122</td><td>イラスト</td><td class="c">長い</td><td class="c">全面</td><td class="c">あり</td><td class="c">なし</td><td>ピンク</td><td>初心者が0→1000人までやったこと完全版</td></tr>
+<tr><td class="c">102</td><td>zubora_notelife</td><td class="c">980円</td><td class="c">59</td><td>イラスト</td><td class="c">短い</td><td class="c">下部</td><td class="c">あり</td><td class="c">なし</td><td>青</td><td>ご報告。</td></tr>
+</table></div>
+
+<h2 id="related">関連する調査記録</h2>
+<p>・<a href="https://dasho-note.github.io/note-price-decision-42.html">有料noteの価格の決め方、実践例42件を調べた記録</a>（同じく2026年11月28日の調査）<br>
+・<a href="https://dasho-note.github.io/">売れてるnote研究所トップページ</a>（調査の一覧はこちら）</p>
+
+<footer>
+売れてるnote研究所（所長ふわ／実践者だしょ）｜<a href="https://dasho-note.github.io/">トップページへ</a>｜基礎：<a href="https://dasho-note.github.io/toha-yuryo-note.html">有料noteとは</a>
+</footer>
+</div>
+</body>
+</html>
